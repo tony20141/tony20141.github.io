@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Yimin Qiu's Blogger Blog</title>
+        <link>https://app.qqlink.net/blog</link>
+        <description>Yimin Qiu's Blogger Blog</description>
+        <lastBuildDate>Sun, 21 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[How to make a markdown website]]></title>
+            <link>https://app.qqlink.net/blog/AAA</link>
+            <guid>https://app.qqlink.net/blog/AAA</guid>
+            <pubDate>Sun, 21 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Prerequisition]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisition">Prerequisition<a href="https://app.qqlink.net/blog/AAA#prerequisition" class="hash-link" aria-label="Direct link to Prerequisition" title="Direct link to Prerequisition">​</a></h2>
+<ol>
+<li>Node.js<!-- -->
+<blockquote>
+<p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a></p>
+</blockquote>
+</li>
+<li>Open node.js CMD</li>
+<li>npm install npx</li>
+<li>npx create-docusaurus@latest my-website classic //create a website names my-website<!-- -->
+<blockquote>
+<p>error: no such file or directory, lstat 'C:\Users\qq\AppData\Roaming\npm'<br>
+<!-- -->solution: manually create the npm folder there</p>
+</blockquote>
+</li>
+<li>cd my-website</li>
+<li>npm start</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="project-structure">Project structure<a href="https://app.qqlink.net/blog/AAA#project-structure" class="hash-link" aria-label="Direct link to Project structure" title="Direct link to Project structure">​</a></h2>
+<p>Assuming you chose the classic template and named your site my-website, you will see the following files generated under a new directory my-website/:</p>
+<p>Assuming you chose the classic template and named your site <code>my-website</code>, you will see the following files generated under a new directory <code>my-website/</code>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">my-website</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── blog</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── 2019-05-28-hola.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── 2019-05-29-hello-world.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── 2020-05-30-welcome.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── authors.yml //global author usersage: -name yimin</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── docs</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── doc1.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── doc2.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── doc3.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── mdx.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── src</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── components\homepagefeatures</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">|   │   └── index.js //main page center</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── css</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── custom.css</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── pages</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│       ├── styles.module.css</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│       └── index.js</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── static</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── img</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── docusaurus.config.js //main page</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── package.json</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── README.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── sidebars.js</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── yarn.lock</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="project-structure-rundown">Project structure rundown<a href="https://app.qqlink.net/blog/AAA#project-structure-rundown" class="hash-link" aria-label="Direct link to Project structure rundown" title="Direct link to Project structure rundown">​</a></h3>
+<ul>
+<li><code>/blog/</code> - Contains the blog Markdown files. You can delete the directory if you've disabled the blog plugin, or you can change its name after setting the <code>path</code> option. More details can be found in the [blog guide]</li>
+<li><code>/docs/</code> - Contains the Markdown files for the docs. Customize the order of the docs sidebar in <code>sidebars.js</code>. You can delete the directory if you've disabled the docs plugin, or you can change its name after setting the <code>path</code> option. More details can be found in the [docs guide]</li>
+<li><code>/src/</code> - Non-documentation files like pages or custom React components. You don't have to strictly put your non-documentation files here, but putting them under a centralized directory makes it easier to specify in case you need to do some sort of linting/processing<!-- -->
+<ul>
+<li><code>/src/pages</code> - Any JSX/TSX/MDX file within this directory will be converted into a website page. More details can be found in the [pages guide]</li>
+</ul>
+</li>
+<li><code>/static/</code> - Static directory. Any contents inside here will be copied into the root of the final <code>build</code> directory</li>
+<li><code>/docusaurus.config.js</code> - A config file containing the site configuration. This is the equivalent of <code>siteConfig.js</code> in Docusaurus v1</li>
+<li><code>/package.json</code> - A Docusaurus website is a React app. You can install and use any npm packages you like in them</li>
+<li><code>/sidebars.js</code> - Used by the documentation to specify the order of documents in the sidebar</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="authors modify">authors.yml<a href="https://app.qqlink.net/blog/AAA#authors%20modify" class="hash-link" aria-label="Direct link to authors.yml" title="Direct link to authors.yml">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">yimin:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  name: Yimin Qiu</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  title: Helper &amp; learner</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  url: https://github.com/tony20141</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  image_url: https://avatars.githubusercontent.com/u/60122866?s=400&amp;u=04bd04ca632e625b294ee33c3f4f549b626b2c8c&amp;v=4</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="build">Build<a href="https://app.qqlink.net/blog/AAA#build" class="hash-link" aria-label="Direct link to Build" title="Direct link to Build">​</a></h2>
+<p>Docusaurus is a modern static website generator so we need to build the website into a directory of static contents and put it on a web server so that it can be viewed. To build the website:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm run build</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>and contents will be generated within the <code>/build</code> directory, which can be copied to any static file hosting service like <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub pages</a>, <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel</a> or <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>. Check out the docs on [deployment] for more details.</p>
+<p>[SUCCESS] Generated static files in "build".
+[INFO] Use <code>npm run serve</code> command to test your build locally.</p>]]></content:encoded>
+            <category>md</category>
+            <category>markdown website</category>
+            <category>docusaurus</category>
+        </item>
+        <item>
+            <title><![CDATA[Linux note]]></title>
+            <link>https://app.qqlink.net/blog/welcome-docusaurus-v2</link>
+            <guid>https://app.qqlink.net/blog/welcome-docusaurus-v2</guid>
+            <pubDate>Sun, 21 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is Linux study.]]></description>
+            <content:encoded><![CDATA[<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#linux-%E5%91%BD%E4%BB%A4">Linux 命令</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7-nice">进程优先级 nice</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%9B%B8%E5%AF%B9%E4%BC%98%E5%85%88%E7%BA%A7">相对优先级</a></li>
+</ul>
+</li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6-jobs">作业控制 jobs</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E8%89%AF%E5%A5%BD%E4%B9%A0%E6%83%AF-%E5%AE%89%E8%A3%85screen%E8%BD%AF%E4%BB%B6-%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%A4%8D%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84%E8%BF%9B%E7%A8%8B--">良好习惯 安装screen软件 可以回复上一次的进程  `</a></li>
+</ul>
+</li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#io%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E9%87%8C%E9%9D%A2">IO重定向（到一个文件里面）</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B">综合案例</a></li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B-1">综合案例</a></li>
+</ul>
+</li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#subshell">subshell</a></li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%AE%A1%E9%81%93-piping%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B">管道 piping（重定向到一个进程）</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%94%A8%E9%80%94">定义及用途</a></li>
+</ul>
+</li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%86%85%E9%83%A8%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4-tee-%E5%88%86%E6%B5%81%E7%94%A8">内部管道命令 tee 分流用</a></li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%88%86%E5%8C%BA">分区</a></li>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#lvm-%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA">LVM 逻辑分区</a>
+<ul>
+<li><a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#snap-%E5%BF%AB%E7%85%A7%E5%8D%B7-%E7%94%A8%E9%80%94%E8%AE%B0%E5%BD%95%E5%8E%9F%E5%A7%8B%E5%8D%B7%E5%8F%98%E5%8C%96%E7%94%A8%E5%BF%AB%E7%85%A7%E5%8D%B7%E8%BF%85%E9%80%9F%E5%A4%87%E4%BB%BD%E4%BF%9D%E6%8C%81%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7">Snap 快照卷 用途：记录原始卷变化，用快照卷迅速备份，保持数据一致性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="进程优先级-nice">进程优先级 nice<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7-nice" class="hash-link" aria-label="Direct link to 进程优先级 nice" title="Direct link to 进程优先级 nice">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="相对优先级">相对优先级<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%9B%B8%E5%AF%B9%E4%BC%98%E5%85%88%E7%BA%A7" class="hash-link" aria-label="Direct link to 相对优先级" title="Direct link to 相对优先级">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="作业控制-jobs">作业控制 jobs<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6-jobs" class="hash-link" aria-label="Direct link to 作业控制 jobs" title="Direct link to 作业控制 jobs">​</a></h2>
+<ul>
+<li>
+<p>作业控制允许shell在子进程运行期间控制父进程</p>
+</li>
+<li>
+<p>前台可以ctrl+z挂后台 然后gf恢复</p>
+</li>
+</ul>
+<p><code>[root@CentOS~]# sleep 7000</code>   //程序在前台运行 接受键盘控制 可以ctrl+z暂停挂在后台<br>
+<code>[root@CentOS~]# sleep 7000 &amp;</code>  //程序在后台运行 不接受键盘控制</p>
+<p><code>[root@CentOS~]# jobs</code>                       //查看现在的作业</p>
+<p><code>ps aux |grep sleep</code>         //可以查看sleep的进程 S为生在运行</p>
+<p><code>kill 2</code>       //杀PID为2的进程<br>
+<code>kill %2</code>      //杀作业号为2的进程</p>
+<p><code>sleep 5; ls; date</code>       //连续运行这几个命令</p>
+<p><code>while :; do date; sleep2; done &amp;</code>          //进程在后台运行 每两秒输出日期</p>
+<p><code>fg</code>        //调到前台才能ctrl+c杀掉</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="良好习惯-安装screen软件-可以回复上一次的进程--">良好习惯 安装screen软件 可以回复上一次的进程  `<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E8%89%AF%E5%A5%BD%E4%B9%A0%E6%83%AF-%E5%AE%89%E8%A3%85screen%E8%BD%AF%E4%BB%B6-%E5%8F%AF%E4%BB%A5%E5%9B%9E%E5%A4%8D%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84%E8%BF%9B%E7%A8%8B--" class="hash-link" aria-label="Direct link to 良好习惯 安装screen软件 可以回复上一次的进程  `" title="Direct link to 良好习惯 安装screen软件 可以回复上一次的进程  `">​</a></h3>
+<p><code>[root@CentOS~]# ssh 10.0.0.1</code>       //进主机</p>
+<p><code>[root@CentOS~]# yum -y install screen</code></p>
+<p><code>[root@CentOS~]# screen -S Install_Session</code>       //标注现在的进程名字</p>
+<p>突然断网</p>
+<p><code>[root@CentOS~]# screen list</code>  //看进程有什么</p>
+<p><code>[root@CentOS~]# screen -r 29033</code>       //恢复到29033进程</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="io重定向到一个文件里面">IO重定向（到一个文件里面）<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#io%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E9%87%8C%E9%9D%A2" class="hash-link" aria-label="Direct link to IO重定向（到一个文件里面）" title="Direct link to IO重定向（到一个文件里面）">​</a></h2>
+<ul>
+<li>
+<p>进程每打开一个文件都会有一个对应的数字标识0（键盘输入）、1（显示器输出）、2（显示器错误输出）、3、4。。。（输出到文件或者从文件输入）</p>
+</li>
+<li>
+<p>此标识叫做file description</p>
+</li>
+<li>
+<p>'&gt;' 表示输出并覆盖 '&gt;&gt;'表示输出并加到后面</p>
+<p><code>[root@CentOS~]# tty</code>       //看目前终端号<br>
+<!-- -->/dev/pts/3<br>
+<code>[root@CentOS~]# date &gt;/dev/pts/4</code>        //把日期输出结果1重定向到4号终端去<br>
+<code>[root@CentOS~]# ll /proc/$$/fd</code>        //看目前$$进程的标识 01234<br>
+<code>[root@CentOS~]# date 1&gt; date.txt</code>        //把正确输出到显示器的搞到文件去 重定向<br>
+<code>[root@CentOS~]# cate 0&lt; /etc/hosts</code>        //输入重定向 不从键盘要文件</p>
+<p><code>[root@CentOS~]# cat 1&gt;file1.txt &lt;&lt;-EOF</code>           //脚本输入不需要按ctrl+D结束 其中-可以忽略脚本中的tab键缩进<br>
+<code>[root@CentOS~]# vim jiaoben.sh</code></p>
+<p><code>[root@CentOS~]# bash jiaoben.sh</code></p>
+<p>//纯输出一段文字</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="综合案例">综合案例<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B" class="hash-link" aria-label="Direct link to 综合案例" title="Direct link to 综合案例">​</a></h3>
+<p><code>[root@CentOS~]# ls; date &amp;&gt;/dev/null</code>       //希望两条都重定向，却只重定向了;后面的，ls仍旧显示了</p>
+<p><code>[root@CentOS~]# ls &amp;&gt;/dev/null; date &amp;&gt;/dev/null</code>        //全部重定向到null<br>
+<!-- -->可以简写<code>[root@CentOS~]# (ls ; date) &amp;&gt;/dev/null</code></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="综合案例-1">综合案例<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B-1" class="hash-link" aria-label="Direct link to 综合案例" title="Direct link to 综合案例">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="subshell">subshell<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#subshell" class="hash-link" aria-label="Direct link to subshell" title="Direct link to subshell">​</a></h2>
+<ul>
+<li>每两秒在后台把date发送到date.txt</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="管道-piping重定向到一个进程">管道 piping（重定向到一个进程）<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E7%AE%A1%E9%81%93-piping%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B" class="hash-link" aria-label="Direct link to 管道 piping（重定向到一个进程）" title="Direct link to 管道 piping（重定向到一个进程）">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="定义及用途">定义及用途<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%94%A8%E9%80%94" class="hash-link" aria-label="Direct link to 定义及用途" title="Direct link to 定义及用途">​</a></h3>
+<ul>
+<li>
+<p>用重定向character输出到一个文件</p>
+</li>
+<li>
+<p>控制输出到另一个程序</p>
+</li>
+<li>
+<p>如图 通过管道输出到下一个进程的输入</p>
+</li>
+<li>
+<p>用less命令和过滤grep示例</p>
+</li>
+<li>
+<p>用--sort 参数排列cpu 并且只列前6项</p>
+</li>
+</ul>
+<p><img loading="lazy" alt="picture" src="https://app.qqlink.net/assets/images/2023-04-23-13-28-35-1947c951e7d974f24aa013889c012b3b.png" width="1577" height="984" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="内部管道命令-tee-分流用">内部管道命令 tee 分流用<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%86%85%E9%83%A8%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4-tee-%E5%88%86%E6%B5%81%E7%94%A8" class="hash-link" aria-label="Direct link to 内部管道命令 tee 分流用" title="Direct link to 内部管道命令 tee 分流用">​</a></h2>
+<ul>
+<li>可以把命令写好后 再把tee插入到想要的位置“前面” 就可以分流</li>
+<li>tee 是重定向到一个进程</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="分区">分区<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#%E5%88%86%E5%8C%BA" class="hash-link" aria-label="Direct link to 分区" title="Direct link to 分区">​</a></h2>
+<ul>
+<li>fdisk 命令给MBR分区 老式 4主分区+扩展</li>
+<li>gdisk 命令给GPT分区 无限主分区</li>
+<li>mkfs.xfs /dev/vda1 or mkfs.ext4 /dev/vda1 格式化</li>
+<li>mount -t xfs -o ro /dev/vda1 /mnt/date1 #把/vda1硬盘挂载到data1文件夹 -t声明xfs或者ext4，可以不写，-o ro是只读，可以不写，默认读写</li>
+<li>mount /dev/vda1 /mnt/date1 挂载点可以是任意一个目录</li>
+<li>blkid /dev/vda1    结果UUID = “*******”</li>
+<li>mount UUID = "******" 推荐按照UUID挂载</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="lvm-逻辑分区">LVM 逻辑分区<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#lvm-%E9%80%BB%E8%BE%91%E5%88%86%E5%8C%BA" class="hash-link" aria-label="Direct link to LVM 逻辑分区" title="Direct link to LVM 逻辑分区">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="snap-快照卷-用途记录原始卷变化用快照卷迅速备份保持数据一致性">Snap 快照卷 用途：记录原始卷变化，用快照卷迅速备份，保持数据一致性<a href="https://app.qqlink.net/blog/welcome-docusaurus-v2#snap-%E5%BF%AB%E7%85%A7%E5%8D%B7-%E7%94%A8%E9%80%94%E8%AE%B0%E5%BD%95%E5%8E%9F%E5%A7%8B%E5%8D%B7%E5%8F%98%E5%8C%96%E7%94%A8%E5%BF%AB%E7%85%A7%E5%8D%B7%E8%BF%85%E9%80%9F%E5%A4%87%E4%BB%BD%E4%BF%9D%E6%8C%81%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7" class="hash-link" aria-label="Direct link to Snap 快照卷 用途：记录原始卷变化，用快照卷迅速备份，保持数据一致性" title="Direct link to Snap 快照卷 用途：记录原始卷变化，用快照卷迅速备份，保持数据一致性">​</a></h3>
+<ul>
+<li>创建 <code>lvcreate -L 50M -n lv1-snap -s /dev/datavg/lv1</code> 给/dev/datavg/lv1 逻辑卷创建一个叫做lv1-snap的快照卷，指定50MB，原始卷可以大于50MB</li>
+<li>注意事项：快照卷和原始卷必须在同一VG</li>
+<li>注意 只能ext4</li>
+</ul>]]></content:encoded>
+            <category>Linux</category>
+            <category>CentOS</category>
+        </item>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://app.qqlink.net/blog/welcome</link>
+            <guid>https://app.qqlink.net/blog/welcome</guid>
+            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
+            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p>
+<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
+<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
+<p>The blog post date can be extracted from filenames, such as:</p>
+<ul>
+<li><code>2019-05-30-welcome.md</code></li>
+<li><code>2019-05-30-welcome/index.md</code></li>
+</ul>
+<p>A blog post folder can be convenient to co-locate blog post images:</p>
+<p><img loading="lazy" alt="Docusaurus Plushie" src="https://app.qqlink.net/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
+<p>The blog supports tags as well!</p>
+<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
+            <category>facebook</category>
+            <category>hello</category>
+            <category>docusaurus</category>
+        </item>
+    </channel>
+</rss>
