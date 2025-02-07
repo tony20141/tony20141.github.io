@@ -13,15 +13,20 @@
             margin: 0 auto;
         }
     </style>
+    <script src="https://kit.fontawesome.com/77263ff1ef.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <a href="../../index.html" class="home-link">
+        <i class="fas fa-home"></i> Return to Homepage
+    </a>
+
     <div class="markdown-body">
         <!-- Markdown content will be inserted here by JavaScript -->
     </div>
 
-    <script src="../../lib/marked.min.js"></script>  <!-- Adjust path as needed -->
+    <script src="../../lib/marked.min.js"></script>
     <script>
-        fetch('project1.md') // Or an absolute path if needed
+        fetch('project1.md')
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
