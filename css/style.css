@@ -32,7 +32,7 @@ body {
     display: flex;
     width: 80%;
     margin: 20px auto;
-    gap: 5px; /* Space between columns */
+    gap: 3%; /* Space between columns */
 }
 
 .column {
