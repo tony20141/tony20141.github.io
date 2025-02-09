@@ -1,8 +1,8 @@
 
 # How to create Azure AI with DeepSeek-R1 or OpenAI 
 
-## Create
+## Subscribe Azure AI Foundry 
 
-## Create 
+## Create group & deploy model 
 
-## 
+## Copy paste api, endpoint & model to local 
