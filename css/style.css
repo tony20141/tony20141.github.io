@@ -41,6 +41,11 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.column:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
 }
 
 .project {
@@ -57,8 +62,31 @@ iframe {
 a {
     color: #007BFF;
     text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 a:hover {
     text-decoration: underline;
+    color: #0056b3; /* Darker shade on hover */
+}
+
+#myButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+#myButton:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
 }
