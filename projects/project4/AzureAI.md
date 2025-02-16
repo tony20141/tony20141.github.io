@@ -17,4 +17,4 @@
 - cons: not safe, data goes online   
 
 ![success](img/project4_1.PNG)
-![success](img/project4_2.PNG)
+![settings](img/project4_2.PNG)
