@@ -432,7 +432,60 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     *   **IEEE Autonegotiation Defaults (Failure):** Speed: 10 Mbps, Duplex: Half duplex (for 10/100), Full duplex (for 1000+).
     *   **Cisco Switch Autonegotiation Defaults (Failure):** Speed: Sense speed, then 10 Mbps if sensing fails. Duplex: IEEE defaults.
 *   **LAN Hubs and Autonegotiation:** Hubs don't participate in autonegotiation. Devices connected to hubs often default to 10 Mbps half duplex.
+### Questions 
+```Question #1 
+![](img/001.png) 
+Which type of route does R1 use to reach host 10.10.13.10/32? 
 
+A. default route 
+B. network route Most Voted 
+C. host route 
+D. floating static route 
+
+Analyze the show ip route output:
+
+The output lists several routes, identified by codes in the first column.
+
+The code O indicates routes learned via OSPF.
+
+The code C indicates connected routes.
+
+The code L indicates local routes.
+
+The code B* indicates a default static route.
+
+We are looking for a route that would be used to reach 10.10.13.10/32.
+
+Identify the relevant route:
+
+The output shows a route: O 10.1.13.0/25 [110/6576] via 10.10.10.1, 06:58:21, FastEthernet0/1
+
+This route is for the subnet 10.1.13.0/25, learned via OSPF (O).
+
+The destination IP address 10.10.13.10/32 falls within the subnet 10.1.13.0/25.
+
+Evaluate the options:
+
+A. default route: A default route (0.0.0.0/0) is listed (B* 0.0.0.0/0), but it's used for destinations not matched by more specific routes. Since there's a route for 10.1.13.0/25, the default route would not be the primary route used for 10.10.13.10/32.
+
+B. network route: A network route is a route to a subnet. The route O 10.1.13.0/25 is a route to the subnet 10.1.13.0/25. This is a valid option as 10.10.13.10/32 is within this subnet.
+
+C. host route: A host route is a route to a specific IP address (/32 mask). There is no host route listed for 10.10.13.10 or any address in the 10.1.13.0/25 subnet.
+
+D. floating static route: Floating static routes are static routes with a higher administrative distance than dynamic routes. The route O 10.1.13.0/25 is an OSPF-learned route, not a static route.
+
+Determine the best answer:
+
+The route O 10.1.13.0/25 is a route to a subnet (network route) that includes the destination host 10.10.13.10/32.
+
+While a default route exists, it's not the specific route used for this destination.
+
+There's no host route or floating static route listed for this destination.
+
+Therefore, the best answer is B. network route.
+
+
+```
 
 Here's a comprehensive summary of Chapters 8-10, focusing on key points for your CCNA exam preparation:
 
