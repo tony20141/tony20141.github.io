@@ -1,20 +1,22 @@
 
-# How to create Azure AI with DeepSeek-R1 or OpenAI 
+# Security Installation & Tools Usage  
+![me](img/000.jpg)
 
-## Subscribe Azure AI Foundry 
+## Qolsys Security Panel 
+![001](img/001.jpg)
+![002](img/002.jpg)
 
-## Create group & deploy model 
+## NVR & Security Cameras  
+![001](img/003.jpg)
+![002](img/004.jpg)
+![002](img/005.jpg)
+![002](img/006.jpg)
+![002](img/007.jpg)
+![002](img/008.jpg)
+![002](img/009.jpg)
 
-## Copy paste api, endpoint & model to local 
+## Gallahger Controllers   
+![001](img/010.jpg)
 
-## Use local gui & api key to use online resource   
-
-## Result  
-
-
-- issues: DeepSeek-R1 doesn't seem work stablely, used gpt-4o-mini model instead 
-- pros: cheaper, local RAG database can also be used
-- cons: not safe, data goes online   
-
-![success](img/project4_1.PNG)
-![settings](img/project4_2.PNG)
+## Personal Care Home Calling Keys    
+![001](img/011.jpg)
