@@ -1,3 +1,4 @@
+![Banner](img/top.jpg)
 # CCNA Personal Note 
 
 ## Original book - AI analysis - Summarize 
