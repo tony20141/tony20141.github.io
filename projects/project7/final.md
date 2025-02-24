@@ -4,7 +4,7 @@
 
 This is a CCNA level project.  
 
-*** Network: ***
+**Network:**
 
 - Vlans 
 - Trunk 
@@ -15,10 +15,13 @@ This is a CCNA level project.
 - BGP 
 - Static/dynamic routing 
 
-** Implement in real devices ** 
+**Network Topology**
 
-![000](img/000.jpg)
+![000](img/000.jpg) 
+
+**Implement in real devices**  
 ![001](img/001.jpg)
 ![002](img/002.jpg)
-![success](img/003.jpg)
+![success](img/003.jpg) 
+**Final view from the back** 
 ![success](img/004.jpg)
