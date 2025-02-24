@@ -17,8 +17,8 @@ This is a CCNA level project.
 
 ** Implement in real devices ** 
 
-![success](img/000.jpg)
-![success](img/001.jpg)
-![success](img/002.jpg)
+![000](img/000.jpg)
+![001](img/001.jpg)
+![002](img/002.jpg)
 ![success](img/003.jpg)
 ![success](img/004.jpg)
