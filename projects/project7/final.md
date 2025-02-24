@@ -15,6 +15,8 @@ This is a CCNA level project.
 - BGP 
 - Static/dynamic routing 
 
+** Implement in real devices ** 
+
 ![success](img/000.jpg)
 ![success](img/001.jpg)
 ![success](img/002.jpg)
