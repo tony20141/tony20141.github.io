@@ -12,18 +12,8 @@
     <script defer src="js/fontawesome.js"></script>
 </head>
 
-<body>
-    <nav class="nav-container">
-        <div class="nav-logo">Tony2D (Yimin Qiu)</div>
-        <ul class="nav-links">
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="column" id="videos">
+    <div class="main-container">
+        <div class="column videos-column" id="videos">
             <h2><i class="fa-brands fa-youtube"></i> Project Videos</h2>
             <div class="project fade-in">
                 <h3><i class="fa-brands fa-bilibili"></i> Migrate Windows 10 to another SSD</h3>
@@ -39,34 +29,50 @@
             </div>
         </div>
 
-        <div class="column" id="projects">
+        <div class="column projects-column" id="projects">
             <h2><i class="fa-regular fa-folder"></i> Project Notes</h2>
-            <div class="project fade-in">
-                <h3><i class="fa-regular fa-floppy-disk"></i> CCNA notes (AI+personal)</h3>
-                <img src="projects/project1/cisco.jpg" alt="Project 1 Preview">
-                <p>It's my CCNA book notes</p>
-                <a href="projects/project1/project1.html" class="btn">View Project</a>
-            </div>
+            <div class="projects-grid">
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> CCNA notes (AI+personal)</h3>
+                    <img src="projects/project1/cisco.jpg" alt="Project 1 Preview">
+                    <p>It's my CCNA book notes</p>
+                    <a href="projects/project1/project1.html" class="btn">View Project</a>
+                </div>
 
-            <div class="project fade-in">
-                <h3><i class="fa-regular fa-floppy-disk"></i> Linux study notes</h3>
-                <img src="projects/project2/linux.jpg" alt="Project 2 Preview">
-                <p>It's my Linux notes</p>
-                <a href="projects/project2/Linux.html" class="btn">View Project</a>
-            </div>
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> Linux study notes</h3>
+                    <img src="projects/project2/linux.jpg" alt="Project 2 Preview">
+                    <p>It's my Linux notes</p>
+                    <a href="projects/project2/Linux.html" class="btn">View Project</a>
+                </div>
 
-            <div class="project fade-in">
-                <h3><i class="fa-regular fa-floppy-disk"></i> Java study notes</h3>
-                <img src="projects/project3/java.jpg" alt="Project 3 Preview">
-                <p>It's my Java notes</p>
-                <a href="projects/project3/java.html" class="btn">View Project</a>
-            </div>
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> Java study notes</h3>
+                    <img src="projects/project3/java.jpg" alt="Project 3 Preview">
+                    <p>It's my Java notes</p>
+                    <a href="projects/project3/java.html" class="btn">View Project</a>
+                </div>
 
-            <div class="project fade-in">
-                <h3><i class="fa-regular fa-floppy-disk"></i> AzureAI with AnythingLLM</h3>
-                <img src="projects/project4/AzureAI.jpg" alt="Project 4 Preview">
-                <p>AzureAI with AnythingLLM local implementation notes</p>
-                <a href="projects/project4/AzureAI.html" class="btn">View Project</a>
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> AzureAI with AnythingLLM</h3>
+                    <img src="projects/project4/AzureAI.jpg" alt="Project 4 Preview">
+                    <p>AzureAI with AnythingLLM local implementation notes</p>
+                    <a href="projects/project4/AzureAI.html" class="btn">View Project</a>
+                </div>
+                
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> Security Installation & Tools</h3>
+                    <img src="projects/project5/security.jpg" alt="Project 5 Preview">
+                    <p>Security Installation & Tools Usage</p>
+                    <a href="projects/project5/security.html" class="btn">View Project</a>
+                </div>
+
+                <div class="project fade-in">
+                    <h3><i class="fa-regular fa-floppy-disk"></i> A school project</h3>
+                    <img src="projects/project6/school.jpg" alt="Project 6 Preview">
+                    <p>From scratch, wire, wireless, cameras, vlan, security</p>
+                    <a href="projects/project6/school.html" class="btn">View Project</a>
+                </div>
             </div>
         </div>
     </div>
@@ -97,7 +103,6 @@
     </div>
 
     <script src="js/script.js"></script>
-    <!-- Additional JavaScript for fade-in animation and dark mode toggle -->
     <script>
         // Fade-in animation
         const observerOptions = {
