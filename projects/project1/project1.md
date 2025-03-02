@@ -476,7 +476,35 @@ Question #1
 
     Therefore, the best answer is B. network route.
 
+Question #2 
+![](img/002.png) 
+Refer to the exhibit. Which prefix does Router1 use for traffic to Host A?
 
+A. 10.10.10.0/28
+B. 10.10.13.0/25
+C. 10.10.13.144/28
+*D. 10.10.13.208/29* 
+
+
+    Router1 will choose the most specific/longest route that matches the destination IP address 10.10.13.214 
+    Subnet: 10.10.13.208/29
+
+    Mask: 255.255.255.248
+
+    Range: 10.10.13.208 - 10.10.13.214
+
+    10.10.13.214 is within this range.
+
+Question #4 
+A frame that enters a switch fails the Frame Check Sequence. Which two interface counters are incremented? (Choose two.)
+
+**A. input errors**  
+B. frame   
+C. giants  
+**D. CRC**  
+E. runts  
+
+    When a frame fails the Frame Check Sequence, the switch recognizes it as an error during reception. The general counter for input errors (input errors) will be incremented, as will the specific counter for FCS errors, which is the CRC counter.
 
 Here's a comprehensive summary of Chapters 8-10, focusing on key points for your CCNA exam preparation:
 
@@ -667,7 +695,13 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
         *   Class C Private: 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)
 *   **One-Size-Subnet-Fits-All vs. Multiple Subnet Sizes:**
     *   **One-Size:** Simpler to manage, easier to calculate, but can waste addresses.
-    *   **Multiple Sizes (VLSM):** More efficient address usage, but more complex to design and manage.
+    *   **Multiple Sizes (VLSM):** More efficient address usage, but more complex to design and manage.  
+
+### Question  
+
+**Question #5**   
+![](img/005.png)   
+![](img/005-1.png)   
 
 **Chapter 12: Analyzing Classful IPv4 Networks**
 
@@ -730,6 +764,7 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
     *   **Communicates Design Details:**  Mask communicates network, subnet, and host bit division to devices.
     *   **Calculates Subnet Count (Single Mask Classful):** 2<sup>S</sup> (where S = P - N, and N is network bits from class).
     *   **Binary Calculations:** Used to calculate subnet ID and broadcast address.
+
 
 **Chapter 14: Analyzing Existing Subnets**
 
@@ -1747,7 +1782,13 @@ Here's a detailed summary of Chapters 9-12 and the Part III Review of Volume 2 o
         *   `show bootvar`: Verify boot system configuration.
 
 
-Here's a detailed summary of Chapters 13-15 and the Part IV Review of Volume 2 of your CCNA study material, designed to help you prepare for your exam:
+Here's a detailed summary of Chapters 13-15 and the Part IV Review of Volume 2 of your CCNA study material, designed to help you prepare for your exam: 
+
+Question #3 
+![](img/003.png) 
+![](img/003-1.png) 
+    FTP uses ports 20 and 21 over TCP by default and is more reliable for loading IOS images
+    TFTP uses port 69 and UDP by default and does not require user credentials 
 
 **Part IV: Network Architecture - Key Summary**
 
