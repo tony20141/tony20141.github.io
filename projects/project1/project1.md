@@ -702,6 +702,12 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
 **Question #5**   
 ![](img/005.png)   
 ![](img/005-1.png)   
+    This subnet question requires us to grasp how to subnet very well. To quickly find out the subnet range, we have to find out the increment and the network address of each subnet. Let's take an example with the subnet 172.28.228.144/18:
+    From the /18 (= 1100 0000 in the 3rd octet), we find out the increment is 64. Therefore the network address of this subnet must be the greatest multiple of the increment but not greater than the value in the 3rd octet (228). We can find out the 3rd octet of the network address is 192 (because 192 = 64 * 3 and 192 < 228) -
+    > The network address is 172.28.192.0. So the first usable host should be 172.28.192.1 and it matches with the 5th answer on the right. In this case we don't need to calculate the broadcast address because we found the correct answer.
+    Let's take another example with subnet 172.28.228.144/23 -> The increment is 2 (as /23 = 1111 1110 in 3rd octet) -> The 3rd octet of the network address is 228
+    (because 228 is the multiply of 2 and equal to the 3rd octet) -> The network address is 172.28.228.0 -> The first usable host is 172.28.228.1. It is not necessary but if we want to find out the broadcast address of this subnet, we can find out the next network address, which is 172.28.(228 + the increment number).0 or
+    172.28.230.0 then reduce 1 bit -> 172.28.229.255 is the broadcast address of our subnet. Therefore the last usable host is 172.28.229.254.
 
 **Chapter 12: Analyzing Classful IPv4 Networks**
 
@@ -1179,6 +1185,16 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     *   **Next-Hop IPv6 Address (or Outgoing Interface).**
     *   **Administrative Distance and Metric.**
 
+
+### Questions  
+Question #10  
+Which command automatically generates an IPv6 address from a specified IPv6 prefix and MAC address of an interface?  
+
+A. ipv6 address dhcp  
+**B. ipv6 address 2001:DB8:5:112::/64 eui-64**  
+C. ipv6 address autoconfig  
+D. ipv6 address 2001:DB8:5:112::2/64 link-local  
+
 **Chapter 25: Implementing IPv6 Routing**
 
 *   **IPv6 Routing - Connected and Local Routes:** Similar to IPv4, routers automatically create connected and local routes for IPv6 addresses configured on interfaces.
@@ -1245,8 +1261,19 @@ Here's a detailed summary of Chapters 26-29, focusing on key points for your CCN
     *   **802.11a:** 54 Mbps, 5 GHz.
     *   **802.11n (Wi-Fi 4):** 600 Mbps, 2.4 and 5 GHz, MIMO, HT.
     *   **802.11ac (Wi-Fi 5):** 6.93 Gbps, 5 GHz, MU-MIMO, VHT.
-    *   **802.11ax (Wi-Fi 6):** 4x 802.11ac, 2.4 and 5 GHz (and other bands), OFDMA, HE.
+    *   **802.11ax (Wi-Fi 6):** 4x 802.11ac, 2.4 and 5 GHz (and other bands), OFDMA, HE.  
 
+### Questions  
+Question #7  
+    Which 802.11 frame type is Association Response?
+
+    **A. management** Most Voted
+    B. protected frame
+    C. action
+    D. control
+    802.11 frames are transmitted over the air, and anyone within range can receive them. If unencrypted, anyone may inspect their contents.
+    •
+    To prevent man-in-the-middle attacks, clients should authenticate the AP, and management frames should also be authenticated
 **Chapter 27: Analyzing Cisco Wireless Architectures**
 
 *   **Autonomous AP Architecture:**
@@ -1980,7 +2007,17 @@ Here's a comprehensive summary of Chapters 16-19 and the Part V Review of Volume
     *   **Object:** Collection of key:value pairs, enclosed in curly braces `{}`.
     *   **Array:** Ordered list of values, enclosed in square brackets `[]`.
     *   **Key:Value Pair:** `"key": value`. Key is a string in double quotes. Value can be string, number, boolean, object, array, or null.
-    *   **Data Types:** String (double quotes), Number (no quotes), Boolean (`true`, `false`), Null (`null`), Object (`{}`), Array (`[]`).
+    *   **Data Types:** String (double quotes), Number (no quotes), Boolean (`true`, `false`), Null (`null`), Object (`{}`), Array (`[]`).  
+
+### Questions  
+Question #8  
+In which way does a spine-and-leaf architecture allow for scalability in a network when additional access ports are required?
+
+A. A spine switch and a leaf switch can be added with redundant connections between them.
+B. A spine switch can be added with at least 40 GB uplinks.
+*C. A leaf switch can be added with connections to every spine switch.*
+D. A leaf switch can be added with a single connection to a core spine switch.
+
 
 **Chapter 19: Understanding Ansible, Puppet, and Chef**
 
@@ -2022,6 +2059,17 @@ Here's a comprehensive summary of Chapters 16-19 and the Part V Review of Volume
     *   **Protocol to Network Device:** Ansible (SSH, NETCONF), Puppet (HTTP/REST), Chef (HTTP/REST).
     *   **Agent/Agentless:** Ansible (Agentless), Puppet (Agent-based or Agentless), Chef (Agent-based).
     *   **Push/Pull Model:** Ansible (Push), Puppet (Pull), Chef (Pull).
+
+### Question  
+Question #9  
+
+What identifies the functionality of virtual machines?
+
+A. The hypervisor communicates on Layer 3 without the need for additional resources.  
+B. Each hypervisor supports a single virtual machine and a single software switch.  
+C. The hypervisor virtualizes physical components including CPU, memory, and storage.  
+**D. Virtualized servers run efficiently when physically connected to a switch that is separate from the hypervisor.**  
+    The functionality of virtual machines is identified by the hypervisor virtualizing physical components including CPU, memory, and storage  
 
 **Part V Review - Key Takeaways:**
 
