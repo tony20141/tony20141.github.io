@@ -233,6 +233,34 @@ Here's a comprehensive summary of Chapters 1-3 from your CCNA study material, de
 
 This summary provides a structured overview of the key concepts from Chapters 1-3. Review these points, figures, and tables in your study material to reinforce your understanding and prepare effectively for your CCNA exam. Good luck!  
 
+## Question #12 
+![](img/012.png) 
+ip route output:
+
+default via 192.168.1.193 dev eth1 proto static: This line indicates the default route. It means that any network traffic 
+destined for an IP address not explicitly listed in other routes will be sent through the gateway at 192.168.1.193, using the network interface 
+eth1. The proto static indicates this route was manually configured.  
+
+192.168.1.0/26 dev eth1 proto kernel scope link src 192.168.1.200 metric 
+1: This line shows the route for the local network. It means that traffic 
+destined for any IP address within the 192.168.1.0/26 subnet will be sent directly through the eth1 interface. The proto kernel 
+indicates this route was automatically added by the kernel. scope link means the destination is directly reachable on the same link. 
+src 192.168.1.200 indicates that the source IP for this route is 192.168.1.200, and metric 1 is the cost of using this route (lower is preferred).  
+
+ip addr show eth1 output:
+
+eth1: mtu 1500 qdisc pfifo_fast qlen 1000: This line describes the eth1 interface. mtu 1500 is the Maximum Transmission Unit, qdisc pfifo_fast is the queuing discipline, and qlen 1000 is the queue length.
+
+link/ether 00:0C:22:83:79:A3 brd ff:ff:ff:ff:ff:ff: This line shows the MAC address of the eth1 interface (00:0C:22:83:79:A3) and the broadcast address (ff:ff:ff:ff:ff:ff).
+
+inet 192.168.1.200/26 brd 192.168.1.255 scope global eth1: This line shows the IPv4 address assigned to the eth1 interface. It's 192.168.1.200 with a subnet mask of /26 (255.255.255.192). brd 192.168.1.255 is the broadcast address for this subnet. scope global means this address is globally routable.
+
+inet6 fe80::20c:29ff:fe89:79b3/64 scope link: This line shows the IPv6 link-local address assigned to the eth1 interface. scope link means it's only valid on the local network segment.
+
+valid_lft forever preferred_lft forever: These lines indicate that the IPv6 address has an infinite lifetime.
+
+In summary, the image shows the network configuration of a Linux machine with IP address 192.168.1.200, subnet mask /26, default gateway 192.168.1.193, and MAC address 00:0C:22:83:79:A3.  
+![](img/012-1.png) 
 
 
 Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA exam preparation:
@@ -391,6 +419,33 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     *   `show history`: Display command history.
     *   `terminal history size <number>`: Set history buffer size for current session.
     *   `history size <number>` (line config mode): Set default history buffer size for console/VTY lines.
+
+## Question #13  
+
+    What is the default behavior of a Layer 2 switch when a frame with an unknown destination MAC address is received?
+
+    A. The Layer 2 switch forwards the packet and adds the destination MAC address to its MAC address table.
+    B. The Layer 2 switch sends a copy of a packet to CPU for destination MAC address learning.
+    **C. The Layer 2 switch floods packets to all ports except the receiving port in the given VLAN.**  
+    D. The Layer 2 switch drops the received frame.
+
+
+## Question #14  
+    An engineer must configure a /30 subnet between two routes. Which usable IP address and subnet mask combination meets this criteria?
+
+    A. interface e0/0 description to XX-AXXX:XXXXX ip address 10.2.1.3 255.255.255.252 .3 is broadcast IP add, not useable  
+    B. interface e0/0 description to XX-AXXX:XXXXX ip address 192.168.1.1 255.255.255.248
+    C. interface e0/0 description to XX-AXXX:XXXXX ip address 172.16.1.4 255.255.255.248
+    **D. interface e0/0 description to XX-AXXX:XXXXX ip address 209.165.201.2 225.255.255.252**  
+
+## Question #15  
+    Which network allows devices to communicate without the need to access the Internet?
+
+    A. 172.9.0.0/16
+    **B. 172.28.0.0/16**
+    C. 192.0.0.0/8
+    D. 209.165.201.0/24
+
 
 **Chapter 7: Configuring and Verifying Switch Interfaces**
 
@@ -1134,6 +1189,15 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     *   **EIGRP for IPv6 (EIGRPv6):** IPv6 version of EIGRP. Advanced distance vector protocol.
     *   **MP-BGP4 (Multiprotocol BGP Version 4):** BGP extended to support IPv6 and other protocols.
 
+## Question #11  
+    When configuring IPv6 on an interface, which two IPv6 multicast groups are joined? (Choose two.)
+
+    A. 2000::/3 全局单播地址的前缀（如公网 IPv6），属于单播范围，非多播组。 
+    B. 2002::5 6to4 隧道相关的单播地址，非多播。 
+    C. FC00::/7 唯一本地地址（类似 IPv4 私有地址），属于单播范围。
+    D. FF02::1 所有 IPv6 接口默认加入此组。 
+    E. FF02::2 若设备是路由器（如运行 OSPFv3 或配置 RA），则加入此组。
+
 **Chapter 23: IPv6 Addressing and Subnetting**
 
 *   **Global Unicast Addresses - Structure (3 Parts):**
@@ -1185,15 +1249,32 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     *   **Next-Hop IPv6 Address (or Outgoing Interface).**
     *   **Administrative Distance and Metric.**
 
+EUI-64 的作用
+IPv6 的 EUI-64（Extended Unique Identifier）方法通过以下步骤生成接口 ID：
+
+将接口的 MAC 地址（48 位）拆分为两部分（24 位 + 24 位）；
+
+在中间插入固定值 FFFE（16 位）；
+
+将第 7 位（U/L 位）取反，表示全局唯一性。
+
+最终生成 64 位接口 ID，并与给定的 IPv6 前缀组合成完整地址。  
+
+
 
 ### Questions  
 Question #10  
 Which command automatically generates an IPv6 address from a specified IPv6 prefix and MAC address of an interface?  
 
-A. ipv6 address dhcp  
-**B. ipv6 address 2001:DB8:5:112::/64 eui-64**  
-C. ipv6 address autoconfig  
-D. ipv6 address 2001:DB8:5:112::2/64 link-local  
+A. ipv6 address dhcp 地址本身并不是以可预测的方式从 MAC 地址生成的，命令中也没有指定特定的前缀。相反，前缀和地址由 DHCPv6 服务器确定。这不符合使用指定前缀或直接从 MAC 地址生成地址的要求。
+  
+**B. ipv6 address 2001:DB8:5:112::/64 eui-64** 该命令指示接口使用指定的前缀 2001:DB8:5:112::/64（一个 64 位前缀）和 EUI-64 方法配置一个 IPv6 地址。在 IPv6 中，EUI-64 过程会自动通过修改接口的 48 位 MAC 地址——在中间插入 FFFE 并翻转第七位（全局/本地位）——生成 64 位接口标识符，并将其附加到前缀上。例如，一个 MAC 地址如 00:1A:2B:3C:4D:5E 在 EUI-64 转换后会变成接口标识符 021A:2BFF:FE3C:4D5E。生成的地址（例如 2001:DB8:5:112:021A:2BFF:FE3C:4D5E）会自动生成，使用指定的前缀，并包含 MAC 地址。这符合所有标准。
+  
+C. ipv6 address autoconfig 前缀本身并没有在命令中指定——它是从路由器发送的 RA 中学到的。问题要求前缀“指定”
+  
+D. ipv6 address 2001:DB8:5:112::2/64 link-local 这条命令似乎手动配置了一个 IPv6 地址（2001:DB8:5:112::2），带有 64 位前缀长度，后面跟着 link-local 关键字。然而，这存在问题。链路本地地址必须使用前缀 FE80::/10，但 2001:DB8:5:112::2 是一个全局单播地址，使该命令在语法上存在问题。更重要的是，它手动指定了完整的地址（::2 作为接口标识符），而不是从 MAC 地址自动生成。
+
+  
 
 **Chapter 25: Implementing IPv6 Routing**
 
