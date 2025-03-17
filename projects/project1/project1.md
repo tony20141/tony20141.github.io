@@ -262,6 +262,61 @@ valid_lft forever preferred_lft forever: These lines indicate that the IPv6 addr
 In summary, the image shows the network configuration of a Linux machine with IP address 192.168.1.200, subnet mask /26, default gateway 192.168.1.193, and MAC address 00:0C:22:83:79:A3.  
 ![](img/012-1.png) 
 
+## Question #23
+Which function does the range of private IPv4 addresses perform?
+
+**A. allows multiple companies to each use the same addresses without conflicts**
+B. provides a direct connection for hosts from outside of the enterprise network
+C. ensures that NAT is not required to reach the Internet with private range addressing
+D. enables secure communications to the Internet for all external hosts
+
+
+## Question #26:
+Understanding the Question: This question tests the fundamental differences in reliability between TCP and UDP.
+Analyzing the Options:
+A. TCP does not guarantee delivery or error checking to ensure that there is no corruption of data, UDP provides message acknowledgement and retransmits data if lost. This is incorrect. TCP does guarantee delivery and provides error checking, while UDP does not. This is incorrect. TCP does guarantee delivery and provides error checking, while UDP does not.
+**B. TCP provides flow control to avoid overwhelming a receiver by sending too many packets at once, UDP sends packets to the receiver in a continuous stream without checking. This is correct. TCP uses windowing for flow control, UDP does not.** This is correct. TCP uses windowing for flow control, UDP does not.
+C. TCP is a connectionless protocol that does not provide reliable delivery of data; UDP is a connection-oriented protocol that uses sequencing to provide reliable delivery. This is incorrect. TCP is connection-oriented and reliable, UDP is connectionless and unreliable.
+D. TCP uses windowing to deliver packets reliably; UDP provides reliable message transfer between hosts by establishing a three-way handshake. This is incorrect. UDP does not provide reliable message transfer or use a three-way handshake.
+Correct Answer: B
+
+## Question #27:
+Understanding the Question: This question asks about the differences between fiber optic and copper cabling.
+Analyzing the Options:
+A. A BNC connector is used for fiber connections. Incorrect. BNC connectors are used for coaxial copper cables.  BNC connectors are used for coaxial copper cables.
+B. The glass core component is encased in a cladding. Correct. Fiber optic cables have a glass core surrounded by cladding. Correct. Fiber optic cables have a glass core surrounded by cladding.
+C. The data can pass through the cladding. Incorrect. Data (light) passes through the core, not the cladding. Incorrect. Data (light) passes through the core, not the cladding.
+D. Light is transmitted through the core of the fiber. Correct. This is how fiber optic cables transmit data. Correct. This is how fiber optic cables transmit data.
+E. Fiber connects to physical interfaces using RJ-45 connections. Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.). Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.).
+Correct Answers: B and D
+
+## Question #28:
+Understanding the Question: This question asks about how CAPWAP (Control and Provisioning of Wireless Access Points) is used for communication between a lightweight AP and a WLC.
+Analyzing the Options:
+A. The access point must not be connected to the wired network, as it would create a loop: Incorrect. APs must be connected to the wired network to reach the WLC.
+B. The access point must be connected to the same switch as the WLC: Incorrect. The AP and WLC can be on different switches, as long as they have IP connectivity.
+C. The access point must directly connect to the WLC using a copper cable: Incorrect. The connection can be copper or fiber, and doesn't need to be direct.
+D. The access point has the ability to link to any switch in the network, assuming connectivity to the WLC: Correct. The AP needs IP connectivity to the WLC, which can be achieved through various switches.
+Correct Answer: D
+
+## Question #29:
+Understanding the Question: This question asks which IPv6 address block is used for multicast addresses.
+Analyzing the Options:
+A. 2000::/3: Global unicast addresses (one-to-one).
+B. FC00::/7: Unique local addresses (private addresses, one-to-one).
+C. FE80::/10: Link-local addresses (one-to-one, local link only).
+D. FF00::/8: Multicast addresses (one-to-many).
+Correct Answer: D
+
+
+## Question #30:
+Understanding the Question: This question asks about the differences in reliability and communication type between TCP and UDP.
+Analyzing the Options:
+A. TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol. Incorrect. TCP is connection-oriented, UDP is connectionless.
+B. TCP is not reliable and is a connectionless protocol; UDP is reliable and is a connection-oriented protocol. Incorrect. TCP is reliable, UDP is unreliable.
+C. TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless protocol. Incorrect. TCP is reliable, UDP is unreliable.
+D. TCP is reliable and is a connection-oriented protocol; UDP is not reliable and is a connectionless protocol. Correct.
+Correct Answer: D
 
 Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA exam preparation:
 
@@ -572,7 +627,19 @@ E. runts
 
     When a frame fails the Frame Check Sequence, the switch recognizes it as an error during reception. The general counter for input errors (input errors) will be incremented, as will the specific counter for FCS errors, which is the CRC counter.
 
-Here's a comprehensive summary of Chapters 8-10, focusing on key points for your CCNA exam preparation:
+## Question #19
+    What are two reasons that cause late collisions to increment on an Ethernet interface? (Choose two.)
+
+    A. when Carrier Sense Multiple Access/Collision Detection is used CSMA/CD is the normal collision avoidance mechanism in half-duplex Ethernet
+    **B. when one side of the connection is configured for half-duplex**  A duplex mismatch (one side full, the other half) is a very common cause of late collisions. This is correct.
+    C. when the sending device waits 15 seconds before sending the frame again This describes a retransmission timer or similar, not a collision cause. Retransmission may occur due to initial collisions, but the waiting time doesn't cause late collisions
+    D. when a collision occurs after the 32nd byte of a frame has been transmitted This is a misstatement of when late collisions occur. They occur after the 64th byte.
+    E. when the cable length limits are exceeded  Exceeding cable length limits can cause signal degradation, timing issues, and late collisions. This is correct.  
+Late Collisions: Ethernet collisions that occur relatively late in the transmission of a frame (after the first 64 bytes or 512 bits of data have been sent).
+Late Collision Causes:
+Duplex Mismatch: One side is configured for full duplex, the other for half duplex. Half-duplex expects collisions, full duplex does not.
+Exceeded Cable Length: Exceeding the maximum cable length for the Ethernet standard (e.g., 100 meters for 100BASE-TX) can cause signal degradation and timing issues that lead to collisions.
+
 
 **Part III: Implementing VLANs and STP - Key Summary**
 
@@ -720,6 +787,13 @@ Here's a comprehensive summary of Chapters 8-10, focusing on key points for your
     *   `spanning-tree portfast` (interface config): Enable PortFast on an access port.
     *   **BPDU Guard:** Enable BPDU Guard on PortFast ports for security: `spanning-tree bpduguard enable` (interface config).
 
+## Question #22Topic 1
+What occurs to frames during the process of frame flooding?
+
+A. Frames are sent to all ports, including those that are assigned to other VLANs.
+B. Frames are sent to every port on the switch that has a matching entry in MAC address table.
+**C. Frames are sent to every port on the switch in the same VLAN except from the originating port.**
+D. Frames are sent to every port on the switch in the same VLAN.
 
 
 Here's a detailed summary of Chapters 11-14, focusing on key points for your CCNA exam preparation on IPv4 Addressing:
@@ -1232,7 +1306,24 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
 *   **EUI-64 Process (Modified EUI-64):** Method to generate 64-bit Interface ID from 48-bit MAC address.
     1.  Split MAC address into two 24-bit halves.
     2.  Insert FFFE (hex) in the middle.
-    3.  Invert the 7th bit (Universal/Local bit) of the first byte.
+    3.  Invert the 7th bit (Universal/Local bit) of the first byte.  
+   
+## Question #17  
+Which IPv6 address type provides communication between subnets and cannot route on the Internet?
+
+    A. link-local(FE80::/10) 鏈路本地位址 (Link-local addresses) 具有鏈路本地作用域 (link-local scope)，這表示它們僅用於單個網路分段或鏈路內的通訊。路由器不會將目標位址為鏈路本地位址的封包轉發到其他子網路。鏈路本地位址以 FE80 開頭。  
+    **B. unique local**FC00::/7, commonly FD00::/8) 唯一本地位址 (Unique local addresses) 的作用與 IPv4 的私有位址類似。它們旨在有限的站點或組織內使用，並且不是全球唯一的。由於它們不是全球唯一的，因此不打算在公共網際網路上進行路由。但是，私有網路中的路由器會使用唯一本地位址在子網路之間路由流量。唯一本地位址的前兩個十六進制數字以 FD 開頭。 
+    C. multicast 多播位址 (Multicast addresses)（以 FF00::/8 開頭）用於將單個封包同時傳送到多個目的地，而不是像單播位址那樣用於同一網路中不同子網路之間個別主機的一般通訊。它們具有不同的作用域（例如，鏈路本地），這些作用域定義了它們可以轉發的距離。 
+    D. global unicast  (2000::/3)全球單播位址 (Global unicast addresses) 旨在全球唯一且可在公共網際網路上路由，類似於公共 IPv4 位址。組織從編號機構獲得用於其使用的全球路由前綴。它們通常以十六進制的 2 或 3 開頭。  
+
+## Question #18
+Which IPv6 address block sends packets to a group address rather than a single address?
+
+    A. 2000::/3
+    B. FC00::/7
+    C. FE80::/10
+    **D. FF00::/8**
+
 
 **Chapter 24: Implementing IPv6 Addressing on Routers**
 
@@ -1273,8 +1364,8 @@ IPv6 的 EUI-64（Extended Unique Identifier）方法通过以下步骤生成接
 
 
 
-### Questions  
-Question #10  
+## Questions  
+## Question #10  
 Which command automatically generates an IPv6 address from a specified IPv6 prefix and MAC address of an interface?  
 
 A. ipv6 address dhcp 地址本身并不是以可预测的方式从 MAC 地址生成的，命令中也没有指定特定的前缀。相反，前缀和地址由 DHCPv6 服务器确定。这不符合使用指定前缀或直接从 MAC 地址生成地址的要求。
@@ -1285,7 +1376,18 @@ C. ipv6 address autoconfig 前缀本身并没有在命令中指定——它是�
   
 D. ipv6 address 2001:DB8:5:112::2/64 link-local 这条命令似乎手动配置了一个 IPv6 地址（2001:DB8:5:112::2），带有 64 位前缀长度，后面跟着 link-local 关键字。然而，这存在问题。链路本地地址必须使用前缀 FE80::/10，但 2001:DB8:5:112::2 是一个全局单播地址，使该命令在语法上存在问题。更重要的是，它手动指定了完整的地址（::2 作为接口标识符），而不是从 MAC 地址自动生成。
 
-  
+## Question #24
+Which action must be taken to assign a global unicast IPv6 address on an interface that is derived from the MAC address of that interface?
+
+A. explicitly assign a link-local address Link-local addresses are automatically assigned, not explicitly required for EUI-64.
+B. disable the EUI-64 bit process The question asks about using EUI-64, so disabling it is incorrect.
+**C. enable SLAAC on an interface**  SLAAC can use EUI-64, but it's not the only way to assign a global unicast address with EUI-64. The ipv6 address <prefix>/<prefix-length> eui-64 command can be used even without SLAAC.
+D. configure a stateful DHCPv6 server on the network DHCPv6 is not related to EUI-64
+
+    EUI-64 Interface ID: 64-bit Interface ID derived from the 48-bit MAC address of the interface.
+    IPv6 Address Configuration with EUI-64: The ipv6 address <prefix>/<prefix-length> eui-64 command is used to configure an IPv6 address where the prefix is specified, and the interface ID is generated using the EUI-64 process.
+    SLAAC (Stateless Address Autoconfiguration): Uses EUI-64 or random interface ID.
+
 
 **Chapter 25: Implementing IPv6 Routing**
 
@@ -1448,6 +1550,24 @@ Question #7
     6.  **Configure Advanced WLAN Settings (Edit WLAN > Advanced Tab):** Session Timeout, Coverage Hole Detection, Client Exclusion, etc.
 *   **Key WLAN Configuration Parameters:** SSID, VLAN Number (Interface), Security Type (WPA2 Personal, WPA2 Enterprise, etc.), Encryption, Authentication Method.
 
+## Question #20
+What is a benefit of using a Cisco Wireless LAN Controller?
+
+**A. It eliminates the need to configure each access point individually.**  This is a primary benefit of a WLC. Configuration is done centrally on the WLC and pushed to the LAPs.
+B. Central AP management requires more complex configurations.
+C. Unique SSIDs cannot use the same authentication method.
+D. It supports autonomous and lightweight APs.  Lightweight APs do not support autonomous APs
+
+## Question #25
+Several new coverage cells are required to improve the Wi-Fi network of an organization. Which two standard designs are recommended? (Choose two.)
+
+**A. 5GHz provides increased network capacity with up to 23 nonoverlapping channels.** This is generally true. 5 GHz has more channels than 2.4 GHz, leading to higher capacity.
+B. 5GHz channel selection requires an autonomous access point.  This is incorrect. Channel selection can be done by a WLC or autonomous APs.
+**C. Cells that overlap one another are configured to use nonoverlapping channels.** This is a fundamental principle of WLAN design to minimize interference.
+D. Adjacent cells with overlapping channels use a repeater access point. This is incorrect. Repeaters amplify interference, not avoid it.
+
+E. For maximum throughput, the WLC is configured to dynamically set adjacent access points to the channel. Dynamic Channel Assignment (DCA) is a common feature of WLCs to optimize channel selection.
+Correct Answers: A and C
 
 ## CCNA Volume 2 
 
@@ -2002,6 +2122,21 @@ Question #3
     *   **Internet VPN (IPsec VPN):** Secure Internet access, encrypted tunnels, but still no QoS guarantees, no SLAs.
     *   **Private WAN (MPLS VPN, Ethernet WAN):** More secure, QoS and SLAs possible, higher cost, longer setup time.
     *   **Intercloud Exchange:** Simplifies multi-cloud connectivity, provides private WAN access to multiple cloud providers.
+
+##Question #21
+
+Which action is taken by switch port enabled for PoE power classification override?
+
+**A. If a monitored port exceeds the maximum administrative value for power, the port is shutdown and err-disabled.**  This is the most likely behavior. If the port is configured to override the power classification and the device draws more than the configured maximum, the switch will likely shut down the port to protect itself.
+
+B. When a powered device begins drawing power from a PoE switch port, a syslog message is generated. Syslog messages can be generated for various PoE events, but this is not specific to power classification override.
+
+C. As power usage on a PoE switch port is checked, data flow to the connected device is temporarily paused. Data flow is not paused during power checks.
+D. If a switch determines that a device is using less than the minimum configured power, it assumes the device has failed and disconnects it.  This is not the typical behavior. The switch doesn't disconnect a device just because it's using less power than the maximum.
+    PoE (Power over Ethernet): Provides power to devices over Ethernet cables.
+    PoE Power Classification: Process where the switch and powered device (PD) negotiate the power requirements. The PD indicates its power class, and the switch allocates power accordingly.
+    Power Classification Override: Allows manually configuring the maximum power that a port can supply, overriding the automatic classification.
+    Purpose of Override: To ensure sufficient power is available for devices that might draw more power than their initial classification indicates or to limit power consumption. 
 
 **Part IV Review - Key Takeaways:**
 
