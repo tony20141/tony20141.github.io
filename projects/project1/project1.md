@@ -572,8 +572,7 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
 A corporate office uses four floors in a building.
 ✑ Floor 1 has 24 users.
 ✑ Floor 2 has 29 users.
-Floor 3 has 28 users.
-
+✑ Floor 3 has 28 users.
 ✑ Floor 4 has 22 users.
 Which subnet summarizes and gives the most efficient distribution of IP addresses for the router configuration?
 
@@ -590,9 +589,20 @@ So, we need 5 host bits.
 Now, let's analyze the options and see if they provide enough hosts and if the summary is correct:
 A. 192.168.0.0/24 as summary and 192.168.0.0/28 for each floor: A /28 provides 2<sup>4</sup> -2 = 14 usable addresses, which is not enough for 29 users. Incorrect.
 B. 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor: A /25 provides 2<sup>7</sup> - 2 = 126 usable addresses, which is enough. The summary of /23 is also correct.
-C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2<sup>5</sup> - 2 = 30 usable addresses, which is enough. However, /25 is not a valid summary of four /27 subnets.
+C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2<sup>5</sup> - 2 = 30 usable addresses, which is enough. However, /25 is not a valid summary of four /27 subnets. 126 usable, /27 needs 4*32=128
 D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2<sup>3</sup> - 2 = 6 usable addresses, which is not enough for 29 users. Incorrect.
 Correct Answer: B
+
+```
+## Question #35  
+![](img/035.png)
+Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?
+
+A. 10.10.225.48 255.255.255.240
+B. 10.10.225.32 255.255.255.240
+C. 10.10.225.48 255.255.255.224
+*D. 10.10.225.32 255.255.255.224* /27 = 32 addresses
+```
 
 **Chapter 7: Configuring and Verifying Switch Interfaces**
 
