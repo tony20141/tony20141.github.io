@@ -557,18 +557,17 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     C. 192.0.0.0/8
     D. 209.165.201.0/24  
 
-==
-## Question #16  
 
-![](img/016.png) 
-    Refer to the exhibit. Which statement explains the configuration error message that is received?
+    ## Question #16  
 
-    A. It belongs to a private IP address range.
-    B. The router does not support /28 mask.
-    C. It is a network IP address.
-    D. It is a broadcast IP address.  
-    /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
-==
+    ![](img/016.png) 
+        Refer to the exhibit. Which statement explains the configuration error message that is received?
+
+        A. It belongs to a private IP address range.
+        B. The router does not support /28 mask.
+        C. It is a network IP address.
+        D. It is a broadcast IP address.  
+        /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
 ```json 
 ## Question #34
