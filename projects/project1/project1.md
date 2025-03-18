@@ -370,7 +370,71 @@ D. The core layer maintains wired connections for each host: Incorrect. The acce
 E. The core and distribution layers perform the same functions: Incorrect. The core layer focuses on high-speed transit, while the distribution layer focuses on aggregation and policy enforcement.
 Correct Answers: A and B
 
+***
+## Question #37
 
+An office has 8 floors with approximately 30-40 users per floor. One subnet must be used. Which command must be configured on the router Switched Virtual
+Interface to use address space efficiently?
+
+A. ip address 192.168.0.0 255.255.0.0  
+**B. ip address 192.168.0.0 255.255.254.0** 510 usable addresses. This is enough for 320 users and is the most efficient option.  
+C. ip address 192.168.0.0 255.255.255.128  
+D. ip address 192.168.0.0 255.255.255.224  
+
+
+***
+## Question #38
+
+DRAG DROP -
+Drag and drop the descriptions of IP protocol transmissions from the left onto the IP traffic types on the right.
+Select and Place:
+
+![](img/038.png)
+
+TCP 
+sends transmissions in sequence  
+transmits packets as a stream  
+uses a lower transmission rate to ensure reliability  
+
+
+UDP  
+8 byte header  
+uses a higher transmission rate to ensure latency  
+transmits packets individually  
+
+***
+
+## Question #39
+A device detects two stations transmitting frames at the same time. This condition occurs after the first 64 bytes of the frame is received. Which interface counter increments?
+
+A. runt  
+B. collision  
+**C. late collision**  
+D. CRC  
+
+Runts: Frames that did not meet the minimum frame size requirement (64 bytes, including the 18-byte destination MAC, source MAC, type, and FCS). Can be caused by collisions.
+Giants: Frames that exceed the maximum frame size requirement (1518 bytes, including the 18-byte destination MAC, source MAC, type, and FCS).
+Input Errors: A total of many counters, including runts, giants, no buffer, CRC, frame, overrun, and ignored counts.
+CRC: Received frames that did not pass the FCS math; can be caused by collisions.
+Frame: Received frames that have an illegal format, for example, ending with a partial byte; can be caused by collisions.
+Packets Output: Total number of packets (frames) forwarded out the interface.
+Output Errors: Total number of packets (frames) that the switch port tried to transmit, but for which some problem occurred.
+Collisions: Counter of all collisions that occur when the interface is transmitting a frame.
+Late Collisions: The subset of all collisions that happen after the 64th byte of the frame has been transmitted. (In a properly working Ethernet LAN, collisions should occur within the first 64 bytes; late collisions today often point to a duplex mismatch.)
+Note that many of these counters occur as part of the CSMA/CD process used when half duplex is enabled. Collisions occur as a normal part of the half-duplex logic imposed by CSMA/CD, so a switch interface with an increasing collisions counter might not even have a
+problem. However, one problem, called late collisions, points to the classic duplex mismatch problem.
+***
+
+## Question #40
+
+
+![](img/040.png)
+Refer to the exhibit. Which outcome is expected when PC_A sends data to PC_B after their initial communication?
+
+A. The source MAC address is changed.  
+B. The destination MAC address is replaced with ffff.ffff.ffff.  
+**C. The source and destination MAC addresses remain the same.**  
+D. The switch rewrites the source and destination MAC addresses with its own.  
 
 
 
@@ -530,48 +594,48 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     *   `show history`: Display command history.
     *   `terminal history size <number>`: Set history buffer size for current session.
     *   `history size <number>` (line config mode): Set default history buffer size for console/VTY lines.
-
+***
 ## Question #13  
 
-    What is the default behavior of a Layer 2 switch when a frame with an unknown destination MAC address is received?
+What is the default behavior of a Layer 2 switch when a frame with an unknown destination MAC address is received?
 
-    A. The Layer 2 switch forwards the packet and adds the destination MAC address to its MAC address table.
-    B. The Layer 2 switch sends a copy of a packet to CPU for destination MAC address learning.
-    **C. The Layer 2 switch floods packets to all ports except the receiving port in the given VLAN.**  
-    D. The Layer 2 switch drops the received frame.
+A. The Layer 2 switch forwards the packet and adds the destination MAC address to its MAC address table.
+B. The Layer 2 switch sends a copy of a packet to CPU for destination MAC address learning.
+**C. The Layer 2 switch floods packets to all ports except the receiving port in the given VLAN.**  
+D. The Layer 2 switch drops the received frame.
 
 ***
 ## Question #14  
-    An engineer must configure a /30 subnet between two routes. Which usable IP address and subnet mask combination meets this criteria?
+An engineer must configure a /30 subnet between two routes. Which usable IP address and subnet mask combination meets this criteria?
 
-    A. interface e0/0 description to XX-AXXX:XXXXX ip address 10.2.1.3 255.255.255.252 .3 is broadcast IP add, not useable  
-    B. interface e0/0 description to XX-AXXX:XXXXX ip address 192.168.1.1 255.255.255.248
-    C. interface e0/0 description to XX-AXXX:XXXXX ip address 172.16.1.4 255.255.255.248
-    **D. interface e0/0 description to XX-AXXX:XXXXX ip address 209.165.201.2 225.255.255.252**  
+A. interface e0/0 description to XX-AXXX:XXXXX ip address 10.2.1.3 255.255.255.252 .3 is broadcast IP add, not useable  
+B. interface e0/0 description to XX-AXXX:XXXXX ip address 192.168.1.1 255.255.255.248
+C. interface e0/0 description to XX-AXXX:XXXXX ip address 172.16.1.4 255.255.255.248
+**D. interface e0/0 description to XX-AXXX:XXXXX ip address 209.165.201.2 225.255.255.252**  
 
 ***
 ## Question #15  
-    Which network allows devices to communicate without the need to access the Internet?
+Which network allows devices to communicate without the need to access the Internet?
 
-    A. 172.9.0.0/16
-    **B. 172.28.0.0/16**
-    C. 192.0.0.0/8
-    D. 209.165.201.0/24  
+A. 172.9.0.0/16
+**B. 172.28.0.0/16**
+C. 192.0.0.0/8
+D. 209.165.201.0/24  
 
-
+***
 ## Question #16  
 
 ![](img/016.png) 
-    Refer to the exhibit. Which statement explains the configuration error message that is received?
+Refer to the exhibit. Which statement explains the configuration error message that is received?
 
-    A. It belongs to a private IP address range.
-    B. The router does not support /28 mask.
-    C. It is a network IP address.
-    D. It is a broadcast IP address.  
-    /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
+A. It belongs to a private IP address range.  
+B. The router does not support /28 mask.  
+C. It is a network IP address.  
+D. It is a broadcast IP address.  
+/28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
+***
 ## Question #34  
-``` 
 A corporate office uses four floors in a building.
 ✑ Floor 1 has 24 users.
 ✑ Floor 2 has 29 users.
@@ -595,10 +659,9 @@ B. 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor: A /25 provides 2
 C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2<sup>5</sup> - 2 = 30 usable addresses, which is enough. However, /25 is not a valid summary of four /27 subnets. 126 usable, /27 needs 4*32=128
 D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2<sup>3</sup> - 2 = 6 usable addresses, which is not enough for 29 users. Incorrect.
 Correct Answer: B
-``` 
 
+***
 ## Question #35  
-``` 
 ![](img/035.png)
 Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?
 
@@ -607,7 +670,7 @@ B. 10.10.225.32 255.255.255.240
 C. 10.10.225.48 255.255.255.224
 *D. 10.10.225.32 255.255.255.224* /27 = 32 addresses
 
-``` 
+***
 
 **Chapter 7: Configuring and Verifying Switch Interfaces**
 
@@ -2300,7 +2363,29 @@ Here's a comprehensive summary of Chapters 16-19 and the Part V Review of Volume
     *   Improved automation and programmability (APIs).
     *   Increased consistency and reduced errors in configuration.
     *   Faster deployment of changes.
-    *   Enhanced network visibility and analytics.
+    *   Enhanced network visibility and analytics.  
+
+***
+## Question #36
+
+What is a characteristic of spine-and-leaf architecture?
+
+A. Each link between leaf switches allows for higher bandwidth.
+B. It provides greater predictability on STP blocked ports.
+C. It provides variable latency.
+D. Each device is separated by the same number of hops.  
+
+Spine-and-Leaf Architecture: Modern data center network topology designed for high bandwidth, low latency, and scalability.
+Spine Switches: High-speed switches that form the core of the network.
+Leaf Switches: Connect to servers and other endpoints.
+Full Mesh: Each leaf switch connects to every spine switch.
+Equal Path Cost: All paths between any two leaf switches have the same number of hops (typically two). This provides predictable latency.
+Now, let's analyze the options:
+A. Each link between leaf switches allows for higher bandwidth. While the links are high bandwidth, this isn't a defining characteristic of the architecture itself.
+B. It provides greater predictability on STP blocked ports. STP is generally not used in spine-and-leaf architectures.
+C. It provides variable latency. Incorrect. A key goal is predictable latency.
+D. Each device is separated by the same number of hops. This is the defining characteristic. All paths between leaf switches are the same length.
+Therefore, the correct answer is D. Each device is separated by the same number of hops.
 
 **Chapter 17: Cisco Software-Defined Access (SDA)**
 
