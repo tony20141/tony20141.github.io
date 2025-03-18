@@ -233,6 +233,9 @@ Here's a comprehensive summary of Chapters 1-3 from your CCNA study material, de
 
 This summary provides a structured overview of the key concepts from Chapters 1-3. Review these points, figures, and tables in your study material to reinforce your understanding and prepare effectively for your CCNA exam. Good luck!  
 
+***
+
+
 ## Question #12 
 ![](img/012.png) 
 ip route output:
@@ -262,6 +265,9 @@ valid_lft forever preferred_lft forever: These lines indicate that the IPv6 addr
 In summary, the image shows the network configuration of a Linux machine with IP address 192.168.1.200, subnet mask /26, default gateway 192.168.1.193, and MAC address 00:0C:22:83:79:A3.  
 ![](img/012-1.png) 
 
+***
+
+
 ## Question #23
 Which function does the range of private IPv4 addresses perform?
 
@@ -269,6 +275,9 @@ Which function does the range of private IPv4 addresses perform?
 B. provides a direct connection for hosts from outside of the enterprise network
 C. ensures that NAT is not required to reach the Internet with private range addressing
 D. enables secure communications to the Internet for all external hosts
+
+
+***
 
 
 ## Question #26:
@@ -286,6 +295,9 @@ A. TCP does not guarantee delivery or error checking to ensure that there is no 
 C. TCP is a connectionless protocol that does not provide reliable delivery of data; UDP is a connection-oriented protocol that uses sequencing to provide reliable delivery. This is incorrect. TCP is connection-oriented and reliable, UDP is connectionless and unreliable.
 D. TCP uses windowing to deliver packets reliably; UDP provides reliable message transfer between hosts by establishing a three-way handshake. This is incorrect. UDP does not provide reliable message transfer or use a three-way handshake.
 Correct Answer: B
+
+***
+
 
 ## Question #27:
 What are two differences between optical-fiber cabling and copper cabling? (Choose two.)
@@ -305,6 +317,9 @@ C. The data can pass through the cladding. Incorrect. Data (light) passes throug
 E. Fiber connects to physical interfaces using RJ-45 connections. Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.). Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.).
 Correct Answers: B and D
 
+***
+
+
 ## Question #28:
 How does CAPWAP communicate between an access point in local mode and a WLC?
 
@@ -320,6 +335,9 @@ B. The access point must be connected to the same switch as the WLC: Incorrect. 
 C. The access point must directly connect to the WLC using a copper cable: Incorrect. The connection can be copper or fiber, and doesn't need to be direct.
 D. The access point has the ability to link to any switch in the network, assuming connectivity to the WLC: Correct. The AP needs IP connectivity to the WLC, which can be achieved through various switches.
 Correct Answer: D
+
+***
+
 
 ## Question #29:
 
@@ -338,6 +356,9 @@ D. FF00::/8: Multicast addresses (one-to-many).
 Correct Answer: D
 
 
+***
+
+
 ## Question #30:
 What is the difference regarding reliability and communication type between TCP and UDP?
 A. TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol.
@@ -352,6 +373,9 @@ B. TCP is not reliable and is a connectionless protocol; UDP is reliable and is 
 C. TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless protocol. Incorrect. TCP is reliable, UDP is unreliable.
 D. TCP is reliable and is a connection-oriented protocol; UDP is not reliable and is a connectionless protocol. Correct.
 Correct Answer: D
+
+***
+
 
 ## Question #31
 What are two descriptions of three-tier network topologies? (Choose two.)
@@ -422,7 +446,8 @@ Output Errors: Total number of packets (frames) that the switch port tried to tr
 Collisions: Counter of all collisions that occur when the interface is transmitting a frame.
 Late Collisions: The subset of all collisions that happen after the 64th byte of the frame has been transmitted. (In a properly working Ethernet LAN, collisions should occur within the first 64 bytes; late collisions today often point to a duplex mismatch.)
 Note that many of these counters occur as part of the CSMA/CD process used when half duplex is enabled. Collisions occur as a normal part of the half-duplex logic imposed by CSMA/CD, so a switch interface with an increasing collisions counter might not even have a
-problem. However, one problem, called late collisions, points to the classic duplex mismatch problem.
+problem. However, one problem, called late collisions, points to the classic duplex mismatch problem.  
+
 ***
 
 ## Question #40
@@ -435,6 +460,9 @@ A. The source MAC address is changed.
 B. The destination MAC address is replaced with ffff.ffff.ffff.  
 **C. The source and destination MAC addresses remain the same.**  
 D. The switch rewrites the source and destination MAC addresses with its own.  
+
+***
+
 
 
 
@@ -594,7 +622,9 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     *   `show history`: Display command history.
     *   `terminal history size <number>`: Set history buffer size for current session.
     *   `history size <number>` (line config mode): Set default history buffer size for console/VTY lines.
+
 ***
+
 ## Question #13  
 
 What is the default behavior of a Layer 2 switch when a frame with an unknown destination MAC address is received?
@@ -614,6 +644,7 @@ C. interface e0/0 description to XX-AXXX:XXXXX ip address 172.16.1.4 255.255.255
 **D. interface e0/0 description to XX-AXXX:XXXXX ip address 209.165.201.2 225.255.255.252**  
 
 ***
+
 ## Question #15  
 Which network allows devices to communicate without the need to access the Internet?
 
@@ -623,6 +654,7 @@ C. 192.0.0.0/8
 D. 209.165.201.0/24  
 
 ***
+
 ## Question #16  
 
 ![](img/016.png) 
@@ -635,6 +667,7 @@ D. It is a broadcast IP address.
 /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
 ***
+
 ## Question #34  
 A corporate office uses four floors in a building.
 ✑ Floor 1 has 24 users.
@@ -660,7 +693,10 @@ C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2
 D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2<sup>3</sup> - 2 = 6 usable addresses, which is not enough for 29 users. Incorrect.
 Correct Answer: B
 
+
 ***
+
+
 ## Question #35  
 ![](img/035.png)
 Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?
@@ -714,7 +750,11 @@ C. 10.10.225.48 255.255.255.224
     *   **Cisco Switch Autonegotiation Defaults (Failure):** Speed: Sense speed, then 10 Mbps if sensing fails. Duplex: IEEE defaults.
 *   **LAN Hubs and Autonegotiation:** Hubs don't participate in autonegotiation. Devices connected to hubs often default to 10 Mbps half duplex.
 ### Questions 
-Question #1 
+
+***
+
+
+## Question #1 
 ![](img/001.png) 
     Which type of route does R1 use to reach host 10.10.13.10/32? 
 
@@ -756,6 +796,10 @@ Question #1
 
     Therefore, the best answer is B. network route.
 
+
+***
+
+
 Question #2 
 ![](img/002.png) 
 Refer to the exhibit. Which prefix does Router1 use for traffic to Host A?
@@ -775,6 +819,9 @@ C. 10.10.13.144/28
 
     10.10.13.214 is within this range.
 
+***
+
+
 Question #4 
 A frame that enters a switch fails the Frame Check Sequence. Which two interface counters are incremented? (Choose two.)
 
@@ -785,6 +832,9 @@ C. giants
 E. runts  
 
     When a frame fails the Frame Check Sequence, the switch recognizes it as an error during reception. The general counter for input errors (input errors) will be incremented, as will the specific counter for FCS errors, which is the CRC counter.
+
+***
+
 
 ## Question #19
     What are two reasons that cause late collisions to increment on an Ethernet interface? (Choose two.)
@@ -946,6 +996,10 @@ Exceeded Cable Length: Exceeding the maximum cable length for the Ethernet stand
     *   `spanning-tree portfast` (interface config): Enable PortFast on an access port.
     *   **BPDU Guard:** Enable BPDU Guard on PortFast ports for security: `spanning-tree bpduguard enable` (interface config).
 
+
+***
+
+
 ## Question #22Topic 1
 What occurs to frames during the process of frame flooding?
 
@@ -997,6 +1051,9 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
     *   **Multiple Sizes (VLSM):** More efficient address usage, but more complex to design and manage.  
 
 ### Question  
+
+***
+
 
 **Question #5**   
 ![](img/005.png)   
@@ -1433,6 +1490,9 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     *   **EIGRP for IPv6 (EIGRPv6):** IPv6 version of EIGRP. Advanced distance vector protocol.
     *   **MP-BGP4 (Multiprotocol BGP Version 4):** BGP extended to support IPv6 and other protocols.
 
+***
+
+
 ## Question #11  
     When configuring IPv6 on an interface, which two IPv6 multicast groups are joined? (Choose two.)
 
@@ -1466,7 +1526,11 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     1.  Split MAC address into two 24-bit halves.
     2.  Insert FFFE (hex) in the middle.
     3.  Invert the 7th bit (Universal/Local bit) of the first byte.  
-   
+
+
+***
+
+
 ## Question #17  
 Which IPv6 address type provides communication between subnets and cannot route on the Internet?
 
@@ -1475,6 +1539,10 @@ Which IPv6 address type provides communication between subnets and cannot route 
     C. multicast 多播位址 (Multicast addresses)（以 FF00::/8 開頭）用於將單個封包同時傳送到多個目的地，而不是像單播位址那樣用於同一網路中不同子網路之間個別主機的一般通訊。它們具有不同的作用域（例如，鏈路本地），這些作用域定義了它們可以轉發的距離。 
     D. global unicast  (2000::/3)全球單播位址 (Global unicast addresses) 旨在全球唯一且可在公共網際網路上路由，類似於公共 IPv4 位址。組織從編號機構獲得用於其使用的全球路由前綴。它們通常以十六進制的 2 或 3 開頭。  
 
+
+***
+
+
 ## Question #18
 Which IPv6 address block sends packets to a group address rather than a single address?
 
@@ -1482,6 +1550,9 @@ Which IPv6 address block sends packets to a group address rather than a single a
     B. FC00::/7
     C. FE80::/10
     **D. FF00::/8**
+
+
+***
 
 
 **Chapter 24: Implementing IPv6 Addressing on Routers**
@@ -1524,6 +1595,10 @@ IPv6 的 EUI-64（Extended Unique Identifier）方法通过以下步骤生成接
 
 
 ## Questions  
+
+***
+
+
 ## Question #10  
 Which command automatically generates an IPv6 address from a specified IPv6 prefix and MAC address of an interface?  
 
@@ -1534,6 +1609,9 @@ A. ipv6 address dhcp 地址本身并不是以可预测的方式从 MAC 地址生
 C. ipv6 address autoconfig 前缀本身并没有在命令中指定——它是从路由器发送的 RA 中学到的。问题要求前缀“指定”
   
 D. ipv6 address 2001:DB8:5:112::2/64 link-local 这条命令似乎手动配置了一个 IPv6 地址（2001:DB8:5:112::2），带有 64 位前缀长度，后面跟着 link-local 关键字。然而，这存在问题。链路本地地址必须使用前缀 FE80::/10，但 2001:DB8:5:112::2 是一个全局单播地址，使该命令在语法上存在问题。更重要的是，它手动指定了完整的地址（::2 作为接口标识符），而不是从 MAC 地址自动生成。
+
+***
+
 
 ## Question #24
 Which action must be taken to assign a global unicast IPv6 address on an interface that is derived from the MAC address of that interface?
@@ -1546,6 +1624,9 @@ D. configure a stateful DHCPv6 server on the network DHCPv6 is not related to EU
     EUI-64 Interface ID: 64-bit Interface ID derived from the 48-bit MAC address of the interface.
     IPv6 Address Configuration with EUI-64: The ipv6 address <prefix>/<prefix-length> eui-64 command is used to configure an IPv6 address where the prefix is specified, and the interface ID is generated using the EUI-64 process.
     SLAAC (Stateless Address Autoconfiguration): Uses EUI-64 or random interface ID.
+
+
+***
 
 
 **Chapter 25: Implementing IPv6 Routing**
@@ -1617,7 +1698,11 @@ Here's a detailed summary of Chapters 26-29, focusing on key points for your CCN
     *   **802.11ax (Wi-Fi 6):** 4x 802.11ac, 2.4 and 5 GHz (and other bands), OFDMA, HE.  
 
 ### Questions  
-Question #7  
+
+***
+
+
+## Question #7  
     Which 802.11 frame type is Association Response?
 
     **A. management** Most Voted
@@ -1627,6 +1712,11 @@ Question #7
     802.11 frames are transmitted over the air, and anyone within range can receive them. If unencrypted, anyone may inspect their contents.
     •
     To prevent man-in-the-middle attacks, clients should authenticate the AP, and management frames should also be authenticated
+
+
+***
+
+
 **Chapter 27: Analyzing Cisco Wireless Architectures**
 
 *   **Autonomous AP Architecture:**
@@ -1709,6 +1799,9 @@ Question #7
     6.  **Configure Advanced WLAN Settings (Edit WLAN > Advanced Tab):** Session Timeout, Coverage Hole Detection, Client Exclusion, etc.
 *   **Key WLAN Configuration Parameters:** SSID, VLAN Number (Interface), Security Type (WPA2 Personal, WPA2 Enterprise, etc.), Encryption, Authentication Method.
 
+***
+
+
 ## Question #20
 What is a benefit of using a Cisco Wireless LAN Controller?
 
@@ -1716,6 +1809,9 @@ What is a benefit of using a Cisco Wireless LAN Controller?
 B. Central AP management requires more complex configurations.
 C. Unique SSIDs cannot use the same authentication method.
 D. It supports autonomous and lightweight APs.  Lightweight APs do not support autonomous APs
+
+***
+
 
 ## Question #25
 Several new coverage cells are required to improve the Wi-Fi network of an organization. Which two standard designs are recommended? (Choose two.)
@@ -1728,6 +1824,9 @@ D. Adjacent cells with overlapping channels use a repeater access point. This is
 E. For maximum throughput, the WLC is configured to dynamically set adjacent access points to the channel. Dynamic Channel Assignment (DCA) is a common feature of WLCs to optimize channel selection.
 Correct Answers: A and C
 
+***
+
+
 ## Question #32
 Which type of IPv6 address is publicly routable in the same way as IPv4 public addresses?
 
@@ -1735,6 +1834,9 @@ A. multicast
 B. unique local
 C. link-local
 **D. global unicast**
+
+***
+
 
 ## Question #33
 What is the expected outcome when an EUI-64 address is generated?
@@ -1751,6 +1853,9 @@ B. The characters FE80 are inserted at the beginning of the MAC address of the i
 C. The seventh bit of the original MAC address of the interface is inverted: Correct. This is a key step in the EUI-64 process (the Universal/Local bit).
 D. The MAC address of the interface is used as the interface ID without modification: Incorrect. The MAC address is modified during the EUI-64 process.
 Correct Answer: C
+
+***
+
 
 ## CCNA Volume 2 
 
@@ -2206,11 +2311,17 @@ Here's a detailed summary of Chapters 9-12 and the Part III Review of Volume 2 o
 
 Here's a detailed summary of Chapters 13-15 and the Part IV Review of Volume 2 of your CCNA study material, designed to help you prepare for your exam: 
 
-Question #3 
+***
+
+
+## Question #3 
 ![](img/003.png) 
 ![](img/003-1.png) 
     FTP uses ports 20 and 21 over TCP by default and is more reliable for loading IOS images
     TFTP uses port 69 and UDP by default and does not require user credentials 
+***
+
+
 
 **Part IV: Network Architecture - Key Summary**
 
@@ -2306,6 +2417,9 @@ Question #3
     *   **Private WAN (MPLS VPN, Ethernet WAN):** More secure, QoS and SLAs possible, higher cost, longer setup time.
     *   **Intercloud Exchange:** Simplifies multi-cloud connectivity, provides private WAN access to multiple cloud providers.
 
+***
+
+
 ##Question #21
 
 Which action is taken by switch port enabled for PoE power classification override?
@@ -2320,6 +2434,9 @@ D. If a switch determines that a device is using less than the minimum configure
     PoE Power Classification: Process where the switch and powered device (PD) negotiate the power requirements. The PD indicates its power class, and the switch allocates power accordingly.
     Power Classification Override: Allows manually configuring the maximum power that a port can supply, overriding the automatic classification.
     Purpose of Override: To ensure sufficient power is available for devices that might draw more power than their initial classification indicates or to limit power consumption. 
+
+***
+
 
 **Part IV Review - Key Takeaways:**
 
@@ -2387,6 +2504,9 @@ C. It provides variable latency. Incorrect. A key goal is predictable latency.
 D. Each device is separated by the same number of hops. This is the defining characteristic. All paths between leaf switches are the same length.
 Therefore, the correct answer is D. Each device is separated by the same number of hops.
 
+***
+
+
 **Chapter 17: Cisco Software-Defined Access (SDA)**
 
 *   **SDA (Software-Defined Access):** Cisco's enterprise campus LAN architecture based on SDN principles and DNA Center controller.
@@ -2442,7 +2562,11 @@ Therefore, the correct answer is D. Each device is separated by the same number 
     *   **Data Types:** String (double quotes), Number (no quotes), Boolean (`true`, `false`), Null (`null`), Object (`{}`), Array (`[]`).  
 
 ### Questions  
-Question #8  
+
+***
+
+
+## Question #8  
 In which way does a spine-and-leaf architecture allow for scalability in a network when additional access ports are required?
 
 A. A spine switch and a leaf switch can be added with redundant connections between them.
@@ -2492,8 +2616,11 @@ D. A leaf switch can be added with a single connection to a core spine switch.
     *   **Agent/Agentless:** Ansible (Agentless), Puppet (Agent-based or Agentless), Chef (Agent-based).
     *   **Push/Pull Model:** Ansible (Push), Puppet (Pull), Chef (Pull).
 
-### Question  
-Question #9  
+
+***
+
+
+## Question #9  
 
 What identifies the functionality of virtual machines?
 
