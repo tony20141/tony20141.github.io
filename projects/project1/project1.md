@@ -570,8 +570,8 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     D. It is a broadcast IP address.  
     /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
-```json 
-## Question #34
+## Question #34  
+``` 
 A corporate office uses four floors in a building.
 ✑ Floor 1 has 24 users.
 ✑ Floor 2 has 29 users.
@@ -597,8 +597,8 @@ D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2
 Correct Answer: B
 ``` 
 
-``` 
 ## Question #35  
+``` 
 ![](img/035.png)
 Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?
 
