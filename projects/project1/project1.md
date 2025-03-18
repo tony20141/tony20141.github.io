@@ -272,6 +272,13 @@ D. enables secure communications to the Internet for all external hosts
 
 
 ## Question #26:
+How do TCP and UDP differ in the way they provide reliability for delivery of packets?
+
+A. TCP does not guarantee delivery or error checking to ensure that there is no corruption of data, UDP provides message acknowledgement and retransmits data if lost.
+B. TCP provides flow control to avoid overwhelming a receiver by sending too many packets at once, UDP sends packets to the receiver in a continuous stream without checking.
+C. TCP is a connectionless protocol that does not provide reliable delivery of data; UDP is a connection-oriented protocol that uses sequencing to provide reliable delivery.
+D. TCP uses windowing to deliver packets reliably; UDP provides reliable message transfer between hosts by establishing a three-way handshake.
+
 Understanding the Question: This question tests the fundamental differences in reliability between TCP and UDP.
 Analyzing the Options:
 A. TCP does not guarantee delivery or error checking to ensure that there is no corruption of data, UDP provides message acknowledgement and retransmits data if lost. This is incorrect. TCP does guarantee delivery and provides error checking, while UDP does not. This is incorrect. TCP does guarantee delivery and provides error checking, while UDP does not.
@@ -281,12 +288,20 @@ D. TCP uses windowing to deliver packets reliably; UDP provides reliable message
 Correct Answer: B
 
 ## Question #27:
+What are two differences between optical-fiber cabling and copper cabling? (Choose two.)
+
+A. A BNC connector is used for fiber connections
+B. The glass core component is encased in a cladding玻璃芯部件由包层包裹
+C. The data can pass through the cladding
+D. Light is transmitted through the core of the fiber
+E. Fiber connects to physical interfaces using RJ-45 connections
+
 Understanding the Question: This question asks about the differences between fiber optic and copper cabling.
 Analyzing the Options:
 A. A BNC connector is used for fiber connections. Incorrect. BNC connectors are used for coaxial copper cables.  BNC connectors are used for coaxial copper cables.
-B. The glass core component is encased in a cladding. Correct. Fiber optic cables have a glass core surrounded by cladding. Correct. Fiber optic cables have a glass core surrounded by cladding.
+**B. The glass core component is encased in a cladding. Correct. Fiber optic cables have a glass core surrounded by cladding. Correct. Fiber optic cables have a glass core surrounded by cladding.**
 C. The data can pass through the cladding. Incorrect. Data (light) passes through the core, not the cladding. Incorrect. Data (light) passes through the core, not the cladding.
-D. Light is transmitted through the core of the fiber. Correct. This is how fiber optic cables transmit data. Correct. This is how fiber optic cables transmit data.
+**D. Light is transmitted through the core of the fiber. Correct. This is how fiber optic cables transmit data. Correct. This is how fiber optic cables transmit data.**
 E. Fiber connects to physical interfaces using RJ-45 connections. Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.). Incorrect. RJ-45 connectors are used for UTP copper cables. Fiber uses different connectors (LC, SC, ST, etc.).
 Correct Answers: B and D
 
