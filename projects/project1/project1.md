@@ -540,7 +540,7 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     **C. The Layer 2 switch floods packets to all ports except the receiving port in the given VLAN.**  
     D. The Layer 2 switch drops the received frame.
 
-
+***
 ## Question #14  
     An engineer must configure a /30 subnet between two routes. Which usable IP address and subnet mask combination meets this criteria?
 
@@ -549,6 +549,7 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     C. interface e0/0 description to XX-AXXX:XXXXX ip address 172.16.1.4 255.255.255.248
     **D. interface e0/0 description to XX-AXXX:XXXXX ip address 209.165.201.2 225.255.255.252**  
 
+***
 ## Question #15  
     Which network allows devices to communicate without the need to access the Internet?
 
@@ -558,16 +559,16 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     D. 209.165.201.0/24  
 
 
-    ## Question #16  
+## Question #16  
 
-    ![](img/016.png) 
-        Refer to the exhibit. Which statement explains the configuration error message that is received?
+![](img/016.png) 
+    Refer to the exhibit. Which statement explains the configuration error message that is received?
 
-        A. It belongs to a private IP address range.
-        B. The router does not support /28 mask.
-        C. It is a network IP address.
-        D. It is a broadcast IP address.  
-        /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
+    A. It belongs to a private IP address range.
+    B. The router does not support /28 mask.
+    C. It is a network IP address.
+    D. It is a broadcast IP address.  
+    /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
 ```json 
 ## Question #34
@@ -605,7 +606,8 @@ A. 10.10.225.48 255.255.255.240
 B. 10.10.225.32 255.255.255.240
 C. 10.10.225.48 255.255.255.224
 *D. 10.10.225.32 255.255.255.224* /27 = 32 addresses
-```
+
+``` 
 
 **Chapter 7: Configuring and Verifying Switch Interfaces**
 
