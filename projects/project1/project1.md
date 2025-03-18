@@ -306,6 +306,13 @@ E. Fiber connects to physical interfaces using RJ-45 connections. Incorrect. RJ-
 Correct Answers: B and D
 
 ## Question #28:
+How does CAPWAP communicate between an access point in local mode and a WLC?
+
+A. The access point must not be connected to the wired network, as it would create a loop
+B. The access point must be connected to the same switch as the WLC
+C. The access point must directly connect to the WLC using a copper cable
+D. The access point has the ability to link to any switch in the network, assuming connectivity to the WLC
+
 Understanding the Question: This question asks about how CAPWAP (Control and Provisioning of Wireless Access Points) is used for communication between a lightweight AP and a WLC.
 Analyzing the Options:
 A. The access point must not be connected to the wired network, as it would create a loop: Incorrect. APs must be connected to the wired network to reach the WLC.
@@ -315,6 +322,13 @@ D. The access point has the ability to link to any switch in the network, assumi
 Correct Answer: D
 
 ## Question #29:
+
+Which IPv6 address block forwards packets to a multicast address rather than a unicast address?
+A. 2000::/3
+B. FC00::/7
+C. FE80::/10
+D. FF00::/12
+
 Understanding the Question: This question asks which IPv6 address block is used for multicast addresses.
 Analyzing the Options:
 A. 2000::/3: Global unicast addresses (one-to-one).
@@ -325,6 +339,12 @@ Correct Answer: D
 
 
 ## Question #30:
+What is the difference regarding reliability and communication type between TCP and UDP?
+A. TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol.
+B. TCP is not reliable and is a connectionless protocol; UDP is reliable and is a connection-oriented protocol.
+C. TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless protocol.
+D. TCP is reliable and is a connection-oriented protocol; UDP is not reliable and is a connectionless protocol.
+
 Understanding the Question: This question asks about the differences in reliability and communication type between TCP and UDP.
 Analyzing the Options:
 A. TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol. Incorrect. TCP is connection-oriented, UDP is connectionless.
@@ -332,6 +352,27 @@ B. TCP is not reliable and is a connectionless protocol; UDP is reliable and is 
 C. TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless protocol. Incorrect. TCP is reliable, UDP is unreliable.
 D. TCP is reliable and is a connection-oriented protocol; UDP is not reliable and is a connectionless protocol. Correct.
 Correct Answer: D
+
+## Question #31
+What are two descriptions of three-tier network topologies? (Choose two.)
+
+A. The distribution layer runs Layer 2 and Layer 3 technologies
+B. The network core is designed to maintain continuous connectivity when devices fail
+C. The access layer manages routing between devices in different domains
+D. The core layer maintains wired connections for each host
+E. The core and distribution layers perform the same functions
+
+Analyzing the Options:
+A. The distribution layer runs Layer 2 and Layer 3 technologies: This is generally true. Distribution layer switches often perform inter-VLAN routing (Layer 3) and also support Layer 2 technologies like VLANs and STP.
+B. The network core is designed to maintain continuous connectivity when devices fail: This is a key characteristic of the core layer. Redundancy is a primary design goal.
+C. The access layer manages routing between devices in different domains: Incorrect. Routing is typically done at the distribution and core layers. Access layer is primarily for connecting end-user devices.
+D. The core layer maintains wired connections for each host: Incorrect. The access layer connects to end-user devices.
+E. The core and distribution layers perform the same functions: Incorrect. The core layer focuses on high-speed transit, while the distribution layer focuses on aggregation and policy enforcement.
+Correct Answers: A and B
+
+
+
+
 
 Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA exam preparation:
 
@@ -527,6 +568,31 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     D. It is a broadcast IP address.  
     /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
 
+## Question #34
+A corporate office uses four floors in a building.
+✑ Floor 1 has 24 users.
+✑ Floor 2 has 29 users.
+Floor 3 has 28 users.
+
+✑ Floor 4 has 22 users.
+Which subnet summarizes and gives the most efficient distribution of IP addresses for the router configuration?
+
+A. 192.168.0.0/24 as summary and 192.168.0.0/28 for each floor
+B. 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor
+C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor
+D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor
+Understanding the Question: This question asks for the most efficient subnetting scheme for four floors with a given number of users.
+Analyzing the Options:
+First, determine the maximum number of hosts needed: Floor 2 has 29 users, so we need at least 29 usable host addresses per subnet.
+2<sup>H</sup> - 2 >= 29
+2<sup>5</sup> - 2 = 30 (enough)
+So, we need 5 host bits.
+Now, let's analyze the options and see if they provide enough hosts and if the summary is correct:
+A. 192.168.0.0/24 as summary and 192.168.0.0/28 for each floor: A /28 provides 2<sup>4</sup> -2 = 14 usable addresses, which is not enough for 29 users. Incorrect.
+B. 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor: A /25 provides 2<sup>7</sup> - 2 = 126 usable addresses, which is enough. The summary of /23 is also correct.
+C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2<sup>5</sup> - 2 = 30 usable addresses, which is enough. However, /25 is not a valid summary of four /27 subnets.
+D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2<sup>3</sup> - 2 = 6 usable addresses, which is not enough for 29 users. Incorrect.
+Correct Answer: B
 
 **Chapter 7: Configuring and Verifying Switch Interfaces**
 
@@ -1583,6 +1649,30 @@ D. Adjacent cells with overlapping channels use a repeater access point. This is
 
 E. For maximum throughput, the WLC is configured to dynamically set adjacent access points to the channel. Dynamic Channel Assignment (DCA) is a common feature of WLCs to optimize channel selection.
 Correct Answers: A and C
+
+## Question #32
+Which type of IPv6 address is publicly routable in the same way as IPv4 public addresses?
+
+A. multicast
+B. unique local
+C. link-local
+**D. global unicast**
+
+## Question #33
+What is the expected outcome when an EUI-64 address is generated?
+
+A. The interface ID is configured as a random 64-bit value
+B. The characters FE80 are inserted at the beginning of the MAC address of the interface
+C. The seventh bit of the original MAC address of the interface is inverted
+D. The MAC address of the interface is used as the interface ID without modification
+
+Understanding the Question: This question asks about what happens during EUI-64 address generation.
+Analyzing the Options:
+A. The interface ID is configured as a random 64-bit value: Incorrect. EUI-64 uses the MAC address.
+B. The characters FE80 are inserted at the beginning of the MAC address of the interface: Incorrect. FE80 is the prefix for link-local addresses, not part of the EUI-64 process itself.
+C. The seventh bit of the original MAC address of the interface is inverted: Correct. This is a key step in the EUI-64 process (the Universal/Local bit).
+D. The MAC address of the interface is used as the interface ID without modification: Incorrect. The MAC address is modified during the EUI-64 process.
+Correct Answer: C
 
 ## CCNA Volume 2 
 
