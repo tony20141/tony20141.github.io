@@ -557,6 +557,7 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     C. 192.0.0.0/8
     D. 209.165.201.0/24  
 
+==
 ## Question #16  
 
 ![](img/016.png) 
@@ -567,7 +568,9 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     C. It is a network IP address.
     D. It is a broadcast IP address.  
     /28 = 16 hosts, it should be 192.168.16.128+16 - 192.168.16.143, .143 is broadcast IP, not valid  
+==
 
+```json 
 ## Question #34
 A corporate office uses four floors in a building.
 ✑ Floor 1 has 24 users.
@@ -592,8 +595,9 @@ B. 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor: A /25 provides 2
 C. 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor: A /27 provides 2<sup>5</sup> - 2 = 30 usable addresses, which is enough. However, /25 is not a valid summary of four /27 subnets. 126 usable, /27 needs 4*32=128
 D. 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor: A /29 provides 2<sup>3</sup> - 2 = 6 usable addresses, which is not enough for 29 users. Incorrect.
 Correct Answer: B
+``` 
 
-```
+``` 
 ## Question #35  
 ![](img/035.png)
 Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?
