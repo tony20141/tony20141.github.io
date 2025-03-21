@@ -463,6 +463,25 @@ D. The switch rewrites the source and destination MAC addresses with its own.
 
 ***
 
+## Question #42
+How do TCP and UDP differ in the way they guarantee packet delivery?
+
+A. TCP uses retransmissions, acknowledgment, and parity checks, and UDP uses cyclic redundancy checks only
+B. TCP uses two-dimensional parity checks, checksums, and cyclic redundancy checks, and UDP uses retransmissions only
+**C. TCP uses checksum, acknowledgements, and retransmissions, and UDP uses checksums only**
+D. TCP uses checksum, parity checks, and retransmissions, and UDP uses acknowledgements only
+
+Reliability: TCP guarantees the delivery of packets. It does this through:
+Acknowledgments: The receiver sends back an acknowledgment (ACK) for packets received. If the sender does not receive an ACK within a certain timeframe, it assumes the packet was lost and retransmits it.
+Retransmissions: If a packet is lost or corrupted, TCP will retransmit the packet.
+Checksums: TCP uses checksums to verify the integrity of the data. If the checksum does not match, the packet is considered corrupted and is discarded.
+ UDP does use checksums to verify the integrity of the data, but if a packet is lost or corrupted, it does not attempt to retransmit it.
+Summary:
+TCP provides reliable delivery through acknowledgments, retransmissions, and checksums.
+UDP provides a simpler, faster service with no guarantees of delivery, relying only on checksums for error checking.
+
+***
+
 
 
 
@@ -1703,18 +1722,60 @@ Here's a detailed summary of Chapters 26-29, focusing on key points for your CCN
 
 
 ## Question #7  
-    Which 802.11 frame type is Association Response?
+Which 802.11 frame type is Association Response?
 
-    **A. management** Most Voted
-    B. protected frame
-    C. action
-    D. control
-    802.11 frames are transmitted over the air, and anyone within range can receive them. If unencrypted, anyone may inspect their contents.
-    •
-    To prevent man-in-the-middle attacks, clients should authenticate the AP, and management frames should also be authenticated
+**A. management** Most Voted
+B. protected frame
+C. action
+D. control
+802.11 frames are transmitted over the air, and anyone within range can receive them. If unencrypted, anyone may inspect their contents.
+•
+To prevent man-in-the-middle attacks, clients should authenticate the AP, and management frames should also be authenticated
 
 
 ***
+
+## Question #41Topic 1
+Using direct sequence spread spectrum, which three 2.4-GHz channels are used to limit collisions?
+
+A. 5, 6, 7  
+B. 1, 2, 3  
+C. 1, 6, 11  
+D. 1, 5, 10  
+non-overlapping channels in the 2.4 GHz band when using Direct Sequence Spread Spectrum (DSSS). 2.4 GHz Band: Frequency range used for Wi-Fi (802.11b/g/n/ax).
+Channel Spacing: Channels are spaced 5 MHz apart.
+Channel Bandwidth: Each channel is 22 MHz wide.
+Non-Overlapping Channels: To minimize interference, adjacent channels should not overlap. In the 2.4 GHz band, channels 1, 6, and 11 are the only three non-overlapping channels. 5 & 10 is a bit.
+Channel 1: 2.412 GHz
+Channel 2: 2.417 GHz
+Channel 3: 2.422 GHz
+Channel 4: 2.427 GHz
+Channel 5: 2.432 GHz
+Channel 6: 2.437 GHz
+Channel 7: 2.442 GHz
+Channel 8: 2.447 GHz
+Channel 9: 2.452 GHz
+Channel 10: 2.457 GHz
+Channel 11: 2.462 GHz
+
+***
+
+## Question #43
+A wireless administrator has configured a WLAN; however, the clients need access to a less congested 5-GHz network for their voice quality. Which action must be taken to meet the requirement?
+
+**A. enable Band Select** 
+B. enable DTIM
+C. enable RX-SOP
+D. enable AAA override
+
+Band Select (Band Steering): Feature that encourages dual-band clients (2.4 GHz and 5 GHz capable) to connect to the 5 GHz band, which is typically less congested and offers better performance.
+DTIM (Delivery Traffic Indication Message): Beacon interval setting that affects power saving and multicast/broadcast delivery. Not directly related to band steering.
+RX-SOP (Receive Start of Packet Detection Threshold): Adjusts the sensitivity of the AP's receiver. Not directly related to band steering.
+AAA Override: Allows overriding AAA settings for specific WLANs or clients. Not directly related to band steering.
+Therefore, the correct answer is A. enable Band Select.
+
+***
+
 
 
 **Chapter 27: Analyzing Cisco Wireless Architectures**
