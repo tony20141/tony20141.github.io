@@ -1735,7 +1735,7 @@ To prevent man-in-the-middle attacks, clients should authenticate the AP, and ma
 
 ***
 
-## Question #41Topic 1
+## Question #41
 Using direct sequence spread spectrum, which three 2.4-GHz channels are used to limit collisions?
 
 A. 5, 6, 7  
