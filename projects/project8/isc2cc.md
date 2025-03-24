@@ -7,205 +7,264 @@
 
 ---
 
-## 1. 充分的安全性
+## 1. 充分的安全性 
+Adequate Security: Security commensurate with the risk and the magnitude of harm resulting from the loss, misuse or unauthorized access to or modification of information. 
 - **原文**: “充分的安全性——与信息丢失、误用或未经授权访问或修改信息所造成的风险和损害程度相称的安全性。资料来源：OMB 通告 A-130”
 - **解释**: 指安全措施应与可能导致的信息丢失、误用或篡改的风险和损害成正比。在 ISC² 考试中，考生需要理解如何根据风险评估选择合适的控制措施，并证明所选措施能够有效缓解潜在风险。
 
 ---
 
 ## 2. 行政控制
+Administrative Controls: Controls implemented through policy and procedures. Examples include access control processes and requiring multiple personnel to conduct a specific operation. Administrative controls in modern environments are often enforced in conjunction with physical and/or technical controls, such as an access-granting policy for new users that requires login and approval by the hiring manager. 
 - **原文**: “行政控制- 通过政策和程序实施的控制。示例包括访问控制过程和需要多个人员执行特定操作。现代环境中的管理控制通常与物理和/或技术控制一起实施，例如需要招聘经理登录和批准的新用户访问授权策略。”
 - **解释**: 依赖组织内部的政策、程序和管理流程来确保安全。ISC² 考试中，考生需掌握如何通过行政手段（如安全政策、程序及培训）来实现整体安全管理，以及与物理和技术控制的协同作用。
 
 ---
 
 ## 3. 不良事件
+Adverse Events: Events with a negative consequence, such as system crashes, network packet floods, unauthorized use of system privileges, defacement of a web page or execution of malicious code that destroys data. 
 - **原文**: “不良事件- 具有负面后果的事件，例如系统崩溃、网络数据包泛滥、未经授权使用系统权限、销毁网页或执行销毁数据的恶意代码。”
 - **解释**: 指可能导致系统故障、数据损坏或安全漏洞的事件。考试中，了解如何识别、响应和恢复不良事件，以及制定相应的事件响应和恢复计划，是关键知识点之一。
 
 ---
 
 ## 4. 应用程序编程接口 (API)
+Application Programming Interface (API): A set of routines, standards, protocols, and tools for building software applications to access a web-based software application or web tool. 
 - **原文**: “应用程序编程接口 (API) - 一组例程、标准、协议和工具，用于构建软件应用程序以访问基于 网络 的软件应用程序或 网络 工具。”
 - **解释**: 提供不同软件组件之间通信的接口。ISC² 考试常涉及 API 的安全性问题，如身份验证、授权和数据传输的安全保护，考生需掌握如何设计和审查安全的 API 接口。
 
 ---
 
 ## 5. 应用程序服务器
+Application Server: A computer responsible for hosting applications to user workstations. 
 - **原文**: “应用程序服务器- 负责将应用程序托管到用户工作站的计算机。 NIST SP 800-82 Rev.2”
 - **解释**: 托管和运行应用程序的服务器或平台。考生需要了解如何确保应用服务器的安全配置、补丁管理及与其他网络组件的安全通信。
 
 ---
 
 ## 6. 人工智能
+Artificial Intelligence: The ability of computers and robots to simulate human intelligence and behavior. 
 - **原文**: “人工智能——计算机和机器人模拟人类智能和行为的能力。”
 - **解释**: 涉及机器学习、自动化决策和智能系统。ISC² 考试中，人工智能在威胁检测、自动化安全响应等方面的应用，以及由此产生的新型安全风险，都是重要考点。
 
 ---
 
 ## 7. 资产
+Asset: Anything of value that is owned by an organization. Assets include both tangible items such as information systems and physical property and intangible assets such as intellectual property. 
 - **原文**: “资产- 组织拥有的任何有价值的东西。资产既包括有形项目（如信息系统和实物财产），也包括无形资产（如知识产权）。”
 - **解释**: 指所有具有价值的资源，包括硬件、软件、数据和知识产权。ISC² 考试中，资产管理、信息分类和保护策略的制定常以此为基础。
 
 ---
 
 ## 8. 非对称加密
-- **原文**: “非对称加密- 一种算法，使用一个密钥加密，另一个密钥解密输入明文。”
+Asymmetric Encryption: An algorithm that uses one key to encrypt and a different key to decrypt the input plaintext.
+- **原文**: “非对称加密- 一种算法，使用一个密钥加密，**另一个密钥**解密输入明文。”
 - **解释**: 利用一对公钥和私钥对数据进行加密和解密，是现代加密技术的重要组成部分。考试中，相关概念还涉及数字签名、证书和密钥管理等内容。
 
 ---
 
 ## 9. 审计
+Audit: Independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures. NIST SP 1800-15B 
+
 - **原文**: “审计- 对记录和活动的独立审查和检查，以评估系统控制的充分性，以确保符合既定政策和操作程序。 NIST SP 1800-15B”
 - **解释**: 指通过独立检查验证安全控制措施的有效性。ISC² 考试中，审计流程、工具和方法是评估安全管理、合规性及风险控制的重要环节。
 
 ---
 
 ## 10. 身份验证
+Authentication: The act of identifying or verifying the eligibility of a station, originator, or individual to access specific categories of information. Typically, a measure designed to protect against fraudulent transmissions by establishing the validity of a transmission, message, station or originator. 
+
 - **原文**: “身份验证- 访问控制过程，通过比较一个（单因素或 SFA）或多个（多因素身份验证或 MFA）识别因素来验证用户或实体声明的身份是否为系统所知。”
 - **解释**: 用于确认用户身份的过程，是确保访问安全的首要步骤。考试中，对单因素、多因素以及生物识别等身份验证技术的理解和应用尤为关键。
 
 ---
 
 ## 11. 授权
+Authorization: The right or a permission that is granted to a system entity to access a system resource. NIST 800-82 Rev.2 
+
 - **原文**: “授权- 授予系统实体访问系统资源的权利或许可。 NIST 800-82 Rev.2”
 - **解释**: 在身份验证之后，根据预先定义的权限控制策略赋予用户访问特定资源的权利。ISC² 考试中，重点在于访问控制模型和最小权限原则的理解与实现。
 
 ---
 
 ## 12. 可用性
+Availability: Ensuring timely and reliable access to and use of information by authorized users. 
+
 - **原文**: “可用性——确保授权用户及时、可靠地访问和使用信息。”
 - **解释**: 确保系统和数据在需要时对合法用户开放，是“CIA三要素”中的一项。考试中，业务连续性、灾难恢复以及高可用性设计都是相关考点。
 
 ---
 
 ## 13. 基线
+Baseline: A documented, lowest level of security configuration allowed by a standard or organization. 
+
 - **原文**: “基线- 标准或组织允许的记录在案的最低级别的安全配置。”
 - **解释**: 指用于确定系统或网络最低安全标准的参考配置。ISC² 考试中，制定、监控和维护安全基线是确保系统配置一致性和降低风险的重要措施。
 
 ---
 
 ## 14. 生物特征
+Biometric: Biological characteristics of an individual, such as a fingerprint, hand geometry, voice, or iris patterns.
+
 - **原文**: “生物特征- 个人的生物特征，例如指纹、手部几何形状、声音或虹膜图案。”
 - **解释**: 用于身份验证的生物信息，是多因素认证（MFA）的常用组成部分。考试中，考生需了解生物识别技术的优缺点以及潜在的安全风险。
 
 ---
 
 ## 15. 位
+Bit: The most essential representation of data (zero or one) at Layer 1 of the Open Systems Interconnection (OSI) model.
+
 - **原文**: “位- 开放系统互连 (OSI) 模型的第 1 层数据（零或一）的最基本表示。”
 - **解释**: 计算机数据的基本单位，通常用零和一表示。ISC² 考试中，此概念有助于理解数据编码、传输和网络协议的基本原理。
 
 ---
 
 ## 16. 机器人
+Bot: Malicious code that acts like a remotely controlled “robot” for an attacker, with other Trojan and worm capabilities. 
+
 - **原文**: “机器人 - 恶意代码，对攻击者来说就像一个远程控制的‘机器人’，具有其他木马和蠕虫功能。”
 - **解释**: 指能自动执行攻击任务的恶意软件，通常具有远程控制功能。考试中，考生需要识别和防范此类自动化恶意代码，并了解其在网络攻击中的作用。
 
 ---
 
 ## 17. 违反
+Breach: The loss of control, compromise, unauthorized disclosure, unauthorized acquisition or any similar occurrence where: a person other than an authorized user accesses or potentially accesses personally identifiable information; or an authorized user accesses personally identifiable information for other than an authorized purpose. Source: NIST SP 800-53 Rev. 5 
+
 - **原文**: “违反- 失控、妥协、未经授权的披露、未经授权的获取或任何类似事件，其中： 授权用户以外的人访问或可能访问个人身份信息；或授权用户出于授权目的以外的目的访问个人身份信息。来源：NIST SP 800-53 Rev. 5”
 - **解释**: 指安全事件中对数据或系统的不当访问或披露。ISC² 考试中，数据泄露、隐私违规及其应急响应流程均为重点考查内容。
 
 ---
 
 ## 18. 广播
+Broadcast: Broadcast transmission is a one-to-many (one-to-everyone) form of sending internet traffic. 
+
 - **原文**: “广播- 广播传输是一种发送互联网流量的一对多（一对多）形式。”
 - **解释**: 一种网络通信方式，允许信息从一个发送者传递到多个接收者。考试中，考生可能需要了解广播流量的管理方法及其安全风险。
 
 ---
 
 ## 19. 业务连续性 (BC)
+Business Continuity (BC): Actions, processes and tools for ensuring an organization can continue critical operations during a contingency. 
+
 - **原文**: “业务连续性 (BC) - 确保组织在突发事件期间能够继续关键运营的行动、流程和工具。”
 - **解释**: 旨在确保在紧急情况下组织的关键业务能够持续运行。ISC² 考试中，业务连续性规划和灾难恢复是考核管理与技术安全策略的重要部分。
 
 ---
 
 ## 20. 业务连续性计划 (BCP)
+Business Continuity Plan (BCP): The documentation of a predetermined set of instructions or procedures that describe how an organization’s mission/business processes will be sustained during and after a significant disruptio
 - **原文**: “业务连续性计划 (BCP) - 一组预定说明或程序的文档，描述了组织的任务/业务流程在重大中断期间和之后如何维持。”
 - **解释**: 是一套详细的预案，用于指导组织在重大中断时如何继续运营。考试中，考生需要了解如何设计、实施和测试 BCP，以确保组织在突发事件中的应变能力。
 
 ---
 
 ## 21. 业务影响分析 (BIA)
+Business Impact Analysis (BIA): An analysis of an information system’s requirements, functions, and interdependencies used to characterize system contingency requirements and priorities in the event of a significant disruption. NIST SP 800-34 Rev. 1
+
 - **原文**: “业务影响分析 (BIA) - 对信息系统的需求、功能和相互依赖性的分析，用于在发生重大中断时表征系统应急需求和优先级。 NIST SP 800-34 修订版 1”
 - **解释**: 分析各信息系统和业务流程在中断情况下的重要性和依赖关系，是制定灾难恢复和业务连续性计划的基础。ISC² 考试中，掌握 BIA 的步骤和方法有助于正确评估风险和确定恢复优先级。
 
 ---
 
 ## 22. 字节
+Byte: The byte is a unit of digital information that most commonly consists of eight bits.
+
 - **原文**: “字节- 字节是数字信息的单位，通常由八位组成。”
 - **解释**: 是数据存储和传输的基本单位，常用于描述内存和带宽等概念。考试中，理解数据单位有助于理解计算机体系结构及数据处理基础。
 
 ---
 
 ## 23. 校验和
+Checksum: A digit representing the sum of the correct digits in a piece of stored or transmitted digital data, against which later comparisons can be made to detect errors in the data. 
+
 - **原文**: “校验和- 一个数字，表示存储或传输的数字数据中正确数字的总和，以后可以进行比较以检测数据中的错误。”
 - **解释**: 一种用于验证数据完整性的技术，通过对数据计算校验和来检测传输或存储过程中是否发生错误。ISC² 考试中，这与数据完整性保护和加密哈希函数的概念密切相关。
 
 ---
 
 ## 24. 密文
+Ciphertext: The altered form of a plaintext message so it is unreadable for anyone except the intended recipients. In other words, it has been turned into a secret. 
+
 - **原文**: “密文- 明文消息的更改形式，因此除了预期的收件人之外，任何人都无法阅读。换句话说，它已经变成了一个秘密。”
 - **解释**: 指通过加密技术处理后的数据，确保除授权接收者外无法读取。考试中，加密机制、密钥管理和加密算法均是重点考查的内容。
 
 ---
 
 ## 25. 分类
+Classification: Classification identifies the degree of harm to the organization, its stakeholders or others that might result if an information asset is divulged to an unauthorized person, process or organization. In short, classification is focused first and foremost on maintaining the confidentiality of the data, based on the data sensitivity. 
+
 - **原文**: “分类- 分类确定了如果信息资产泄露给未经授权的人员、流程或组织可能对组织、其利益相关者或其他人造成的损害程度。简而言之，分类首先关注的是基于数据敏感性维护数据的机密性。”
 - **解释**: 对信息资产按敏感性进行分级管理，以便采取适当的保护措施。ISC² 考试中，信息分类、标签管理和相应的保护措施是风险管理和安全控制中的核心概念。
 
 ---
 
 ## 26. 机密或敏感信息
+Classified or Sensitive Information: Information that has been determined to require protection against unauthorized disclosure and is marked to indicate its classified status and classification level when in documentary form. 
+
 - **原文**: “机密或敏感信息- 已确定需要保护以防止未经授权的披露的信息，并以文件形式标记以表明其机密状态和分类级别。”
 - **解释**: 指那些因其敏感性而必须严格保护的信息。考试中，会涉及如何识别、分类和保护此类信息，以及如何制定相应的访问控制和合规策略。
 
 ---
 
 ## 27. 云计算
+Cloud Computing: A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. NIST 800-145 
+
 - **原文**: “云计算- 一种模型，用于实现对可配置计算资源（例如，网络、服务器、存储、应用程序和服务）的共享池的无处不在、方便、按需的网络访问，可以以最少的管理工作快速配置和发布，或服务提供者交互。 NIST 800-145”
 - **解释**: 描述了一种按需提供和弹性扩展计算资源的模型。ISC² 考试中，云计算安全、虚拟化技术和共享责任模型是重要考点，要求考生了解云
 
 --- 
 
 ## 28. 社区云
+Community Cloud: A system in which the cloud infrastructure is provisioned for exclusive use by a specific community of consumers from organizations that have shared concerns (e.g., mission, security requirements, policy and compliance considerations). It may be owned, managed and operated by one or more of the organizations in the community, a third party or some combination of them, and it may exist on or off premises. NIST 800-145
+
 - **原文**: “社区云- 一个系统，其中云基础设施被配置为由具有共同关注（例如，任务、安全要求、政策和合规性考虑）的组织的特定消费者社区云独家使用。它可能由社区云中的一个或多个组织、第三方或它们的某种组合拥有、管理和运营，它可能存在于场所内或场所外。 NIST 800-145”
 - **解释**: 为一群具有相似安全需求和合规要求的组织共同使用的云平台。考试中，考生需区分不同的云部署模型（公有云、私有云、混合云、社区云），并理解各自的安全挑战和管理策略。
 
 ---
 
 ## 29. 机密性
+Confidentiality: The characteristic of data or information when it is not made available or disclosed to unauthorized persons or processes. NIST 800-66 
+
 - **原文**: “机密性 - 数据或信息在未向未经授权的人员或流程提供或披露时的特征。 NIST 800-66”
 - **解释**: 仅授权用户能够访问和理解信息的特性，是“CIA三要素”中的一部分。ISC² 考试中，如何通过加密、访问控制等手段保障机密性是核心知识点。
 
 ---
 
 ## 30. 配置管理
+Configuration Management: A process and discipline used to ensure that the only changes made to a system are those that have been authorized and validated.
+
 - **原文**: “配置管理- 用于确保对系统所做的唯一更改是那些已获得授权和验证的过程和规程。”
 - **解释**: 指管理系统或网络配置变更的标准化流程，确保所有修改均经过授权和测试。考试中，与补丁管理、安全基线和系统审计相关的知识点均依赖于有效的配置管理。
 
 ---
 
 ## 31. 通过环境设计预防犯罪 (CPTED)
+Crime Prevention through Environmental Design (CPTED): An architectural approach to the design of buildings and spaces that emphasizes passive features to reduce the likelihood of criminal activity. 
+
 - **原文**: “通过环境设计预防犯罪 (CPTED) - 一种建筑和空间设计的建筑方法，强调被动特征以减少犯罪活动的可能性。”
 - **解释**: 利用建筑和环境设计来降低犯罪风险。虽然在 ISC² 考试中不一定直接考查，但其理念与物理安全、场所安全管理及综合安全策略相关，帮助考生了解如何通过环境控制降低安全威胁。
 
 ---
 
 ## 32. 关键性
+Criticality: A measure of the degree to which an organization depends on the information or information system for the success of a mission or of a business function. NIST SP 800-60 Vol. 1, Rev. 1
+
 - **原文**: “关键性- 衡量组织依赖信息或信息系统以实现任务或业务功能成功的程度。 NIST SP 800-60 卷。 1，第 1 版”
 - **解释**: 衡量一个系统或资产对业务持续性和运营成功的重要性。ISC² 考试中，这一概念帮助确定优先保护哪些资产，关联业务影响分析（BIA）和风险评估。
 
 ---
 
 ## 33. 密码分析员
+Cryptanalyst: One who performs cryptanalysis, which is the study of mathematical techniques for attempting to defeat cryptographic techniques and/or information systems security. This includes the process of looking for errors or weaknesses in the implementation of an algorithm or of the algorithm itself. 
+
 - **原文**: “密码分析员 - 执行密码分析的人，这是研究试图击败密码技术和/或信息系统安全的数学技术。这包括在算法或算法本身的实现中寻找错误或弱点的过程。”
 - **解释**: 专注于分析和破解密码算法或实现漏洞的专家。考试中，密码学的基本原理及密码分析方法是理解和评估加密技术安全性的重要部分。
 
 ---
 
 ## 34. 密码学
+Cryptography: The study or applications of methods to secure or protect the meaning and content of messages, files, or other information, usually by disguise, obscuration, or other transformations of that content and meaning. 
+
 - **原文**: “密码学- 保护或保护消息、文件或其他信息的含义和内容的方法的研究或应用，通常通过对该内容和含义的伪装、模糊或其他转换。”
 - **解释**: 研究保护信息内容不被未授权者理解的技术和方法，包括加密、哈希函数、数字签名等。ISC² 考试中，密码学构成了信息保护技术的重要理论和实践基础。
 
@@ -214,6 +273,8 @@
 ---
 
 ## 1. 数据完整性
+Data Integrity: The property that data has not been altered in an unauthorized manner. Data integrity covers data in storage, during processing and while in transit. Source: NIST SP 800-27 Rev A
+
 - **原文**: 数据完整性- 数据未以未经授权的方式更改的属性。数据完整性涵盖存储中、处理期间和传输中的数据。来源：NIST SP 800-27 Rev A
 - **解释**: 指数据在整个生命周期内（存储、处理、传输）保持其准确性和一致性，未被未授权篡改。在 ISC² 考试中，考生需要掌握如何检测、预防和修复数据完整性问题，以及了解常见的数据完整性保护技术（如哈希算法和数字签名）。
 
