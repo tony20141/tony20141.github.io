@@ -281,138 +281,183 @@ Data Integrity: The property that data has not been altered in an unauthorized m
 ---
 
 ## 2. 数据丢失防护 (DLP)
+Data Loss Prevention (DLP): System capabilities designed to detect and prevent the unauthorized use and transmission of information.
 - **原文**: 数据丢失防护 (DLP) - 旨在检测和防止未经授权使用和传输信息的系统功能。
 - **解释**: 指利用技术和策略检测、防止敏感数据被非法复制、传输或泄露。在 ISC² 考试中，DLP 是保护信息资产、实施数据防泄漏策略和确保合规性的重要技术之一。
 
 ---
 
 ## 3. 解密
+Decryption: The reverse process from encryption. It is the process of converting a ciphertext message back into plaintext through the use of the cryptographic algorithm and the appropriate key for decryption (which is the same for symmetric encryption, but different for asymmetric encryption). This term is also used interchangeably with “deciphering.” 
+
 - **原文**: 解密- 加密的逆过程。它是通过使用密码算法和适当的解密密钥（对称加密相同，非对称加密不同）将密文消息转换回明文的过程。该术语也可与“解密”互换使用。
 - **解释**: 指将密文数据恢复为原始明文的过程。考试中，考生需理解不同加密方法（对称与非对称）的解密机制、密钥管理以及解密在安全通信中的应用。
 
 ---
 
 ## 4. 解封装
+De-encapsulation: The opposite process of encapsulation, in which bundles of data are unpacked or revealed.
+
 - **原文**: 解封装- 封装的相反过程，其中数据包被解包或显示。
 - **解释**: 指从封装的数据包中提取出原始数据或信息。在网络安全考试中，解封装与协议分析、数据包检查以及网络流量分析密切相关，是理解网络通信结构的基础。
 
 ---
 
 ## 5. 纵深防御
+Defense in Depth: Information security strategy integrating people, technology, and operations capabilities to establish variable barriers across multiple layers and missions of the organization. Source: NIST SP 800-53 Rev 4 
+
 - **原文**: 纵深防御——整合人员、技术和运营能力的信息安全战略，在组织的多个层级和任务中建立可变障碍。来源：NIST SP 800-53 Rev 4
 - **解释**: 指通过多层次的安全控制（物理、技术、行政）构建防御体系，即使某一层失效，整体安全仍能得到保障。ISC² 考试中，考生需要理解如何设计和实施纵深防御策略以降低单点故障风险。
 
 ---
 
 ## 6. 消磁
+Degaussing: A technique of erasing data on disk or tape (including video tapes) that, when performed properly, ensures that there is insufficient magnetic remanence to reconstruct data. 
+
 - **原文**: 消磁- 一种擦除磁盘或磁带（包括录像带）上的数据的技术，如果执行得当，可以确保没有足够的剩磁来重建数据。
 - **解释**: 通过磁场消除存储介质上的剩余磁信号，从而彻底擦除数据。考试中，这涉及到物理数据销毁方法和防止数据恢复的措施，通常出现在数据处置和存储安全问题中。
 
 ---
 
 ## 7. 拒绝服务 (DoS)
+Degaussing: A technique of erasing data on disk or tape (including video tapes) that, when performed properly, ensures that there is insufficient magnetic remanence to reconstruct data. 
+
 - **原文**: 拒绝服务 (DoS) - 防止授权访问资源或延迟时间关键操作。 （时间关键可能是几毫秒或几小时，具体取决于所提供的服务。）来源：NIST SP 800-27 Rev A
 - **解释**: 指通过过载系统资源，使合法用户无法及时访问服务的攻击方式。在 ISC² 考试中，DoS 攻击和相应的缓解措施（如流量过滤和负载均衡）是网络安全防护的重要考点。
 
 ---
 
 ## 8. 数字签名
+Digital Signature: The result of a cryptographic transformation of data which, when properly implemented, provides the services of origin authentication, data integrity, and signer non-repudiation. NIST SP 800-12 Rev. 1
+
+
 - **原文**: 数字签名- 数据加密转换的结果，如果正确实施，可提供原始身份验证、数据完整性和签名者不可否认性服务。 NIST SP 800-12 修订版 1
 - **解释**: 通过加密技术对数据生成唯一签名，用于验证数据来源和完整性，并防止签名者事后否认。考试中，数字签名的原理、算法（如 RSA、DSA）及其在电子交易和文档认证中的应用是重点。
 
 ---
 
 ## 9. 灾难恢复 (DR)
+Disaster Recovery (DR): In information systems terms, the activities necessary to restore IT and communications services to an organization during and after an outage, disruption or disturbance of any kind or scale. 
+
 - **原文**: 灾难恢复 (DR) - 在信息系统术语中，在任何类型或规模的中断、中断或干扰期间和之后为组织恢复 IT 和通信服务所必需的活动。
 - **解释**: 指在遭受中断（如自然灾害、网络攻击）后，通过技术和管理措施恢复关键 IT 服务和通信能力。ISC² 考试中，理解灾难恢复策略、恢复时间目标（RTO）和恢复点目标（RPO）至关重要。
 
 ---
 
 ## 10. 灾难恢复计划 (DRP)
+Disaster Recovery Plan (DRP): The processes, policies and procedures related to preparing for recovery or continuation of an organization's critical business functions, technology infrastructure, systems and applications after the organization experiences a disaster. A disaster is when an organization’s critical business function(s) cannot be performed at an acceptable level within a predetermined period following a disruption.
+
 - **原文**: 灾难恢复计划 (DRP) - 与在组织经历灾难后准备恢复或继续组织的关键业务功能、技术基础设施、系统和应用程序相关的流程、政策和程序。灾难是指组织的关键业务功能在中断后的预定时间内无法以可接受的水平执行。
 - **解释**: 指组织制定的书面计划和程序，用于在灾难发生后快速恢复业务和 IT 系统。考试中，DRP 与业务连续性计划（BCP）密切相关，考生需要了解制定和测试 DRP 的关键步骤。
 
 ---
 
 ## 11. 自主访问控制 (DAC)
+Discretionary Access Control (DAC): A certain amount of access control is left to the discretion of the object’s owner, or anyone else who is authorized to control the object’s access. The owner can determine who should have access rights to an object and what those rights should be. NIST SP 800-192
+
 - **原文**: 自主访问控制 (DAC) - 一定数量的访问控制留给对象所有者或任何其他有权控制对象访问的人自行决定。所有者可以确定谁应该拥有对象的访问权限以及这些权限应该是什么。 NIST SP 800-192
 - **解释**: 指对象的所有者拥有对其资源访问权限的完全控制权。ISC² 考试中，DAC 是访问控制模型之一，考生需要理解其优势、局限以及与强制访问控制（MAC）和基于角色的访问控制（RBAC）的区别。
 
 ---
 
 ## 12. 域名服务 (DNS)
+Domain Name Service (DNS): This acronym can be applied to three interrelated elements: a service, a physical server and a network protocol.
+
 - **原文**: 域名服务 (DNS) - 这个首字母缩写词可以应用于三个相互关联的元素：服务、物理服务器和网络协议。
 - **解释**: 指用于将域名转换为 IP 地址的系统及其相关协议和服务器。考试中，DNS 的安全问题（如 DNS 缓存投毒）及其加固措施是网络安全部分的重要考查点。
 
 ---
 
 ## 13. 出口监控
+Egress Monitoring: Monitoring of outgoing network traffic. 
+
 - **原文**: 出口监控- 监控传出网络流量。
 - **解释**: 指对离开内部网络的流量进行检测和监控，以防止敏感数据泄露。ISC² 考试中，出口监控是数据泄露防护（DLP）策略的一部分，考生需要了解其在信息安全中的作用和实施方法。
 
 ---
 
 ## 14. 封装
+Encapsulation: Enforcement of data hiding and code hiding during all phases of software development and operational use. Bundling together data and methods is the process of encapsulation; its opposite process may be called unpacking, revealing, or using other terms. Also used to refer to taking any set of data and packaging it or hiding it in another data structure, as is common in network protocols and encryption.
+
 - **原文**: 封装- 在软件开发和操作使用的所有阶段执行数据隐藏和代码隐藏。将数据和方法捆绑在一起就是封装的过程；其相反的过程可以称为拆包、揭示或使用其他术语。也用于指获取任何数据集并将其打包或隐藏在另一个数据结构中，这在网络协议和加密中很常见。
 - **解释**: 指将数据或功能打包隐藏的过程，以提高模块化和安全性。在考试中，封装概念用于理解面向对象编程、网络数据结构以及加密协议中如何保护数据的完整性和保密性。
 
 ---
 
 ## 15. 加密 (保护私人信息)
+Encrypt: To protect private information by putting it into a form that can only be read by people who have permission to do so.
+
 - **原文**: 加密- 通过将私人信息放入只有有权这样做的人才能阅读的形式来保护私人信息。
 - **解释**: 指将明文数据转换为不可读的密文，以防止未经授权访问。ISC² 考试中，加密技术是核心内容，考生需要了解加密算法、密钥管理和加密在数据保护中的实际应用。
 
 ---
 
 ## 16. 加密 (转换过程)
+Encapsulation: Enforcement of data hiding and code hiding during all phases of software development and operational use. Bundling together data and methods is the process of encapsulation; its opposite process may be called unpacking, revealing, or using other terms. Also used to refer to taking any set of data and packaging it or hiding it in another data structure, as is common in network protocols and encryption.
+
 - **原文**: 加密- 将消息从明文转换为密文的过程和行为。有时它也被称为加密。这两个术语有时在文学作品中可以互换使用，并且具有相似的含义。
 - **解释**: 与前一条类似，强调将明文转化为密文的过程。考试中，考生应理解加密的基本原理、常用算法（如 AES、DES）及其安全性要求。
 
 ---
 
 ## 17. 加密系统
+Encryption System: The total set of algorithms, processes, hardware, software and procedures that taken together provide an encryption and decryption capability.
+
 - **原文**: 加密系统- 算法、过程、硬件、软件和程序的总集，它们共同提供加密和解密能力。
 - **解释**: 指构成数据加密解决方案的完整系统，包括硬件、软件和流程。ISC² 考试中，考生需要认识不同加密系统的架构及其在整体信息安全中的角色。
 
 ---
 
 ## 18. 事件
+Event: Any observable occurrence in a network or system. Source: NIST SP 800-61 Rev 2
+
 - **原文**: 事件- 网络或系统中任何可观察到的事件。来源：NIST SP 800-61 Rev 2
 - **解释**: 指在网络或系统中发生的任何可检测活动或异常行为。在 ISC² 考试中，事件管理和事件响应流程是关键知识点，考生需要掌握如何识别、记录和响应安全事件。
 
 ---
 
 ## 19. 开发
+Exploit: A particular attack. It is named this way because these attacks exploit system vulnerabilities. 
+
 - **原文**: 开发 - 一种特殊的攻击。之所以这样命名，是因为这些攻击利用了系统漏洞。
 - **解释**: 此处“开发”指的是利用软件或系统缺陷（漏洞）进行的攻击，通常也被称为漏洞攻击。考试中，理解漏洞利用、漏洞管理和防御措施对于评估系统安全性至关重要。
 
 ---
 
 ## 20. 文件传输协议 (FTP)
+File Transfer Protocol (FTP): The internet protocol (and program) used to transfer files between hosts. 
+
 - **原文**: 文件传输协议 (FTP) - 用于在主机之间传输文件的 互联网 协议（和程序）。
 - **解释**: 指一种标准网络协议，用于在计算机之间传输文件。ISC² 考试中，考生需了解 FTP 的工作原理及其固有的安全风险（如明文传输）和相应的安全加固措施（如 SFTP）。
 
 ---
 
 ## 21. 防火墙
+Firewalls: Devices that enforce administrative security policies by filtering incoming traffic based on a set of rules. 
+
 - **原文**: 防火墙- 通过基于一组规则过滤传入流量来执行管理安全策略的设备。
 - **解释**: 指用来监控和控制进出网络流量的安全设备或软件，依据预定义策略允许或拒绝流量。考试中，防火墙技术、部署策略及其在网络边界安全中的作用是常见考点。
 
 ---
 
 ## 22. 分片攻击
+Fragment Attack: In a fragment attack, an attacker fragments traffic in such a way that a system is unable to put data packets back together.
+
 - **原文**: 分片攻击——在分片攻击中，攻击者将流量分片，使系统无法将数据包重新组合在一起。
 - **解释**: 指攻击者利用数据包分片技术干扰目标系统的数据包重组过程，从而达到拒绝服务或绕过安全检测的目的。ISC² 考试中，考生需要了解网络协议的分片机制及其安全漏洞防护方法。
 
 ---
 
 ## 23. 通用数据保护条例 (GDPR)
+General Data Protection Regulation (GDPR): In 2016, the European Union passed comprehensive legislation that addresses personal privacy, deeming it an individual human right. 
+
 - **原文**: 通用数据保护条例 (GDPR) - 2016 年，欧盟通过了涉及个人隐私的综合立法，将其视为个人人权。
 - **解释**: 指欧盟在 2016 年颁布的全面数据隐私法规，旨在保护欧盟公民的个人数据隐私。考试中，GDPR 是讨论合规性、数据保护和隐私权的重要法规案例，考生需了解其基本要求和实施影响。
 
 ---
 
 ## 24. 治理
+Governance: The process of how an organization is managed; usually includes all aspects of how decisions are made for that organization, such as policies, roles and procedures. 
 - **原文**: 治理- 如何管理组织的过程；通常包括如何为该组织做出决策的所有方面，例如该组织用于做出这些决策的政策、角色和程序。
 - **解释**: 指组织中决策制定、政策实施和角色分配的整体管理机制。ISC² 考试中，治理与风险管理、合规性以及安全战略密切相关，考生需掌握良好治理实践的重要性。
 
@@ -457,317 +502,417 @@ Data Integrity: The property that data has not been altered in an unauthorized m
 ---
 
 ## 1. 影响
+Impact: The magnitude of harm that could be caused by a threat’s exercise of a vulnerability.
+
 - **原文**: 影响 - 威胁利用漏洞可能造成的损害程度。
 - **解释**: 指当威胁成功利用漏洞后可能带来的负面后果。在 ISC² 考试中，理解“影响”是风险评估的重要组成部分，考生需要根据影响程度来确定风险的严重性，并制定相应的缓解策略。
 
 ---
 
 ## 2. 事件
+Incident: An event that actually or potentially jeopardizes the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.
+
 - **原文**: 事件 - 实际或潜在地危及信息系统的机密性、完整性或可用性或系统处理、存储或传输的信息的事件。
 - **解释**: 指任何可能或实际对信息系统的机密性、完整性和可用性（CIA）构成威胁的情况。在 ISC² 考试中，事件管理和事件响应是核心考点，考生需掌握如何识别和分类安全事件。
 
 ---
 
 ## 3. 事件处理
+
 - **原文**: 事件处理 - 缓解违反安全策略和推荐做法的情况。也称为事件响应。来源：NIST SP 800-61 Rev 2。
 - **解释**: 指在发生安全事件时采取的缓解措施和管理流程，目的是降低事件带来的危害。考试中，考生需了解事件处理流程、沟通及协调机制，以及如何制定和执行应急响应计划。
 
 ---
 
 ## 4. 事件响应 (IR)
+Incident Handling or Incident Response (IR): The process of detecting and analyzing incidents to limit the incident's effect.
+
 - **原文**: 事件响应 (IR) - 缓解违反安全策略和推荐做法的情况。也称为事件处理。来源：NIST SP 800-61 Rev 2。
 - **解释**: 与“事件处理”同义，强调在安全事件发生时采取有效措施进行响应。ISC² 考试中，事件响应流程、工具及角色分配是重要知识点。
 
 ---
 
 ## 5. 事件响应计划 (IRP)
+Incident Response Plan (IRP): The documentation of a predetermined set of instructions or procedures to detect, respond to and limit consequences of a malicious cyberattack against an organization’s information systems(s). Source: NIST SP 800-34 Rev 1
+
 - **原文**: 事件响应计划 (IRP) - 一组预定指令或程序的文档，用于检测、响应和限制针对组织信息系统的恶意网络攻击的后果。来源：NIST SP 800-34 Rev 1。
 - **解释**: 指组织事先制定的、详细描述如何应对和缓解安全事件的书面计划。考试中，IRP 的制定、测试和更新是确保组织在遭受攻击后能够迅速恢复的关键。
 
 ---
 
 ## 6. 信息安全风险
+Information Security Risk: The potential adverse impacts to an organization’s operations (including its mission, functions and image and reputation), assets, individuals, other organizations, and even the nation, which results from the possibility of unauthorized access, use, disclosure, disruption, modification or destruction of information and/or information systems.
+
 - **原文**: 信息安全风险 - 对组织运营（包括其使命、职能、形象和声誉）、资产、个人、其他组织甚至国家的潜在不利影响，由未经授权的访问、使用、披露、中断造成、修改或破坏信息和/或信息系统。
 - **解释**: 指由信息安全事件引发的对组织各方面可能产生的不利后果。ISC² 考试中，风险管理和风险评估（包括可能性和影响分析）是重要考点。
 
 ---
 
 ## 7. 基础设施即服务 (IaaS)
+Infrastructure as a Service (IaaS): The provider of the core computing, storage and network hardware and software that is the foundation upon which organizations can build and then deploy applications. IaaS is popular in the data center where software and servers are purchased as a fully outsourced service and usually billed on usage and how much of the resource is used.
+
 - **原文**: 基础设施即服务 (IaaS) - 核心计算、存储和网络硬件和软件的提供商，是组织构建和部署应用程序的基础。IaaS 在数据中心很流行，软件和服务器作为完全外包服务购买，通常根据使用情况和资源量计费。
 - **解释**: 指一种云计算服务模式，提供虚拟化的计算、存储和网络资源。在 ISC² 考试中，云安全、服务模型以及共享责任模型是关键主题，考生需理解 IaaS 的优点与风险。
 
 ---
 
 ## 8. 入口监控
+Ingress Monitoring: Monitoring of incoming network traffic.
+
 - **原文**: 入口监控 - 监控传入的网络流量。
 - **解释**: 指对进入内部网络的流量进行实时监控，以检测和阻止潜在攻击。在 ISC² 考试中，入口监控是网络安全和入侵检测的重要组成部分。
 
 ---
 
 ## 9. 内部威胁
+Insider Threat: An entity with authorized access that has the potential to harm an information system through destruction, disclosure, modification of data, and/or denial of service. NIST SP 800-32
+
 - **原文**: 内部威胁 - 具有授权访问权限的实体，有可能通过破坏、披露、修改数据和/或拒绝服务来损害信息系统。来源：NIST SP 800-32。
 - **解释**: 指来自具有合法访问权限的内部人员或系统的威胁，这类威胁可能利用信任关系进行破坏。在 ISC² 考试中，考生需掌握内部威胁的识别、预防和监控策略。
 
 ---
 
 ## 10. 电气和电子工程师协会 (IEEE)
+Institute of Electrical and Electronics Engineers (IEEE): IEEE is a professional organization that sets standards for telecommunications, computer engineering and similar disciplines.
+
 - **原文**: 电气和电子工程师协会 (IEEE) - IEEE 是一个为电信、计算机工程和类似学科制定标准的专业组织。
 - **解释**: 指一个制定技术和工程标准的国际性专业组织。在 ISC² 考试中，IEEE 标准可能在讨论技术实施和安全最佳实践时被提及。
 
 ---
 
 ## 11. 完整性
+Integrity: The property of information whereby it is recorded, used and maintained in a way that ensures its completeness, accuracy, internal consistency and usefulness for a stated purpose.
+
 - **原文**: 完整性 - 以确保其完整性、准确性、内部一致性和对既定目的有用的方式记录、使用和维护信息的属性。
 - **解释**: 指保证数据在整个生命周期内保持准确、一致且未被篡改，是 CIA 三要素之一。ISC² 考试中，完整性保护措施（如哈希和数字签名）是核心内容。
 
 ---
 
 ## 12. 国际标准组织 (ISO)
+International Organization of Standards (ISO): The ISO develops voluntary international standards in collaboration with its partners in international standardization, the International Electro-technical Commission (IEC) and the International Telecommunication Union (ITU), particularly in the field of information and communication technologies.
+
 - **原文**: 国际标准组织 (ISO) - ISO 与国际标准化合作伙伴、国际电工委员会 (IEC) 和国际电信联盟 (ITU) 合作制定自愿性国际标准，特别是在信息和通信技术领域.
 - **解释**: 指负责制定国际标准的组织，ISO 27001 等标准广泛用于信息安全管理体系。考试中，了解国际标准有助于理解安全管理和合规要求。
 
 ---
 
-## 13. 互联网控制消息协议 (ICMP)
+Internet Control Message Protocol (ICMP): An IP network protocol standardized by the Internet Engineering Task Force (IETF) through RFC 792 to determine if a particular service or host is available.
+
 - **原文**: 互联网控制消息协议 (ICMP) - 由互联网工程任务组 (IETF) 通过 RFC 792 标准化的 IP 网络协议，用于确定特定服务或主机是否可用。
 - **解释**: 指用于网络诊断和错误报告的协议，如“ping”命令。在 ISC² 考试中，考生需理解 ICMP 的作用及其潜在的安全风险（如 ICMP 攻击）。
 
 ---
 
 ## 14. 互联网工程任务组 (IETF)
+Internet Engineering Task Force (IETF): The internet standards organization, made up of network designers, operators, vendors and researchers, that defines protocol standards (e.g., IP, TCP, DNS) through a process of collaboration and consensus. Source: NIST SP 1800-16B
+
 - **原文**: 互联网工程任务组 (IETF) - 互联网标准组织，由网络设计者、运营商、供应商和研究人员组成，通过协作和共识过程定义协议标准（例如，IP、TCP、DNS）。来源：NIST SP 1800-16B。
 - **解释**: 指负责制定互联网相关协议标准的组织。ISC² 考试中，对互联网协议和标准的理解是网络安全基础的重要部分。
 
 ---
 
 ## 15. 互联网协议 (IPv4)
+Internet Protocol (IPv4): Standard protocol for transmission of data from source to destinations in packet-switched communications networks and interconnected systems of such networks. CNSSI 4009-2015
+
 - **原文**: 互联网协议 (IPv4) - 用于在分组交换通信网络和此类网络的互连系统中将数据从源传输到目的地的标准协议。CNSSI 4009-2015。
 - **解释**: 指互联网使用的主要协议，负责地址分配和数据传输。考试中，IPv4 相关的安全问题（如地址欺骗）是网络安全的基础知识。
 
 ---
 
 ## 16. 入侵
+Intrusion: A security event, or combination of security events, that constitutes a security incident in which an intruder gains, or attempts to gain, access to a system or system resource without authorization. Source: IETF RFC 4949 Ver 2
+
 - **原文**: 入侵 - 构成安全事件的安全事件或安全事件组合，其中入侵者未经授权获得或试图获得对系统或系统资源的访问权。来源：IETF RFC 4949 第 2 版。
 - **解释**: 指未经授权的访问行为，是安全事件的重要组成部分。ISC² 考试中，入侵检测、预防及响应策略是必考内容。
 
 ---
 
 ## 17. iOS
+iOS: An operating system manufactured by Apple Inc. Used for mobile devices.
+
 - **原文**: iOS - 苹果公司制造的操作系统，用于移动设备。
 - **解释**: 指苹果公司开发的移动设备操作系统。考试中，移动设备安全及其特有的安全机制（如应用沙箱）常被讨论。
 
 ---
 
 ## 18. 分层防御
+Layered Defense: The use of multiple controls arranged in series to provide several consecutive controls to protect an asset; also called defense in depth.
+
 - **原文**: 分层防御 - 使用串联排列的多个控件来提供多个连续控件来保护资产；也称为纵深防御。
 - **解释**: 指采用多个安全控制层次构建防护体系，即使其中一层失效，整体安全仍能得到保障。ISC² 考试中，分层防御策略是风险管理和防御体系设计的核心概念。
 
 ---
 
 ## 19. 概率
+Likelihood: The probability that a potential vulnerability may be exercised within the construct of the associated threat environment.
+
 - **原文**: 概率 - 潜在漏洞可能在相关威胁环境的构造中发挥作用的概率。
 - **解释**: 指漏洞被威胁利用的可能性，是风险评估中用于确定风险水平的重要参数。在 ISC² 考试中，评估概率有助于量化风险和优先排序安全措施。
 
 ---
 
 ## 20. 发生的概率
+Likelihood of Occurrence: A weighted factor based on a subjective analysis of the probability that a given threat is capable of exploiting a given vulnerability or set of vulnerabilities.
+
 - **原文**: 发生的概率 - 基于给定威胁能够利用给定漏洞或一组漏洞的概率的主观分析的加权因子。
 - **解释**: 指对威胁利用漏洞的可能性进行主观量化的评估因子，是风险分析模型中常用的概念。考试中，理解如何结合影响与概率进行风险评估至关重要。
 
 ---
 
 ## 21. Linux
+Linux: An operating system that is open source, making its source code legally available to end users.
+
+
 - **原文**: Linux - 一种开源操作系统，使其源代码合法地可供最终用户使用。
 - **解释**: 指基于 Unix 的开源操作系统，因其灵活性和安全性广泛应用于服务器和嵌入式设备。ISC² 考试中，Linux 安全配置、补丁管理和访问控制等是常考点。
 
 ---
 
 ## 22. 日志异常
+Log Anomaly: A system irregularity that is identified when studying log entries which could represent events of interest for further surveillance.
+
 - **原文**: 日志异常 - 在研究日志条目时识别出的系统异常，它可能代表感兴趣的事件以供进一步监视。
 - **解释**: 指在日志数据中发现的非正常或可疑行为，可能提示潜在安全事件。考试中，日志异常分析是入侵检测和事件响应的重要技能。
 
 ---
 
 ## 23. 日志记录
+Logging: Collecting and storing user activities in a log, which is a record of the events occurring within an organization’s systems and networks. NIST SP 1800-25B.
+
 - **原文**: 日志记录 - 收集用户活动并将其存储在日志中，该日志记录组织的系统和网络中发生的事件。来源：NIST SP 1800-25B。
 - **解释**: 指记录系统和网络事件的过程，便于后续审计、分析和事件调查。ISC² 考试中，日志记录和监控策略对于事件响应和取证分析至关重要。
 
 ---
 
 ## 24. 逻辑访问控制系统
+Logical Access Control Systems: An automated system that controls an individual’s ability to access one or more computer system resources, such as a workstation, network, application or database. A logical access control system requires the validation of an individual’s identity through some mechanism, such as a PIN, card, biometric or other token. It has the capability to assign different access privileges to different individuals depending on their roles and responsibilities in an organization. NIST SP 800-53 Rev.5. 
+
 - **原文**: 逻辑访问控制系统 - 控制个人访问一个或多个计算机系统资源（例如工作站、网络、应用程序或数据库）的能力的自动化系统。逻辑访问控制系统需要通过某种机制验证个人身份，例如 PIN、卡、生物识别或其他令牌。它能够根据不同的个人在组织中的角色和职责为他们分配不同的访问权限。来源：NIST SP 800-53 Rev.5。
 - **解释**: 指使用自动化工具和机制（如密码、生物识别、智能卡）管理和控制用户对计算资源的访问。ISC² 考试中，逻辑访问控制模型及其实施细节（如最小权限原则、基于角色的访问控制）是关键知识点。
 
 ---
-# ISC² 安全考试相关词条简略解释
-
-以下每个词条列出了原文以及简略解释，特别强调了与 ISC² CC 考试相关的知识点和应用场景。
 
 ---
 
 ## 1. 中间人
+Man-in-the-Middle: An attack where the adversary positions himself in between the user and the system so that he can intercept and alter data traveling between them. Source: NISTIR 7711
+
 - **原文**: 中间人 - 攻击者将自己定位在用户和系统之间的攻击，以便他可以拦截和更改在它们之间传输的数据。来源：NISTIR 7711
 - **解释**: 指攻击者通过“中间人”手法截获并可能篡改通信数据。ISC² 考试中，考生需理解如何防范 MITM 攻击，包括使用加密、证书验证和安全通信协议。
 
 ---
 
 ## 2. 强制访问控制
+Mandatory Access Control - Access control that requires the system itself to manage access controls in accordance with the organization’s security policies.
+
 - **原文**: 强制访问控制- 要求系统本身根据组织的安全策略管理访问控制的访问控制。
 - **解释**: 指由系统强制执行的访问策略，不允许用户自行更改。此模式常用于高安全性环境，ISC² 考试中常与 MAC（Mandatory Access Control）的理论和实施细节相关。
 
 ---
 
 ## 3. 陷阱
+Mantrap - An entrance to a building or an area that requires people to pass through two doors with only one door opened at a time.
+
 - **原文**: 陷阱 - 建筑物或区域的入口，需要人们通过两扇门，一次只打开一扇门。
 - **解释**: 一种物理安全策略，通过多重门禁来防止未授权进入。虽然在 ISC² 考试中重点多在信息安全，但物理安全（如陷阱和双重入口）也是整体安全策略的一部分。
 
 ---
 
 ## 4. 消息摘要
+Message Digest - A digital signature that uniquely identifies data and has the property such that changing a single bit in the data will cause a completely different message digest to be generated. NISTIR-8011 Vol.3
+
 - **原文**: 消息摘要- 唯一标识数据的数字签名并具有这样的属性：更改数据中的单个位将导致生成完全不同的消息摘要。 NISTIR-8011 Vol.3
 - **解释**: 利用哈希算法生成的固定长度“指纹”，用于验证数据完整性。ISC² 考试中，理解消息摘要在数字签名和完整性验证中的应用至关重要。
 
 ---
 
 ## 5. 微分段
+Microsegmentation - Part of a zero-trust strategy that breaks LANs into very small, highly localized zones using firewalls or similar technologies. At the limit, this places a firewall at every connection point.
+
 - **原文**: 微分段- 零信任策略的一部分，它使用防火墙或类似技术将 LAN 分成非常小的、高度本地化的区域。在极限情况下，这会将防火墙放置在每个连接点。
 - **解释**: 指将网络细分为极小的区域以实现最小信任原则，防止横向移动攻击。ISC² 考试中，微分段是零信任和现代网络安全架构的重要概念。
 
 ---
 
 ## 6. 多因素身份验证
+Multi-Factor Authentication - Using two or more distinct instances of the three factors of authentication (something you know, something you have, something you are) for identity verification.
+
 - **原文**: 多因素身份验证- 使用三个身份验证因素（你知道的东西、你拥有的东西、你是的东西）的两个或更多不同的实例来进行身份验证。
 - **解释**: 指通过组合两种或更多不同认证因子（如密码、令牌、生物识别）来验证身份。ISC² 考试中，多因素认证被广泛讨论，作为强化访问控制的重要措施。
 
 ---
 
 ## 7. 美国国家标准与技术研究院 (NIST)
+National Institutes of Standards and Technology (NIST) - The NIST is part of the U.S. Department of Commerce and addresses the measurement infrastructure within science and technology efforts within the U.S. federal government. NIST sets standards in a number of areas, including information security within the Computer Security Resource Center of the Computer Security Divisions.
+
 - **原文**: 美国国家标准与技术研究院 (NIST) - NIST 是美国商务部的一部分，负责美国联邦政府内科技工作中的测量基础设施。NIST 在多个领域制定标准，包括计算机安全部门的计算机安全资源中心内的信息安全。
 - **解释**: NIST 制定的标准和指南（如 SP 系列）为信息安全实践提供了基础框架，是 ISC² 考试中常引用的重要标准来源。
 
 ---
 
 ## 8. 不可否认性
+Non-repudiation - The inability to deny taking an action such as creating information, approving information and sending or receiving a message.
+
 - **原文**: 不可否认性- 无法拒绝采取行动，例如创建信息、批准信息以及发送或接收消息。
 - **解释**: 指通过技术手段确保一方在完成某项操作后不能否认其行为。ISC² 考试中，不可否认性与数字签名和日志记录等概念密切相关。
 
 ---
 
 ## 9. 对象
+Object - Passive information system-related entity (e.g., devices, files, records, tables, processes, programs, domains) containing or receiving information. Access to an object (by a subject) implies access to the information it contains. See subject. Source: NIST SP 800-53 Rev 4
+
 - **原文**: 对象- 包含或接收信息的被动信息系统相关实体（例如，设备、文件、记录、表格、流程、程序、域）。访问一个对象（由一个主体）意味着访问它包含的信息。来源：NIST SP 800-53 Rev 4
 - **解释**: 指在访问控制模型中被保护的资源。ISC² 考试中，对象与主体和访问控制规则一起构成安全模型的基本概念。
 
 ---
 
 ## 10. 操作系统
+Operating System - The software “master control application” that runs the computer. It is the first program loaded when the computer is turned on, and its main component, the kernel, resides in memory at all times. The operating system sets the standards for all application programs (such as the Web server) that run in the computer. The applications communicate with the operating system for most user interface and file management operations. NIST SP 800-44 Version 2
+
 - **原文**: 操作系统- 运行计算机的软件“主控制应用程序”。它是计算机开机时加载的第一个程序，其主要组件内核始终驻留在内存中。操作系统为在计算机中运行的所有应用程序（例如 网络 服务器）设置了标准。对于大多数用户界面和文件管理操作，应用程序与操作系统进行通信。 NIST SP 800-44 第 2 版
 - **解释**: 指管理硬件资源和软件应用的核心程序。ISC² 考试中，操作系统安全（包括补丁管理、访问控制和硬化措施）是关键知识点。
 
 ---
 
 ## 11. 超大数据包攻击
+Oversized Packet Attack - Purposely sending a network packet that is larger than expected or larger than can be handled by the receiving system, causing the receiving system to fail unexpectedly.
+
 - **原文**: 超大数据包攻击- 故意发送大于预期或大于接收系统可以处理的网络数据包，导致接收系统意外失败。
 - **解释**: 一种拒绝服务攻击，通过发送过大的数据包来使系统资源耗尽。ISC² 考试中，此类攻击作为网络安全和防护措施的案例被讨论。
 
 ---
 
 ## 12. 数据包
+Packet - Representation of data at Layer 3 of the Open Systems Interconnection (OSI) model.
+
 - **原文**: 数据包- 在开放系统互连 (OSI) 模型的第 3 层表示数据。
 - **解释**: 指网络中传输的数据单元，是理解网络协议和数据流的重要基础。ISC² 考试中，数据包分析与网络安全监控密切相关。
 
 ---
 
 ## 13. 补丁
+Patch - A software component that, when installed, directly modifies files or device settings related to a different software component without changing the version number or release details for the related software component. Source: ISO/IEC 19770-2
+
 - **原文**: 补丁- 一种软件组件，在安装时直接修改与不同软件组件相关的文件或设备设置，而不更改相关软件组件的版本号或发布详细信息。来源：ISO/IEC 19770-2
 - **解释**: 用于修复软件漏洞或改进功能的小程序。ISC² 考试中，补丁管理作为风险缓解的重要手段，要求考生理解其管理流程与重要性。
 
 ---
 
 ## 14. 补丁管理
+Patch Management - The systematic notification, identification, deployment, installation and verification of operating system and application software code revisions. These revisions are known as patches, hotfixes, and service packs. Source: CNSSI 4009
+
 - **原文**: 补丁管理- 操作系统和应用软件代码修订的系统通知、识别、部署、安装和验证。这些修订被称为补丁、热修复和服务包。来源：CNSSI 4009
 - **解释**: 指对软件补丁的整体管理流程，确保及时修复漏洞。ISC² 考试中，补丁管理是维护系统安全性的重要实践之一。
 
 ---
 
 ## 15. 有效负载
+Payload - The primary action of a malicious code attack.
+
 - **原文**: 有效负载- 恶意代码攻击的主要动作。
 - **解释**: 指恶意软件执行其破坏性操作的部分。ISC² 考试中，了解恶意软件有效负载有助于理解攻击意图和防御策略。
 
 ---
 
 ## 16. 支付卡行业数据安全标准 (PCI DSS)
+Payment Card Industry Data Security Standard (PCI DSS) - An information security standard administered by the Payment Card Industry Security Standards Council that applies to merchants and service providers who process credit or debit card transactions.
+
 - **原文**: 支付卡行业数据安全标准 (PCI DSS) - 由支付卡行业安全标准委员会管理的信息安全标准，适用于处理信用卡或借记卡交易的商家和服务提供商。
 - **解释**: 一套针对支付卡数据保护的安全标准。ISC² 考试中，合规性和数据保护标准（如 PCI DSS）是风险管理和安全治理的重要案例。
 
 ---
 
 ## 17. 个人身份信息 (PII)
+Personally Identifiable Information (PII) - The National Institute of Standards and Technology, known as NIST, in its Special Publication 800-122 defines PII as “any information about an individual maintained by an agency, including (1) any information that can be used to distinguish or trace an individual’s identity, such as name, Social Security number, date and place of birth, mother’s maiden name, or biometric records; and (2) any other information that is linked or linkable to an individual, such as medical, educational, financial and employment information.”
+
 - **原文**: 个人身份信息 (PII) - 美国国家标准与技术研究院 (NIST) 在其特别出版物 800-122 中将 PII 定义为“由机构维护的有关个人的任何信息，包括 (1) 任何可以使用的信息区分或追踪个人身份，例如姓名、社会安全号码、出生日期和地点、母亲的婚前姓名或生物特征记录； (2) 与个人相关的或可链接的任何其他信息，例如医疗、教育、财务和就业信息。”
 - **解释**: 指能够识别特定个人的信息。ISC² 考试中，PII 的保护是隐私和合规性策略的核心内容。
 
 ---
 
 ## 18. 物理控制
+Physical Controls - Controls implemented through a tangible mechanism. Examples include walls, fences, guards, locks, etc. In modern organizations, many physical control systems are linked to technical/logical systems, such as badge readers connected to door locks. Also known as Physical Access Controls.
+
 - **原文**: 物理控制- 通过有形机制实施的控制。示例包括墙壁、栅栏、警卫、锁等。在现代组织中，许多物理控制系统与技术/逻辑系统相关联，例如与门锁相连的徽章阅读器。也称为物理访问控制。
 - **解释**: 指使用物理手段保护资产不受未经授权访问。ISC² 考试中，物理控制是整体安全防护体系的一部分，与技术控制互补。
 
 ---
 
 ## 19. 明文
+Plaintext - A message or data in its natural format and in readable form; extremely vulnerable from a confidentiality perspective.
+
 - **原文**: 明文- 自然格式和可读形式的消息或数据；从机密性的角度来看非常脆弱。
 - **解释**: 指未经加密的、可直接读取的数据。ISC² 考试中，明文与密文概念常用于讨论加密技术和数据保护。
 
 ---
 
 ## 20. 平台即服务 (PaaS)
+Platform as a Service (PaaS) - The web-authoring or application development middleware environment that allows applications to be built in the cloud before they’re deployed as SaaS assets.
+
 - **原文**: 平台即服务 (PaaS) - 网络创作或应用程序开发中间件环境，允许在将应用程序部署为 SaaS 资产之前在云中构建它们。
 - **解释**: 一种云服务模式，提供应用开发所需的平台工具和环境。ISC² 考试中，理解 PaaS 的安全风险和共享责任模型是云安全的重要部分。
 
 ---
 
 ## 21. 隐私
+Privacy - The right of an individual to control the distribution of information about themselves.
+
 - **原文**: 隐私- 个人控制有关他们自己的信息的分发的权利。
 - **解释**: 指个体对其个人信息如何收集、使用和披露拥有决定权。ISC² 考试中，隐私法规（如 GDPR、HIPAA）和保护措施是重要考点。
 
 ---
 
 ## 22. 私有云
+Private Cloud - A cloud computing platform that is implemented within the corporate firewall, under the control of the IT department. A private cloud is designed to offer the same features and benefits of cloud systems but removes a number of objections to the cloud computing model, including control over enterprise and customer data, worries about security, and issues connected to regulatory compliance.
+
 - **原文**: 私有云- 在企业防火墙内实施的云计算平台，由 IT 部门控制。私有云旨在提供与云系统相同的功能和优势，但消除了对云计算模型的许多反对意见，包括对企业和客户数据的控制、对安全性的担忧以及与法规遵从性相关的问题。
 - **解释**: 指部署在组织内部的云平台，提供更高的安全性和数据控制。ISC² 考试中，私有云与公有云的比较及其安全性管理是云计算安全的重要话题。
 
 ---
 
 ## 23. 最小权限原则
+Principle of Least Privilege - The principle that users and programs should have only the minimum privileges necessary to complete their tasks. NIST SP 800-179
+
 - **原文**: 最小权限原则 - 用户和程序应仅具有完成其任务所需的最低权限的原则。来源：NIST SP 800-179
 - **解释**: 指只授予用户或程序完成任务所必需的最低权限，以减少潜在损害。ISC² 考试中，这是访问控制和风险管理的核心概念。
 
 ---
 
 ## 24. 特权帐户
+Privileged Account - An information system account with approved authorizations of a privileged user. NIST SP 800-53 Rev. 4
+
 - **原文**: 特权帐户- 具有特权用户批准授权的信息系统帐户。来源：NIST SP 800-53 修订版 4
 - **解释**: 指具有超常权限的账户，通常用于系统管理。ISC² 考试中，管理特权帐户和防止滥用是信息安全管理的重要考点。
 
 ---
 
 ## 25. 概率
+Probability - The chances, or likelihood, that a given threat is capable of exploiting a given vulnerability or a set of vulnerabilities. Source: NIST SP 800-30 Rev. 1
+
 - **原文**: 概率 - 给定威胁能够利用给定漏洞或一组漏洞的机会或概率。来源：NIST SP 800-30 Rev. 1
 - **解释**: 指漏洞被威胁利用的可能性，是风险评估中的关键量化指标。ISC² 考试中，概率与风险评估和风险管理紧密相关。
 
 ---
 
 ## 26. 受保护的健康信息 (PHI)
+Protected Health Information (PHI) - Information regarding health status, the provision of healthcare or payment for healthcare as defined in HIPAA (Health Insurance Portability and Accountability Act).
+
 - **原文**: 受保护的健康信息 (PHI) - 有关健康状况、医疗保健提供或 HIPAA（健康保险流通与责任法案）中定义的医疗保健支付的信息。
 - **解释**: 指受法律保护的健康相关数据。ISC² 考试中，PHI 的保护涉及隐私、合规性和数据安全策略。
 
 ---
 
 ## 27. 协议
+Protocols - A set of rules (formats and procedures) to implement and control some type of association (that is, communication) between systems. NIST SP 800-82 Rev. 2
+
 - **原文**: 协议- 一组规则（格式和程序），用于实现和控制系统之间某种类型的关联（即通信）。来源：NIST SP 800-82 修订版 2
 - **解释**: 指在系统间实现通信的标准规则，如 TCP/IP、SMTP 等。ISC² 考试中，协议安全性和漏洞防护是网络安全的基础知识。
 
 ---
 
 ## 28. 公共云
+Public Cloud - The cloud infrastructure is provisioned for open use by the general public. It may be owned, managed, and operated by a business, academic, or government organization, or some combination of them. It exists on the premises of the cloud provider. NIST SP 800-145
+
 - **原文**: 公共云——云基础设施是为公众开放使用而提供的。它可能由商业、学术或政府组织或它们的某种组合拥有、管理和运营。它存在于云提供商的场所。来源：NIST SP 800-145
 - **解释**: 指由第三方提供的、面向公众的云服务平台。ISC² 考试中，公共云的安全性、数据隔离和共享责任模型是重点讨论内容。
 
