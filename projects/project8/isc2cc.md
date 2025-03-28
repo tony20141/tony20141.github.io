@@ -919,312 +919,419 @@ Public Cloud - The cloud infrastructure is provisioned for open use by the gener
 ---
 
 ## 29. 定性风险分析
+Qualitative Risk Analysis: A method for risk analysis that is based on the assignment of a descriptor such as low, medium or high. Source: NISTIR 8286
+
 - **原文**: 定性风险分析- 一种风险分析方法，基于分配的描述符，例如低、中或高。来源：NISTIR 8286
 - **解释**: 指利用描述性等级（如低、中、高）评估风险的过程。ISC² 考试中，理解定性与定量风险分析的区别是风险管理的基础。
 
 ---
 
 ## 30. 定量风险分析
+Quantitative Risk Analysis - A method for risk analysis where numerical values are assigned to both impact and likelihood based on statistical probabilities and monetarized valuation of loss or gain. Source: NISTIR 8286
+
 - **原文**: 定量风险分析- 一种风险分析方法，其中基于统计概率和损失或收益的货币化估值将数值分配给影响和可能性。来源：NISTIR 8286
 - **解释**: 指通过量化评估风险影响和发生概率，以货币值表达风险。ISC² 考试中，这种方法帮助制定更精确的风险管理策略。
 
 ---
 
 ## 31. 勒索攻击
+Ransomware - A type of malicious software that locks the computer screen or files, thus preventing or limiting a user from accessing their system and data until money is paid.
+
 - **原文**: 勒索攻击- 一种锁定计算机屏幕或文件的恶意软件，从而阻止或限制用户在付款之前访问他们的系统和数据。
 - **解释**: 指利用恶意软件加密受害者数据，要求支付赎金以恢复访问的攻击。ISC² 考试中，勒索软件及其防护措施是当前威胁情景分析的重要案例。
 
 ---
 
 ## 32. 记录
+Records - The recordings (automated and/or manual) of evidence of activities performed or results achieved (e.g., forms, reports, test results), which serve as a basis for verifying that the organization and the information system are performing as intended. Also used to refer to units of related data fields (i.e., groups of data fields that can be accessed by a program and that contain the complete set of information on particular items). NIST SP 800-53 Rev. 4
+
 - **原文**: 记录——记录（自动和/或手动）执行的活动或取得的结果的证据（例如，表格、报告、测试结果），作为验证组织和信息系统是否按预期执行的基础。也用于指相关数据字段的单元（即，程序可以访问并包含特定项目的完整信息集的数据字段组）。来源：NIST SP 800-53 修订版 4
 - **解释**: 指用于证明和审计系统活动的文档或数据。ISC² 考试中，日志记录和证据保留是事件响应和取证的重要部分。
 
 ---
 
 ## 33. 记录保留
+Records Retention - A practice based on the records life cycle, according to which records are retained as long as necessary, and then are destroyed after the appropriate time interval has elapsed.
+
 - **原文**: 记录保留- 基于记录生命周期的一种做法，根据该做法，记录会在必要时保留，然后在适当的时间间隔过去后销毁。
 - **解释**: 指对记录进行系统化存储与定期销毁的管理方法，确保合规与审计要求。ISC² 考试中，记录保留政策是安全治理和合规的重要内容。
 
 ---
 
 ## 34. 剩磁
+Remanence - Residual information remaining on storage media after clearing. NIST SP 800-88 Rev. 1
+
 - **原文**: 剩磁 - 清除后残留在存储介质上的信息。来源：NIST SP 800-88 修订版 1
 - **解释**: 指数据删除后存储介质上残留的微量信息，可能被用于数据恢复。ISC² 考试中，了解剩磁问题有助于掌握数据销毁和媒体处置策略。
 
 ---
 
 ## 35. 变更请求 (RFC)
+Request for Change (RFC) - The first stage of change management, wherein a change in procedure or product is sought by a stakeholder.
+
 - **原文**: 变更请求 (RFC) - 变更管理的第一阶段，其中利益相关者寻求程序或产品的变更。
 - **解释**: 指在变更管理流程中，由利益相关者提交的初步变更建议。ISC² 考试中，变更管理流程是保障系统稳定性和安全的重要环节。
 
 ---
 
 ## 36. 风险
+Risk - A measure of the extent to which an entity is threatened by a potential circumstance or event.
+
 - **原文**: 风险- 可能对组织产生负面影响的事件。
 - **解释**: 指因威胁利用漏洞而对组织造成损害的可能性。ISC² 考试中，风险评估和风险管理是核心知识领域。
 
 ---
 
 ## 37. 风险接受
+Risk Acceptance - Determining that the potential benefits of a business function outweigh the possible risk impact/likelihood and performing that business function with no other action.
+
 - **原文**: 风险接受——确定业务功能的潜在收益超过可能的风险影响/可能性，并在不采取其他行动的情况下执行该业务功能。
 - **解释**: 指组织在评估风险后，决定接受风险而不采取进一步措施。ISC² 考试中，风险接受策略是风险处理选项之一。
 
 ---
 
 ## 38. 风险评估
+Risk Assessment - The process of identifying and analyzing risks to organizational operations (including mission, functions, image, or reputation), organizational assets, individuals and other organizations. The analysis performed as part of risk management which incorporates threat and vulnerability analyses and considers mitigations provided by security controls planned or in place.
+
 - **原文**: 风险评估——识别和分析组织运营（包括使命、职能、形象或声誉）、组织资产、个人和其他组织的风险的过程。作为风险管理的一部分执行的分析，其中包含威胁和漏洞分析，并考虑计划或到位的安全控制提供的缓解措施。
 - **解释**: 指通过分析威胁、漏洞及现有控制措施，评估风险水平的过程。ISC² 考试中，风险评估方法及其应用是管理安全风险的重要基础。
 
 ---
 
 ## 39. 风险规避
+Risk Avoidance - Determining that the impact and/or likelihood of a specific risk is too great to be offset by the potential benefits and not performing a certain business function because of that determination.
+
 - **原文**: 风险规避- 确定特定风险的影响和/或可能性太大而无法被潜在收益抵消，并且由于该确定而无法执行特定业务功能。
 - **解释**: 指因风险过高而决定停止某项业务或活动的策略。ISC² 考试中，风险规避是风险处理的常见策略之一。
 
 ---
 
 ## 40. 风险管理
+Risk Management - The process of identifying, evaluating and controlling threats, including all the phases of risk context (or frame), risk assessment, risk treatment and risk monitoring.
+
 - **原文**: 风险管理——识别、评估和控制威胁的过程，包括风险背景（或框架）、风险评估、风险处理和风险监控的所有阶段。
 - **解释**: 指全面管理组织风险的流程与方法。ISC² 考试中，风险管理框架和策略是核心知识领域。
 
 ---
 
 ## 41. 风险管理框架
+Risk Management Framework - A structured approach used to oversee and manage risk for an enterprise. Source: CNSSI 4009
+
 - **原文**: 风险管理框架- 用于监督和管理企业风险的结构化方法。来源：CNSSI 4009
 - **解释**: 指系统化的方法和流程，用以识别、评估和应对风险。ISC² 考试中，熟悉诸如 NIST RMF 等风险管理框架至关重要。
 
 ---
 
 ## 42. 风险缓解
+Risk Management Framework - A structured approach used to oversee and manage risk for an enterprise. Source: CNSSI 4009
+
 - **原文**: 风险缓解- 实施安全控制以减少特定风险的可能影响和/或可能性。
 - **解释**: 指通过实施控制措施来降低风险水平。ISC² 考试中，风险缓解策略与安全控制的选择和部署密切相关。
 
 ---
 
 ## 43. 风险容忍度
+Risk Tolerance - The level of risk an entity is willing to assume in order to achieve a potential desired result.
+
 - **原文**: 风险容忍度——实体为实现潜在预期结果而愿意承担的风险水平。资料来源：NIST SP 800-32。风险阈值、风险偏好和可接受的风险也是风险承受能力的同义词。
 - **解释**: 指组织愿意接受的风险水平。在 ISC² 考试中，风险容忍度是制定风险处理策略时的重要考量因素。
 
 ---
+Risk threshold, risk appetite and acceptable risk - are also terms used synonymously with risk tolerance.
+
+---
 
 ## 44. 风险转移
+
+Risk Transference - Paying an external party to accept the financial impact of a given risk.
+
+
 - **原文**: 风险转移——支付给外部方以接受给定风险的财务影响。
 - **解释**: 指通过保险或合同，将部分风险责任转嫁给第三方。ISC² 考试中，风险转移策略是风险处理方案的重要组成部分。
 
 ---
 
 ## 45. 风险处理
+Risk Treatment - The determination of the best way to address an identified risk.
+
+
 - **原文**: 风险处理- 确定解决已识别风险的最佳方法。
 - **解释**: 指选择并实施最合适的风险应对策略（避免、接受、缓解或转移）。ISC² 考试中，这一过程贯穿整个风险管理框架。
 
 ---
 
 ## 46. 基于角色的访问控制 (RBAC)
+Role-Based Access Control (RBAC) - An access control system that sets up user permissions based on roles.
+
 - **原文**: 基于角色的访问控制 (RBAC) - 一种基于角色设置用户权限的访问控制系统。
 - **解释**: 指通过预定义的角色来分配访问权限，有效减少权限滥用。ISC² 考试中，RBAC 是最常见的访问控制模型之一。
 
 ---
 
 ## 47. 规则
+Rule - An instruction developed to allow or deny access to a system by comparing the validated identity of the subject to an access control list.
+
 - **原文**: 规则- 通过将主体的验证身份与访问控制列表进行比较来允许或拒绝访问系统的指令。
 - **解释**: 指定义访问决策的具体条件和准则。ISC² 考试中，理解如何制定和实施规则对构建有效访问控制体系至关重要。
 
 ---
 
 ## 48. 安全控制
+Security Controls - The management, operational and technical controls (i.e., safeguards or countermeasures) prescribed for an information system to protect the confidentiality, integrity and availability of the system and its information. Source: FIPS PUB 199
+
 - **原文**: 安全控制——为信息系统规定的管理、操作和技术控制（即保障措施或对策），以保护系统及其信息的机密性、完整性和可用性。资料来源：FIPS PUB 199
 - **解释**: 指各种用以保护信息系统免受威胁的措施。ISC² 考试中，安全控制的分类（管理、技术、物理）及其实施是核心考点。
 
 ---
 
 ## 49. 安全治理
+Security Governance - The entirety of the policies, roles and processes the organization uses to make security decisions in an organization.
+
 - **原文**: 安全治理- 组织用于在组织中做出安全决策的全部策略、角色和流程。
 - **解释**: 指指导和管理安全决策的整体框架。ISC² 考试中，安全治理与风险管理、合规性和战略规划密不可分。
 
 ---
 
 ## 50. 安全运营中心
+Security Operations Center - A centralized organizational function fulfilled by an information security team that monitors, detects and analyzes events on the network or system to prevent and resolve issues before they result in business disruptions.
+
 - **原文**: 安全运营中心- 由信息安全团队履行的集中式组织职能，负责监控、检测和分析网络或系统上的事件，以在问题导致业务中断之前预防和解决问题。
 - **解释**: 指专门负责监控和响应安全事件的中心。ISC² 考试中，SOC 的构建和运营策略是事件响应和持续监控的重要组成部分。
 
 ---
 
 ## 51. 职责分离
+Segregation of Duties - The practice of ensuring that an organizational process cannot be completed by a single person; forces collusion as a means to reduce insider threats. Also commonly known as Separation of Duties.
+
 - **原文**: 职责分离——确保组织过程不能由一个人完成的做法；强制勾结作为减少内部威胁的一种手段。也通常称为职责分离。
 - **解释**: 指将关键职责分配给不同人员，以防止滥用权限和内部欺诈。ISC² 考试中，职责分离是内部控制和治理的重要原则。
 
 ---
 
 ## 52. 敏感度
+Sensitivity - A measure of the importance assigned to information by its owner, for the purpose of denoting its need for protection. Source: NIST SP 800-60 Vol 1 Rev 1
+
 - **原文**: 敏感度- 衡量其所有者赋予信息的重要性的指标，目的是表明其需要保护。资料来源：NIST SP 800-60 Vol 1 Rev 1
 - **解释**: 指信息的重要性和保密需求程度。ISC² 考试中，信息分类和敏感度评估是制定保护策略的基础。
 
 ---
 
 ## 53. 简单邮件传输协议 (SMTP)
+Sensitivity - A measure of the importance assigned to information by its owner, for the purpose of denoting its need for protection. Source: NIST SP 800-60 Vol 1 Rev 1
+
 - **原文**: 简单邮件传输协议 (SMTP) - 用于在发件人和收件人之间发送和接收电子邮件的标准通信协议。
 - **解释**: 指电子邮件传输的标准协议。ISC² 考试中，SMTP 相关的安全问题（如邮件伪造）是网络安全讨论的一部分。
 
 ---
 
 ## 54. 单因素身份验证
+Single-Factor Authentication - Use of just one of the three available factors (something you know, something you have, something you are) to carry out the authentication process being requested.  
+
 - **原文**: 单因素身份验证- 仅使用三个可用因素之一（您知道的东西、您拥有的东西、您是的东西）来执行所请求的身份验证过程。
 - **解释**: 指仅依赖单一认证方式进行身份验证，安全性较低。ISC² 考试中，通常推荐多因素认证以提高安全性。
 
 ---
 
 ## 55. 社会工程
+Social Engineering - Tactics to infiltrate systems via email, phone, text, or social media, often impersonating a person or agency in authority or offering a gift. A low-tech method would be simply following someone into a secure building. 
+
 - **原文**: 社会工程——通过电子邮件、电话、短信或社交媒体渗透系统的策略，通常冒充权威人士或机构或提供礼物。一种低技术含量的方法是简单地跟随某人进入一个安全的建筑物。
 - **解释**: 指利用心理操控诱使用户泄露敏感信息或执行不安全操作的技术。ISC² 考试中，社会工程是讨论人因安全和安全意识培训的重要主题。
 
 ---
 
 ## 56. 软件
-- **原文**: 软件- 可以在执行期间动态写入或修改的计算机程序和相关数据。来源：NIST SP 80-37 修订版 2
-- **解释**: 指构成计算机应用的程序和数据。ISC² 考试中，软件安全（如漏洞、补丁管理）是保障系统完整性的基础。
+Software - Computer programs and associated data that may be dynamically written or modified during execution. NIST SP 80-37 Rev. 2
 
 ---
 
 ## 57. 软件即服务 (SaaS)
+Software as a Service (SaaS) - The cloud customer uses the cloud provider’s applications running within a cloud infrastructure. The applications are accessible from various client devices through either a thin client interface, such as a web browser or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings. Derived from NIST 800-145
+
 - **原文**: 软件即服务 (SaaS) - 云客户使用在云基础架构中运行的云提供商的应用程序。这些应用程序可以通过诸如网络浏览器之类的瘦客户端界面或程序界面从各种客户端设备访问。消费者不管理或控制底层云基础设施，包括网络、服务器、操作系统、存储，甚至单个应用程序功能，但有限的用户特定应用程序配置设置可能除外。源自 NIST 800-145
 - **解释**: 指基于云的应用程序服务模式，用户无需管理底层硬件。ISC² 考试中，SaaS 的安全模型和共享责任划分是云安全的核心内容。
 
 ---
 
 ## 58. 欺骗
+Spoofing - Faking the sending address of a transmission to gain illegal entry into a secure system. CNSSI 4009-2015
+
 - **原文**: 欺骗- 伪造传输的发送地址以非法进入安全系统。CNSSI 4009-2015
 - **解释**: 指通过伪造身份信息进入系统的攻击技术，如 IP 欺骗。ISC² 考试中，欺骗攻击的防范与检测是网络安全的重要内容。
 
 ---
 
 ## 59. 状态
+State - The condition an entity is in at a point in time.
+
 - **原文**: 状态- 实体在某个时间点所处的状态。
 - **解释**: 指系统或会话在特定时刻的配置和条件。ISC² 考试中，状态管理与会话控制密切相关，是系统安全维护的一部分。
 
 ---
 
-## 60. 主题
+## 60. 
+Subject - Generally an individual, process or device causing information to flow among objects or change to the system state. Source: NIST SP800-53 R4
+
 - **原文**: 主题- 通常是导致信息在客体之间流动或改变系统状态的个人、过程或设备。来源：NIST SP800-53 R4
 - **解释**: 指在访问控制中执行操作的主体（用户或进程）。ISC² 考试中，主体与对象的关系是理解访问控制模型的重要概念。
 
 ---
 
 ## 61. 对称加密
+Symmetric Encryption - An algorithm that uses the same key in both the encryption and the decryption processes.
+
 - **原文**: 对称加密- 在加密和解密过程中使用相同密钥的算法。
 - **解释**: 指使用同一密钥进行加密和解密的加密方法。ISC² 考试中，对称加密（如 AES）是加密技术的基础知识。
 
 ---
 
 ## 62. 系统完整性
+System Integrity - The quality that a system has when it performs its intended function in an unimpaired manner, free from unauthorized manipulation of the system, whether intentional or accidental. Source: NIST SP 800-27 Rev. A
+
 - **原文**: 系统完整性——系统以不受损害的方式执行其预期功能时所具有的质量，不受未经授权的系统操纵，无论是有意还是无意。来源：NIST SP 800-27 Rev. A 
 - **解释**: 指系统在正常运行中保持数据和功能不被篡改。ISC² 考试中，确保系统完整性是维护 CIA 三要素的核心部分。
 
 ---
 
 ## 63. 技术控制
+Technical Controls: The security controls (i.e., safeguards or countermeasures) for an information system that are primarily implemented and executed by the information system through mechanisms contained in the hardware, software or firmware components of the system.
+
 - **原文**: 技术控制- 主要由信息系统通过包含在系统的硬件、软件或固件组件中的机制实施和执行的信息系统的安全控制（即保护措施或对策）。
 - **解释**: 指依靠技术手段（如防火墙、加密、入侵检测系统）实现的安全控制。ISC² 考试中，技术控制在构建纵深防御和风险缓解策略中起关键作用。
 
 ---
 
 ## 64. 威胁
+Threat - Any circumstance or event with the potential to adversely impact organizational operations (including mission, functions, image or reputation), organizational assets, individuals, other organizations or the nation through an information system via unauthorized access, destruction, disclosure, modification of information and/or denial of service. Source: NIST SP 800-30 Rev 1
+
 - **原文**: 威胁- 任何可能通过未经授权的访问、破坏、披露、修改信息而通过信息系统对组织运营（包括使命、职能、形象或声誉）、组织资产、个人、其他组织或国家产生不利影响的情况或事件和/或拒绝服务。来源：NIST SP 800-30 Rev 1
 - **解释**: 指可能利用漏洞对组织造成损害的潜在事件。ISC² 考试中，威胁分析是风险评估和安全设计的基础。
 
 ---
 
 ## 65. 威胁行为者
+Threat Actor - An individual or a group that attempts to exploit vulnerabilities to cause or force a threat to occur.
+
 - **原文**: 威胁行为者 - 试图利用漏洞导致或迫使威胁发生的个人或团体。
 - **解释**: 指实施攻击或破坏行为的人员或组织。ISC² 考试中，识别威胁行为者有助于制定针对性的防御措施。
 
 ---
 
 ## 66. 威胁向量
+Threat Vector - The means by which a threat actor carries out their objectives.
+
 - **原文**: 威胁向量- 威胁行为者执行其目标的手段。
 - **解释**: 指攻击者利用漏洞进入系统的路径或方式。ISC² 考试中，理解各种威胁向量（如网络钓鱼、恶意软件）是安全防护的重要内容。
 
 ---
 
 ## 67. 令牌
+Token - A physical object a user possesses and controls that is used to authenticate the user’s identity. NISTIR 7711
+
 - **原文**: 令牌- 用户拥有和控制的用于验证用户身份的物理对象。尼斯蒂尔 7711
 - **解释**: 指作为认证手段的硬件或软件令牌，用于提供额外的身份验证。ISC² 考试中，多因素认证中常见令牌的使用是关键知识点。
 
 ---
 
 ## 68. 传输控制协议/互联网协议 (TCP/IP) 模型
+Token - A physical object a user possesses and controls that is used to authenticate the user’s identity. NISTIR 7711
+
 - **原文**: 传输控制协议/互联网协议 (TCP/IP) 模型- 由 IETF 创建的互联网协议模型，它指定了四层功能：链路层（物理通信）、互联网层（网络到网络通信）、传输层（基本主机之间连接和无连接数据交换的通道）和应用层，其他协议和用户应用程序在此使用网络服务。
 - **解释**: 指构成互联网通信基础的协议模型。ISC² 考试中，TCP/IP 模型及其安全性（如端口安全、协议漏洞）是网络安全的基础知识。
 
 ---
 
 ## 69. 旋转门
+Turnstile - A one-way spinning door or barrier that allows only one person at a time to enter a building or pass through an area.
+
 - **原文**: 旋转门- 一种单向旋转门或屏障，一次只允许一个人进入建筑物或通过一个区域。
 - **解释**: 指用于控制人员物理出入的安全装置。ISC² 考试中，旋转门属于物理安全控制的一部分，强调访问控制和物理隔离。
 
 ---
 
 ## 70. Unix
+Turnstile - A one-way spinning door or barrier that allows only one person at a time to enter a building or pass through an area.
+
 - **原文**: Unix - 用于软件开发的操作系统。
 - **解释**: 指一类多用户、多任务的操作系统，广泛应用于服务器和开发环境。ISC² 考试中，Unix/Linux 的安全配置和管理是常见考点。
 
 ---
 
 ## 71. 用户配置
+User Provisioning - The process of creating, maintaining and deactivating user identities on a system.
+
 - **原文**: 用户配置- 在系统上创建、维护和停用用户身份的过程。
 - **解释**: 指对用户账户的管理，包括创建、更新和删除账户。ISC² 考试中，用户配置和身份管理是确保访问控制安全的基本措施。
 
 ---
 
 ## 72. 虚拟局域网 (VLAN)
+Virtual Local Area Network (VLAN) - A logical group of workstations, servers, and network devices that appear to be on the same LAN despite their geographical distribution.
+
 - **原文**: 虚拟局域网 (VLAN) - 工作站、服务器和网络设备的逻辑组，尽管它们的地理分布似乎在同一个 LAN 上。
 - **解释**: 指通过逻辑分组实现网络隔离与安全控制的技术。ISC² 考试中，VLAN 技术常用于网络分段和防止横向移动攻击。
 
 ---
 
 ## 73. 虚拟专用网络 (VPN)
+Virtual Private Network (VPN) - A virtual private network, built on top of existing networks, that can provide a secure communications mechanism for transmission between networks.
+
 - **原文**: 虚拟专用网络 (VPN) - 建立在现有网络之上的虚拟专用网络，可为网络之间的传输提供安全的通信机制。
 - **解释**: 指通过加密隧道实现安全远程连接的技术。ISC² 考试中，VPN 的工作原理及其安全配置是网络安全的重要组成部分。
 
 ---
 
 ## 74. 漏洞
+Vulnerability - Weakness in an information system, system security procedures, internal controls or implementation that could be exploited by a threat source. Source: NIST SP 800-128
+
 - **原文**: 漏洞- 信息系统、系统安全程序、内部控制或实施中可能被威胁源利用的弱点。资料来源：NIST SP 800-128
 - **解释**: 指系统或应用程序中的缺陷，可能被攻击者利用。ISC² 考试中，漏洞管理和修复流程是风险缓解和安全评估的重要部分。
 
 ---
 
 ## 75. 网络服务器
+Web Server - A computer that provides World Wide Web (WWW) services on the Internet. It includes the hardware, operating system, Web server software, and Web site content (Web pages). If the Web server is used internally and not by the public, it may be known as an “intranet server.” NIST SP 800-44 Version 2
+
 - **原文**: 网络服务器- 在 互联网上提供万维网 (WWW) 服务的计算机。它包括硬件、操作系统、网络服务器软件和网站内容（网页）。如果 网络服务器在内部使用而不是由公众使用，则它可能被称为“内部网服务器”。来源：NIST SP 800-44 第 2 版
 - **解释**: 指提供 Web 服务的服务器，其安全配置和管理是确保外部攻击防范的重要内容。ISC² 考试中，网络服务器的硬化和防护措施是常见考点。
 
 ---
 
 ## 76. 捕鲸攻击
+Whaling Attack - Phishing attacks that attempt to trick highly placed officials or private individuals with sizable assets into authorizing large fund wire transfers to previously unknown entities.
+
 - **原文**: 捕鲸攻击- 网络钓鱼攻击，试图诱骗拥有大量资产的高级官员或私人授权向以前未知的实体进行大笔资金电汇。
 - **解释**: 指针对高层管理人员的精心设计的钓鱼攻击，目标是窃取敏感信息或资金。ISC² 考试中，捕鲸攻击属于社会工程和钓鱼攻击的高级案例。
 
 ---
 
 ## 77. 无线局域网 (WLAN)
+Wireless Area Network (WLAN) - A group of computers and devices that are located in the same vicinity, forming a network based on radio transmissions rather than wired connections. A Wi-Fi network is a type of WLAN.
+
 - **原文**: 无线局域网 (WLAN) - 一组位于同一附近的计算机和设备，形成基于无线电传输而非有线连接的网络。Wi-Fi 网络是 WLAN 的一种。
 - **解释**: 指利用无线技术构建的局域网络。ISC² 考试中，无线网络的加密、认证和隔离措施是网络安全的重要内容。
 
 ---
 
 ## 78. Zenmap
+Zenmap - The graphical user interface (GUI) for the Nmap Security Scanner, an open-source application that scans networks to determine everything that is connected as well as other information.
+
 - **原文**: Zenmap - 安全扫描工具的图形用户界面 (GUI)，这是一个开源应用程序，可扫描网络以确定连接的所有内容以及其他信息。
 - **解释**: 指 Nmap 的图形界面，用于网络发现和漏洞扫描。ISC² 考试中，了解网络扫描工具有助于理解安全评估和渗透测试方法。
 
 ---
 
 ## 79. 0 Day漏洞
+Zero Day - A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.
+
 - **原文**: 漏洞漏洞 - 一个以前未知的系统漏洞，具有被利用的潜力，没有被检测或预防的风险，因为它通常不符合公认的模式、签名或方法。
 - **解释**: 指零日漏洞，即在公开前未被发现或修补的安全缺陷。ISC² 考试中，零日漏洞是讨论新兴威胁和漏洞管理的重要案例。
 
 ---
 
 ## 80. 零信任
+Zero Trust - Removing the design belief that the network has any trusted space. Security is managed at each possible level, representing the most granular asset. Microsegmentation of workloads is a tool of the model.
+
 - **原文**: 零信任 - 消除网络具有任何可信空间的设计信念。安全性在每个可能的级别进行管理，代表最细粒度的资产。工作负载的微分段是该模型的一个工具。
 - **解释**: 指在没有默认信任的前提下，对所有请求进行严格验证的安全模型。ISC² 考试中，零信任理念及其实施（如微分段）是当前网络安全架构的重要趋势。
 
