@@ -5374,8 +5374,4 @@ C. Port 22
         *   端口 21 用于 FTP 控制连接。
         *   端口 23 用于 Telnet。
 
-<<<<<<< Updated upstream
 ---
-=======
----
->>>>>>> Stashed changes
