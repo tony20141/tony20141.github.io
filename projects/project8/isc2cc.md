@@ -1342,10 +1342,12 @@ Zero Trust - Removing the design belief that the network has any trusted space. 
 ## 81. HIDS
  a Host-based Intrusion Detection System (HIDS) 基于主机的入侵检测系统 (HIDS) 
 
+
 # Question
 
-Okay, I will now provide the answers and explanations for questions 1 through 14, including the original question in English and using Markdown formatting as requested.
+---
 
+# Test 1
 ---
 
 **1.**
@@ -1411,18 +1413,19 @@ A network engineer is tasked with setting up secure communication for a company'
 A. Application layer
 B. Transport layer
 C. Internet layer
+D. Network Interface layer
 ```
 
 **Answer:**
 
-B. Transport layer
+A. Application layer
 
 **Explanation:**
 
 *   **English:** Transport Layer Security (TLS), and its predecessor SSL, are cryptographic protocols designed to provide secure communication over a computer network. While application protocols like SMTP (for email) operate at the Application Layer, TLS operates logically *between* the Application Layer and the Transport Layer (typically TCP). It uses the services of the Transport Layer (like TCP's reliable connection) to establish a secure session. During the setup (handshake), TLS negotiates encryption algorithms and keys. Once established, it encrypts the data received from the Application Layer *before* it's passed down to the Transport Layer for segmentation and transmission. Therefore, when implementing TLS to secure email traffic (which uses Application Layer protocols like SMTP, IMAP, POP3), the engineer focuses on configuring it to work *on top of* the Transport Layer connections (e.g., specifying TLS for certain TCP ports like 465 for SMTPS or using STARTTLS command after an initial connection on standard ports). The security is applied to the transport of the application data.
 
 *   **Chinese (中文):**
-    *   **答案:** B. 传输层 (Transport layer)
+    *   **答案:** A. 传输层 (Transport layer)
     *   **解释:** 传输层安全性协议 (TLS) 及其前身 SSL 是设计用于在计算机网络上提供安全通信的加密协议。虽然像 SMTP（用于电子邮件）这样的应用协议在应用层运行，但 TLS 在逻辑上运行于应用层和传输层（通常是 TCP）*之间*。它利用传输层提供的服务（如 TCP 的可靠连接）来建立安全会话。在建立连接（握手）期间，TLS 协商加密算法和密钥。一旦建立，它会在将从应用层接收到的数据传递给传输层进行分段和传输*之前*对其进行加密。因此，在实施 TLS 以保护电子邮件流量（使用如 SMTP、IMAP、POP3 等应用层协议）时，工程师的重点是配置它在传输层连接*之上*工作（例如，为特定的 TCP 端口如 SMTPS 的 465 端口指定 TLS，或在标准端口上建立初始连接后使用 STARTTLS 命令）。安全性是应用于应用数据的传输过程。
 
 ---
@@ -1673,6 +1676,7 @@ An organization assesses the risk of unauthorized access to its confidential fil
 A. Risk transference
 B. Risk avoidance
 C. Risk mitigation
+D. Risk acceptance
 ```
 
 **Answer:**
