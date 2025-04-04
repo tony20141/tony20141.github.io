@@ -1757,7 +1757,6 @@ B. Overwriting data on the devices with random data multiple times
 
 ---
 
-Okay, here is the answer and explanation for your fifteenth question, formatted as requested.
 
 ---
 
@@ -1784,7 +1783,7 @@ B. Provide the migration team access only to the specific data required for the 
     *   **解释:** 最小权限原则规定，用户、进程或系统只应被授予执行其所需任务所必需的最低级别的访问权限（权限）。在电子邮件迁移中，团队需要访问权限以从旧系统读取数据并将其写入新系统。授予他们“对所有用户帐户的完全访问权限”(A) 或完全的“管理权限”(D) 是过度的，提供的权限远远超出了迁移任务本身所需的范围，如果这些凭据被泄露或滥用，会增加风险。只读访问权限 (C) 可能不足够，因为迁移通常涉及向新系统写入数据。因此，*仅*提供对迁移所需的特定数据和功能的访问权限（例如，邮箱导入/导出功能、对相关邮箱数据的访问权限）是最小权限原则的正确应用。这最大限度地减少了涉及迁移团队帐户的错误或安全事件的潜在影响。
 
 ---
-Okay, here is the answer and explanation for your sixteenth question, formatted as requested.
+
 
 ---
 
@@ -1819,7 +1818,7 @@ A. Upgrade to electronic locks with audit trail capability.
     因此，与现有的标准钥匙相比，将锁系统升级为带审计功能的电子锁是控制和监控高安全性区域访问的最直接、最有效的增强措施。
 
 ---
-Okay, here is the answer and explanation for your seventeenth question, formatted as requested.
+
 
 ---
 
@@ -1854,7 +1853,7 @@ B. Connect the alarm system to a 24/7 monitoring service.
     因此，连接到专业的监控服务是确保对警报触发做出即时和适当反应的最可靠方法。
 
 ---
-Okay, here is the answer and explanation for your eighteenth question, formatted as requested.
+
 
 ---
 
@@ -1887,7 +1886,7 @@ C. By generating a unique hash value that can be compared before and after trans
         *   用于完整性验证的标准哈希不需要共享密钥 (D)；那描述的是像 HMAC（基于哈希的消息认证码）这样的技术，它除了提供完整性之外还提供身份验证。
 
 ---
-Okay, here is the answer and explanation for your nineteenth question, formatted as requested.
+
 
 ---
 
@@ -1920,7 +1919,7 @@ B. It prevents the installation of software that could introduce security risks.
         *   审查旨在验证供应商声誉和软件完整性，但不能绝对*保证* (D) 所有软件都无风险或来自完全信誉良好的来源；主要目标是识别和阻止已知或可能的风险。
 
 ---
-Okay, here is the answer and explanation for your twentieth question, formatted as requested.
+
 
 ---
 
@@ -1956,7 +1955,15 @@ C. Trojan Horse
 
 ---
 
-Okay, here is the answer and explanation for your twenty-second question, formatted as requested.
+**21.**
+
+A company's BYOD policy includes a provision that all devices must have up-to-date antivirus software. What is the main security benefit of this requirement? 
+A. It ensures devices run more efficiently.
+B. It helps prevent malware from compromising company data on personal devices.
+C. It allows employees to use their devices without restrictions.
+D. It simplifies the IT department's workload. 
+
+B. Requiring up-to-date antivirus software on personal devices helps prevent malware infections that could compromise company data stored or accessed on those devices. Option A (It ensures devices run more efficiently) is incorrect as the primary goal is security, not efficiency. Option C (It allows employees to use their devices without restrictions) is not true because the policy enforces restrictions for security reasons. Option D (It simplifies the IT department's workload) is not the main focus, as the policy aims to protect company data.
 
 ---
 
@@ -2000,7 +2007,7 @@ A. Provide consumers with the option to opt-out of the sale of their personal da
 
 ---
 
-Okay, here is the answer and explanation for your twenty-third question, formatted as requested.
+
 
 ---
 
@@ -2028,7 +2035,7 @@ B. Disaster recovery plan
     因此，该描述直接符合灾难恢复计划的目的。
 
 ---
-Okay, here is the answer and explanation for your twenty-fourth question, formatted as requested.
+
 
 ---
 
@@ -2047,7 +2054,7 @@ D. Ransomware
 B. Man-in-the-Middle (MITM)
 
 ---
-Okay, here is the answer and explanation for your twenty-fifth question, formatted as requested.
+
 
 ---
 
@@ -2080,7 +2087,7 @@ A. Malware Beaconing
         *   社会工程 (D) 是一种诱骗用户破坏安全（例如安装恶意软件）的方法，但它不是持续进行的连接活动本身。
 
 ---
-Okay, here is the answer and explanation for your twenty-sixth question, formatted as requested.
+
 
 ---
 
@@ -2114,7 +2121,7 @@ B. It allows for collective decision-making to evaluate the potential impacts of
 
 ---
 
-Okay, here is the answer and explanation for your twenty-seventh question, formatted as requested.
+
 
 ---
 
@@ -2147,7 +2154,7 @@ B. Securing data transfers between cloud and on-premises systems
         *   根据定义，混合模型并*不*完全依赖公有云 (D)；它集成了公有和私有资源。
 
 ---
-Okay, here is the answer and explanation for your twenty-eighth question, formatted as requested.
+
 
 ---
 
@@ -2182,7 +2189,7 @@ A. Application performance metrics
     虽然 SLA 的所有部分都很重要，但性能指标部分直接满足了公司定义和强制执行性能标准的需求。
 
 ---
-Okay, here is the answer and explanation for your twenty-ninth question, formatted as requested.
+
 
 ---
 
@@ -2218,7 +2225,7 @@ A. Use encrypted USB drives for storing sensitive information
 
 ---
 
-Okay, here is the answer and explanation for your thirtieth question, formatted as requested.
+
 
 ---
 
