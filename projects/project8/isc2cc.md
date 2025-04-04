@@ -2899,7 +2899,7 @@ D. The DAC model does not allow specific access control.
 Option A is correct because, under DAC, the file owner is responsible for assigning permissions, and it is likely that the owner mistakenly granted access to the wrong users. This highlights a potential risk of DAC, where the owner's decisions can lead to unintended access. Option B (B) is incorrect as DAC allows for specific access control and does not default to all users. Option C (C) suggests a security breach which is less likely in this context without further evidence. Option D (D) is incorrect because DAC specifically allows owners to control access permissions.
 
 ---
-53. An organization wants to prevent external attacks from reaching its internal network while allowing necessary outbound traffic. Which type of firewall rule is most appropriate for this scenario?
+**53.** An organization wants to prevent external attacks from reaching its internal network while allowing necessary outbound traffic. Which type of firewall rule is most appropriate for this scenario?
 
  
 
@@ -2919,7 +2919,7 @@ The correct answer is B. Outbound allow, inbound block. This rule configuration 
 
  
 
-54. A healthcare organization needs to implement an authentication system for its electronic medical records (EMR) system. The system must comply with strict regulatory requirements for user authentication. Which of the following is the most appropriate solution?
+**54.** A healthcare organization needs to implement an authentication system for its electronic medical records (EMR) system. The system must comply with strict regulatory requirements for user authentication. Which of the following is the most appropriate solution?
 
  
 
@@ -2939,7 +2939,7 @@ Requiring a smart card in addition to a password provides two-factor authenticat
 
  
 
-55. A company’s security policy requires employees to change their passwords every three months. During security awareness training, what reason is given for this policy?
+**55.** A company’s security policy requires employees to change their passwords every three months. During security awareness training, what reason is given for this policy?
 
  
 
