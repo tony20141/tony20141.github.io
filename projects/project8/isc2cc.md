@@ -3045,7 +3045,7 @@ Using dehumidifiers (B) helps maintain appropriate humidity levels, preventing c
 
 A. Allow researchers to freely assign access levels to their own data.
 
-B. Define access levels based on roles and job functions, enforced by the system.
+**B. Define access levels based on roles and job functions, enforced by the system.**
 
 C. Enable a committee to review and approve access requests on a case-by-case basis.
 
@@ -3065,7 +3065,7 @@ Option B is correct because it aligns with MAC principles by defining and enforc
 
 A. To protect intellectual property and trade secrets
 
-B. To ensure continuity of production and avoid downtime
+**B. To ensure continuity of production and avoid downtime**
 
 C. To comply with industry standards for data protection
 
@@ -3085,7 +3085,7 @@ For a manufacturing company, the primary importance of a disaster recovery plan 
 
 A. Man-in-the-Middle (MITM)
 
-B. SYN Flood
+**B. SYN Flood**
 
 C. SQL Injection
 
@@ -3105,7 +3105,7 @@ The correct answer is B. SYN Flood. The NIDS alert indicating numerous SYN packe
 
 A. Use a centralized logging system to monitor server activities.
 
-B. Apply standard security templates through automated deployment scripts.
+**B. Apply standard security templates through automated deployment scripts.**
 
 C. Set up network-based firewalls to protect each server.
 
@@ -3125,7 +3125,7 @@ The correct answer is B. Applying standard security templates through automated 
 
 A. Malware
 
-B. Port Scanning
+**B. Port Scanning**
 
 C. Phishing
 
@@ -3145,7 +3145,7 @@ The correct answer is B. Port Scanning. This scenario describes a situation wher
 
 A. The color scheme of the SaaS application
 
-B. Data residency and regulatory compliance
+**B. Data residency and regulatory compliance**
 
 C. Integration capabilities with social media
 
@@ -3165,7 +3165,7 @@ Verifying data residency and regulatory compliance (B) with the SaaS provider en
 
 A. Immediately apply the patch to all systems without testing.
 
-B. Assess the impact of the vulnerability and test the patch in a controlled environment.
+**B. Assess the impact of the vulnerability and test the patch in a controlled environment.**
 
 C. Wait for confirmation from other organizations that the patch is stable.
 
@@ -3187,7 +3187,7 @@ A. Add the file to the antivirus exclusion list
 
 B. Delete the file immediately
 
-C. Contact the antivirus vendor for further analysis
+**C. Contact the antivirus vendor for further analysis**
 
 D. Disable the antivirus to prevent false alerts
 
@@ -3205,7 +3205,7 @@ A. Subnetting
 
 B. NAT (Network Address Translation)
 
-C. IP forwarding
+**C. IP forwarding**
 
 D. DHCP (Dynamic Host Configuration Protocol)
 
@@ -3225,7 +3225,7 @@ B. Conducting daily reconciliations and audits
 
 C. Encrypting the transaction records
 
-D. Utilizing a blockchain-based ledger for transactions
+**D. Utilizing a blockchain-based ledger for transactions**
 
  
 
