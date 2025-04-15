@@ -3247,7 +3247,7 @@ A. File Integrity Monitoring (FIM).
 
 B. Antivirus software.
 
-C. Group Policy to restrict software installation.
+**C. Group Policy to restrict software installation.**
 
 D. Regular software audits.
 
@@ -3265,7 +3265,7 @@ Implementing Group Policy to restrict software installation (C) is a technical c
 
 A. To meet legal obligations for patient data protection
 
-B. To quickly restore access to critical healthcare systems
+**B. To quickly restore access to critical healthcare systems**
 
 C. To enhance the hospital's cybersecurity posture
 
@@ -3287,7 +3287,7 @@ A. Application layer
 
 B. Transport layer
 
-C. Internet layer
+**C. Internet layer**
 
 D. Network Interface layer
 
@@ -3307,7 +3307,7 @@ A. Cross-Site Scripting (XSS)
 
 B. SQL Injection
 
-C. Man-in-the-Browser Attack
+**C. Man-in-the-Browser Attack**
 
 D. Buffer Overflow
 
@@ -3323,7 +3323,7 @@ The correct answer is C. Man-in-the-Browser Attack. This scenario represents a t
 
  
 
-A. Install a fire suppression system in the server room.
+**A. Install a fire suppression system in the server room.**
 
 B. Use multifactor authentication for server access.
 
@@ -3347,7 +3347,7 @@ A. Increased vulnerability to zero-day exploits
 
 B. Reduced performance of the antivirus software
 
-C. Potential exposure to new malware threats
+**C. Potential exposure to new malware threats**
 
 D. Inability to detect hardware failures
 
@@ -3363,7 +3363,7 @@ The correct answer is C. Potential exposure to new malware threats. Outdated ant
 
  
 
-A. Establishing a baseline configuration and regularly auditing for changes.
+**A. Establishing a baseline configuration and regularly auditing for changes.**
 
 B. Implementing a robust firewall policy to block unauthorized access.
 
@@ -3385,7 +3385,7 @@ The correct answer is A. Establishing a baseline configuration and regularly aud
 
 A. Grant read access to everyone in the team.
 
-B. Give read access specifically to the colleague.
+**B. Give read access specifically to the colleague.**
 
 C. Assign full control to the colleague and remove Alice's own access.
 
