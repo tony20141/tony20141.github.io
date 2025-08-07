@@ -376,6 +376,20 @@ Correct Answer: D
 
 ***
 
+### Question #63
+**What is the difference regarding reliability and communication type between TCP and UDP?**
+
+- **A.** TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol.  
+- **B.** TCP is not reliable and is a connectionless protocol; UDP is reliable and is a connection-oriented protocol.  
+- **C.** TCP is reliable and is a connection-oriented protocol; UDP is not reliable and is a connectionless protocol.  
+- **D.** TCP is not reliable and is a connection-oriented protocol; UDP is reliable and is a connectionless protocol.  
+
+**Answer:** C  
+**Explanation:**  
+Transmission Control Protocol (TCP) is a connection-oriented protocol that ensures reliable data transmission by establishing a connection before data transfer and using mechanisms like acknowledgments and retransmissions to guarantee delivery without errors. User Datagram Protocol (UDP) is a connectionless protocol that does not establish a connection or ensure reliable delivery, making it faster but less dependable. Thus, TCP is reliable and connection-oriented, while UDP is not reliable and connectionless.
+
+---
+
 
 ## Question #31
 What are two descriptions of three-tier network topologies? (Choose two.)
@@ -593,6 +607,28 @@ Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA 
     *   `clear mac address-table dynamic vlan <vlan-id>`: Clear entries for a specific VLAN.
     *   `clear mac address-table dynamic interface <interface>`: Clear entries for a specific interface.
     *   `clear mac address-table dynamic address <mac-address>`: Clear a specific MAC address entry.
+
+---
+
+### Question #57
+![](img/0057.jpg) 
+**Refer to the exhibit. A network technician is asked to design a small network with redundancy. The exhibit represents this design, with all hosts configured in the same VLAN. What conclusion can be made about this design?**
+
+- **A.** This design will function as intended  
+- **B.** Spanning-tree will need to be used  
+- **C.** The router will not accept the addressing scheme  
+- **D.** The connection between switches should be a trunk  
+- **E.** The router interfaces must be encapsulated with the 802.1Q protocol  
+
+**Answer:** C  
+**Explanation:**  
+In a network where all hosts are in the same VLAN and connected to a router with multiple interfaces, each router interface must be in a unique subnet. If the design places multiple router interfaces in the same VLAN (and thus the same subnet), the router will reject the configuration due to overlapping IP addresses, generating an error. For redundancy with a single VLAN, technologies like HSRP or VRRP are needed, not multiple interfaces in the same subnet.  
+- Option A is incorrect unless the design avoids this issue (e.g., via subinterfaces).  
+- Option B is true for switches but not the primary issue here.  
+- C: router's ports must be in different network. 
+- Options D and E may apply in multi-VLAN designs, not a single-VLAN setup.
+
+---
 
 **Chapter 6: Configuring Basic Switch Management**
 
@@ -1073,7 +1109,7 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
 
 ***
 
-
+---
 **Question #5**   
 ![](img/005.png)   
 ![](img/005-1.png)   
@@ -1082,7 +1118,85 @@ Here's a detailed summary of Chapters 11-14, focusing on key points for your CCN
     > The network address is 172.28.192.0. So the first usable host should be 172.28.192.1 and it matches with the 5th answer on the right. In this case we don't need to calculate the broadcast address because we found the correct answer.
     Let's take another example with subnet 172.28.228.144/23 -> The increment is 2 (as /23 = 1111 1110 in 3rd octet) -> The 3rd octet of the network address is 228
     (because 228 is the multiply of 2 and equal to the 3rd octet) -> The network address is 172.28.228.0 -> The first usable host is 172.28.228.1. It is not necessary but if we want to find out the broadcast address of this subnet, we can find out the next network address, which is 172.28.(228 + the increment number).0 or
-    172.28.230.0 then reduce 1 bit -> 172.28.229.255 is the broadcast address of our subnet. Therefore the last usable host is 172.28.229.254.
+    172.28.230.0 then reduce 1 bit -> 172.28.229.255 is the broadcast address of our subnet. Therefore the last usable host is 172.28.229.254.  
+---
+
+### Question #58
+**A corporate office uses four floors in a building:**  
+- **Floor 1:** 24 users  
+- **Floor 2:** 29 users  
+- **Floor 3:** 28 users  
+- **Floor 4:** 22 users  
+**Which subnet summarizes and gives the most efficient distribution of IP addresses for the router configuration?**
+
+- **A.** 192.168.0.0/24 as summary and 192.168.0.0/28 for each floor  
+- **B.** 192.168.0.0/23 as summary and 192.168.0.0/25 for each floor  
+- **C.** 192.168.0.0/25 as summary and 192.168.0.0/27 for each floor  
+- **D.** 192.168.0.0/26 as summary and 192.168.0.0/29 for each floor  
+
+**Answer:** C  
+**Explanation:**  
+Each floor needs a subnet that supports its number of users (plus network and broadcast addresses):  
+- /29 = 6 usable IPs (insufficient for all floors).  
+- /28 = 14 usable IPs (insufficient for floors with >14 users).  
+- /27 = 30 usable IPs (sufficient for 24, 29, 28, 22 users).  
+- /25 = 126 usable IPs (too large for individual floors).  
+Four /27 subnets (32 IPs each) require 128 IPs total, which fits within a /25 summary (192.168.0.0/25, 128 IPs). Example subnets: 192.168.0.0/27, 192.168.0.32/27, 192.168.0.64/27, 192.168.0.96/27.  
+- Option A (/28) fails for floors with >14 users.  
+- Option B (/25 per floor) wastes IPs.  
+- Option D (/29) is too small.  
+Thus, C is the most efficient.
+
+---
+---
+
+### Question #59
+
+**Refer to the exhibit. An engineer must add a subnet for a new office that will add 20 users to the network. Which IPv4 network and subnet mask combination does the engineer assign to minimize wasting addresses?**
+
+- **A.** 10.10.225.48 255.255.255.240 (wrong block size)  
+- **B.** 10.10.225.32 255.255.255.240  
+- **C.** 10.10.225.48 255.255.255.224  
+- **D.** 10.10.225.32 255.255.255.224  
+
+**Answer:** D  
+**Explanation:**  
+For 20 users, a subnet must provide at least 22 IPs (20 users + network + broadcast):  
+- /28 (255.255.255.240) = 14 usable IPs (too small).  
+- /27 (255.255.255.224) = 30 usable IPs (smallest fit).  
+Option D (10.10.225.32/27) provides 30 usable IPs (10.10.225.33–10.10.225.62), minimizing waste. Option C (10.10.225.48/27) is also a /27 but starts mid-subnet; D aligns better with subnet boundaries. Options A and B (/28) are insufficient.
+Block size: 取决于实际的/网络段，比如说/28网络段是16，/27是32
+---
+
+### Question #60
+**Drag and drop the IPv4 network subnets from the left onto the correct usable host ranges on the right.**
+
+**Subnets:**  
+- 172.28.228.144/18  
+- 172.28.228.144/21  
+- 172.28.228.144/23  
+- 172.28.228.144/25  
+- 172.28.228.144/29  
+
+**Answer:**  
+- **172.28.228.144/18:** 16382 usable hosts (172.28.192.1–172.28.255.254)  
+- **172.28.228.144/21:** 2046 usable hosts (172.28.224.1–172.28.231.254)  
+- **172.28.228.144/23:** 510 usable hosts (172.28.228.1–172.28.229.254)  
+- **172.28.228.144/25:** 126 usable hosts (172.28.228.129–172.28.228.254)  
+- **172.28.228.144/29:** 6 usable hosts (172.28.228.145–172.28.228.150)  
+**Explanation:**  
+- /18: 2^(32-18) - 2 = 16382 hosts.  
+- /21: 2^(32-21) - 2 = 2046 hosts.  
+- /23: 2^(32-23) - 2 = 510 hosts.  
+- /25: 2^(32-25) - 2 = 126 hosts.  
+- /29: 2^(32-29) - 2 = 6 hosts.  
+Ranges are calculated from the base address (172.28.228.144) aligned to subnet boundaries.
+
+---
+
+Based on the user query to "continue," I will provide complete, self-contained answers to questions 63 to 72 from the provided document. Below are the answers formatted in Markdown for clarity.
+
+---
 
 **Chapter 12: Analyzing Classful IPv4 Networks**
 
@@ -2050,6 +2164,61 @@ Okay, here's a detailed summary of Chapters 4-8 and the Part II Review of Volume
     *   **Malware:** Malicious software (Trojan horses, viruses, worms) that can compromise systems, steal data, or launch attacks.
     *   **Social Engineering:** Manipulating users into revealing confidential information or performing actions that compromise security (phishing, spear phishing, whaling, vishing, smishing, pharming, watering hole attacks).
 
+---
+
+### Question 44
+**Refer to the exhibit. Which two events occur on the interface, if packets from an unknown Source address arrive after the interface learns the maximum number of secure MAC addresses? (Choose two.)**
+
+![](img/0044.jpg) 
+
+- **A.** The security violation counter does not increment  
+- **B.** The port LED turns off  
+- **C.** The interface is error-disabled  
+- **D.** A syslog message is generated  
+- **E.** The interface drops traffic from unknown MAC addresses  
+
+**Answer:** C, D  
+**Explanation:**  
+In port security’s "protect" mode (the default unless specified otherwise), when the maximum number of secure MAC addresses is reached:  
+- **A:** 错，增加1，只有protect不增加    
+- **C.** 对，双向停止转发  
+- **D.** 对，当进入error-disabled状态的时候就会产生日志  
+- **E:** 错，protect=drop, shutdown=关闭，并没有drop的动作.  
+Options C ("error-disabled") and D ("syslog message") occur in "shutdown" or "restrict" modes, and B (LED turning off) is not a standard port security behavior.
+
+---
+
+### Question #45  
+**Refer to the exhibit. Which two statements about the interface that generated the output are true? (Choose two.)**
+![](img/0045.jpg) 
+```
+Port Security : Enabled
+Port Status : Secure-up
+Violation Mode : Protect
+Aging Time : 5 mins
+Aging Type : Inactivity
+SecureStatic Address Aging : Disabled
+Maximum MAC Addresses : 3
+Total MAC Addresses : 3
+Configured MAC Addresses : 1
+Sticky MAC Addresses : 2
+Last Source Address : Vlan : 0001.0fAA.33BB:1
+Security Violation Count : 0
+```
+
+- **A.** learned MAC addresses are deleted after five minutes of inactivity  
+- **B.** the interface is error-disabled if packets arrive from a new unknown source address  
+- **C.** it has dynamically learned two secure MAC addresses  
+- **D.** it has dynamically learned three secure MAC addresses  
+- **E.** the security violation counter increments if packets arrive from a new unknown source address (restict=increment, protect=no increment)  
+
+**Answer:** A, C  
+**Explanation:**  
+- **A:** The aging time is 5 minutes with "Inactivity" type, meaning learned MAC addresses are removed after 5 minutes of inactivity.  
+- **C:** Total MAC addresses are 3 (1 configured statically, 2 sticky), where the 2 sticky addresses were dynamically learned and saved.  
+Option B is false because "protect" mode drops traffic, not error-disables the port. D is incorrect as only 2 are dynamically learned, and E is false because "protect" mode does not increment the violation counter.
+
+
 **Chapter 5: Securing Network Devices**
 
 *   **Securing IOS Passwords:**
@@ -2247,6 +2416,191 @@ Here's a detailed summary of Chapters 9-12 and the Part III Review of Volume 2 o
         *   `show lldp neighbors detail`: Detailed LLDP neighbor information. Similar output to `show cdp neighbors detail`.
         *   `show lldp`: Global LLDP status and timers.
         *   `show lldp interface [type number]`: LLDP status and timers for a specific interface.
+
+---
+
+### Question #46
+**Which statement about Cisco Discovery Protocol is true?**
+
+- **A.** It is a Cisco-proprietary protocol.  
+- **B.** It runs on the network layer.  
+- **C.** It can discover information from routers, firewalls, and switches.  
+- **D.** It runs on the physical layer and the data link layer.  
+
+**Answer:** A  
+**Explanation:**  
+Cisco Discovery Protocol (CDP) is a Cisco-proprietary protocol operating at the data link layer (Layer 2). It discovers neighboring Cisco devices but does not run at the network layer (B), nor at both physical and data link layers (D). While it can discover routers and switches, discovery of firewalls (C) depends on vendor support, making A the most universally true statement.
+
+---
+
+### Question 47
+**What are two reasons a network administrator would use CDP? (Choose two.)**
+
+- **A.** to verify the type of cable interconnecting two devices  
+- **B.** to determine the status of network services on a remote device(只能找到直连)  
+- **C.** to obtain VLAN information from directly connected switches  
+- **D.** to verify Layer 2 connectivity between two devices when Layer 3 fails  
+- **E.** to obtain the IP address of a connected device in order to telnet to the device (show cdp neighbors detail)  
+- **F.** to determine the status of the routing protocols between directly connected routers  
+
+**Answer:** D, E  
+**Explanation:**  
+CDP helps administrators:  
+- **D:** Verify Layer 2 connectivity when Layer 3 (e.g., ping) fails, using neighbor discovery.  
+- **E:** Obtain the IP address of a connected Cisco device for remote management like Telnet.  
+Option A (cable type) isn’t provided by CDP, B and F relate to higher-layer functions beyond CDP’s scope, and C is limited to the native VLAN, not full VLAN details.
+
+---
+
+### Question #48
+**Refer to the exhibit. Which command provides this output?**
+
+```
+Router#
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone,
+                  D - Remote, C - CVTA, M - Two-port Mac Relay
+Device ID Local Intrfce Holdtme Capability Platform Port ID
+10.1.1.2 Gig 37/3 176 RI CPT 600 Gig 36/41
+10.1.1.2 Gig 37/1 174 RI CPT 600 Gig 36/43
+10.1.1.2 Gig 36/41 134 RI CPT 600 Gig 37/3
+10.1.1.2 Gig 36/43 134 RI CPT 600 Gig 37/1
+10.1.1.2 Ten 3/2 132 RI CPT 600 Ten 4/2
+10.1.1.2 Ten 4/2 174 RI CPT 600 Ten 3/2
+```
+
+- **A.** `show ip route`  
+- **B.** `show ip interface`  
+- **C.** `show interface`  
+- **D.** `show cdp neighbor`  
+
+**Answer:** D  
+**Explanation:**  
+The output shows CDP neighbor details, including Device ID, local interface, holdtime, capabilities, platform, and remote Port ID, which matches the `show cdp neighbor` command. Option A shows routing tables, B shows IP interface details, and C shows interface statistics—none of which match this output.
+
+---
+
+---
+
+### Question #49
+**In a CDP environment, what happens when the CDP interface on an adjacent device is configured without an IP address?**
+
+- **A.** CDP becomes inoperable on that neighbor  
+- **B.** CDP uses the IP address of another interface for that neighbor  
+- **C.** CDP operates normally, but it cannot provide IP address information for that neighbor  
+- **D.** CDP operates normally, but it cannot provide any information for that neighbor  
+
+**Answer:** C  
+**Explanation:**  
+CDP operates at Layer 2 and does not require an IP address to function. If an interface lacks an IP address, CDP still exchanges device information (e.g., device ID, capabilities), but it cannot include IP address details for that interface. Option A is false as CDP remains operable, B is incorrect as CDP doesn’t substitute another IP, and D overstates the impact.  
+
+
+### Question #51
+**Which two pieces of information about a Cisco device can Cisco Discovery Protocol communicate? (Choose two.)**
+
+- **A.** the native VLAN  
+- **B.** the trunking protocol  
+- **C.** the VTP domain  
+- **D.** the spanning-tree priority  
+- **E.** the spanning tree protocol  
+
+**Answer:** A, C  
+**Explanation:**  
+Cisco Discovery Protocol (CDP) is a Cisco proprietary protocol that shares information between directly connected Cisco devices. Among the details it communicates are:  
+- **A:** The native VLAN of the interface, which identifies the VLAN that untagged traffic belongs to.  
+- **C:** The VTP (VLAN Trunking Protocol) domain name, if configured, which helps manage VLAN configurations across devices.  
+Options B (trunking protocol), D (spanning-tree priority), and E (spanning tree protocol) are not directly shared via CDP. Instead, CDP focuses on device identification, interface details, and basic configuration data like native VLAN and VTP domain.
+
+---
+
+
+### Question #52
+**The network engineer must create a diagram of a multivendor network. Which command must be configured on the Cisco devices so that the topology of the network can be mapped?**
+
+- **A.** `Device(config)# ldp run`  
+- **B.** `Device(config)# cdp run`  
+- **C.** `Device(config)# cdp enable`  
+- **D.** `Device(config)# flow-sampler-map topology`  
+
+**Answer:** B  
+**Explanation:**  
+To map the topology of a network using Cisco devices, the Cisco Discovery Protocol (CDP) must be enabled globally. The command `cdp run` in global configuration mode activates CDP on the device, allowing it to send and receive CDP advertisements. These advertisements provide information about directly connected Cisco devices, which can be used to create a network topology diagram.  
+- Option C (`cdp enable`) enables CDP on a specific interface, not globally, so it’s insufficient for full topology mapping.  
+- Option A (`ldp run`) refers to Label Distribution Protocol, unrelated to topology mapping.  
+- Option D (`flow-sampler-map topology`) is not a valid command for this purpose.
+
+---
+
+### Question #53  
+
+**Which statement about LLDP is true?**
+
+- **A.** It is a Cisco proprietary protocol  
+- **B.** It is configured in global configuration mode  
+- **C.** The LLDP update frequency is a fixed value  
+- **D.** It runs over the transport layer  
+
+**Answer:** B  
+**Explanation:**  
+Link Layer Discovery Protocol (LLDP) is an industry-standard protocol (IEEE 802.1AB) for network device discovery, not a Cisco proprietary protocol (ruling out A).  
+- **B:** LLDP is enabled globally on Cisco devices using the `lldp run` command in global configuration mode, making this statement true.  
+- Option C is false because the LLDP update frequency can be adjusted with the `lldp timer` command (default is 30 seconds, range 5–254 seconds).  
+- Option D is incorrect as LLDP operates at the data link layer (Layer 2), not the transport layer (Layer 4).
+
+---
+
+### Question #54
+**Which command is used to enable LLDP globally on a Cisco IOS ISR?**
+
+- **A.** `lldp run`  
+- **B.** `lldp enable`  
+- **C.** `lldp transmit`  
+- **D.** `cdp run`  
+- **E.** `cdp enable`  
+
+**Answer:** A  
+**Explanation:**  
+To enable LLDP globally on a Cisco IOS Integrated Services Router (ISR), the command `lldp run` is used in global configuration mode. This activates LLDP across the device, allowing it to send and receive LLDP advertisements.  
+- Options B (`lldp enable`) and C (`lldp transmit`) are not valid commands for enabling LLDP globally.  
+- Options D (`cdp run`) and E (`cdp enable`) pertain to Cisco Discovery Protocol (CDP), not LLDP.
+
+---
+
+### Question #55
+**Which command should you enter to configure an LLDP delay time of 5 seconds?**
+
+- **A.** `lldp timer 5000`  
+- **B.** `lldp holdtime 5`  
+- **C.** `lldp reinit 5000`  
+- **D.** `lldp reinit 5`  
+
+**Answer:** D  
+**Explanation:**  
+The `lldp reinit` command specifies the delay time in seconds before LLDP initializes on any interface. The valid range is 1 to 10 seconds, with a default of 2 seconds.  
+- **D:** `lldp reinit 5` correctly sets the delay to 5 seconds.  
+- Option A (`lldp timer 5000`) sets the LLDP update frequency, not the initialization delay, and uses seconds (not milliseconds).  
+- Option B (`lldp holdtime 5`) configures how long received LLDP information is retained, not the initialization delay.  
+- Option C (`lldp reinit 5000`) is incorrect because the value exceeds the valid range (1–10 seconds).
+
+---
+
+### Question #56
+**Which command is used to specify the delay time in seconds for LLDP to initialize on any interface?**
+
+- **A.** `lldp timer`  
+- **B.** `lldp holdtime`  
+- **C.** `lldp reinit`  
+- **D.** `lldp tlv-select`  
+
+**Answer:** C  
+**Explanation:**  
+The `lldp reinit` command in global configuration mode sets the delay time (in seconds) before LLDP initializes on an interface. This allows the system to stabilize before LLDP starts.  
+- Option A (`lldp timer`) sets the frequency of LLDP updates.  
+- Option B (`lldp holdtime`) determines how long received LLDP data is kept.  
+- Option D (`lldp tlv-select`) specifies which Type-Length-Value (TLV) fields are included in LLDP messages, not the initialization delay.
+
+---
+
 
 **Chapter 10: Network Address Translation**
 
