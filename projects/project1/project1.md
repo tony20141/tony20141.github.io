@@ -376,7 +376,7 @@ Correct Answer: D
 
 ***
 
-### Question #63
+## Question #63
 **What is the difference regarding reliability and communication type between TCP and UDP?**
 
 - **A.** TCP is reliable and is a connectionless protocol; UDP is not reliable and is a connection-oriented protocol.  
@@ -387,6 +387,53 @@ Correct Answer: D
 **Answer:** C  
 **Explanation:**  
 Transmission Control Protocol (TCP) is a connection-oriented protocol that ensures reliable data transmission by establishing a connection before data transfer and using mechanisms like acknowledgments and retransmissions to guarantee delivery without errors. User Datagram Protocol (UDP) is a connectionless protocol that does not establish a connection or ensure reliable delivery, making it faster but less dependable. Thus, TCP is reliable and connection-oriented, while UDP is not reliable and connectionless.
+
+---
+
+
+### Question 64
+**How do TCP and UDP differ in the way they provide reliability for delivery of packets?**
+
+- **A.** TCP does not guarantee delivery or error checking to ensure that there is no corruption of data, UDP provides message acknowledgement and retransmits data if lost.  
+- **B.** TCP provides flow control to avoid overwhelming a receiver by sending too many packets at once; UDP sends packets to the receiver in a continuous stream without checking for sequencing.  
+- **C.** TCP is a connectionless protocol that does not provide reliable delivery of data; UDP is a connection-oriented protocol that uses sequencing to provide reliable delivery.  
+- **D.** TCP uses windowing to deliver packets reliably; UDP provides reliable message transfer between hosts by establishing a three-way handshake.  
+
+**Answer:** B  
+**Explanation:**  
+TCP ensures reliability through features like flow control, which adjusts the data transmission rate to prevent overwhelming the receiver, along with sequencing and acknowledgments to ensure packets arrive in order and without errors. UDP, however, does not offer flow control or reliability mechanisms; it sends packets continuously without checking for sequencing or guaranteeing delivery, prioritizing speed over reliability. Option B accurately highlights TCP’s flow control and UDP’s lack of sequencing.
+
+---
+
+### Question 65
+**What are two benefits that the UDP protocol provide for application traffic? (Choose two.)**
+
+- **A.** UDP traffic has lower overhead than TCP traffic.  
+- **B.** UDP provides a built-in recovery mechanism to retransmit lost packets.  
+- **C.** The CTL field in the UDP packet header enables a three-way handshake to establish the connection.  
+- **D.** UDP maintains the connection state to provide more stable connections than TCP.  
+- **E.** The application can use checksums to verify the integrity of application data.  
+
+**Answer:** A, E  
+**Explanation:**  
+UDP provides two key benefits for application traffic:  
+- **A:** It has lower overhead than TCP because it lacks the additional headers and mechanisms (e.g., for reliability and connection management) that TCP includes, making it more efficient for certain applications.  
+- **E:** UDP includes an optional checksum field in its header, allowing applications to verify data integrity, though it does not handle retransmissions itself.  
+Options B, C, and D are incorrect because UDP does not retransmit lost packets, perform a three-way handshake, or maintain connection state—those are TCP features.
+
+---
+
+### Question 66
+**How do TCP and UDP differ in the way that they establish a connection between two endpoints?**
+
+- **A.** TCP uses synchronization packets, and UDP uses acknowledgment packets.  
+- **B.** UDP uses SYN, SYN ACK, and FIN bits in the frame header while TCP uses SYN, SYN ACK, and ACK bits.  
+- **C.** UDP provides reliable message transfer, and TCP is a connectionless protocol.  
+- **D.** TCP uses the three-way handshake, and UDP does not guarantee message delivery.  
+
+**Answer:** D  
+**Explanation:**  
+TCP establishes a connection between two endpoints using a three-way handshake (SYN, SYN-ACK, ACK), ensuring both sides are synchronized and ready for reliable data transfer. UDP, being connectionless, does not establish a connection or guarantee delivery; it simply sends packets without any setup process. Option D correctly describes TCP’s handshake and UDP’s lack of delivery assurance.
 
 ---
 
@@ -2727,7 +2774,30 @@ The `lldp reinit` command in global configuration mode sets the delay time (in s
 Here's a detailed summary of Chapters 13-15 and the Part IV Review of Volume 2 of your CCNA study material, designed to help you prepare for your exam: 
 
 ***
+### Question 67
+**Drag and drop the network protocols from the left onto the correct transport services on the right.**
+![](img/0067.jpg) 
+**Protocols:**  
+- FTP  
+- SMTP  
+- SNMP  
+- SSH  
+- TFTP  
+- VoIP  
 
+**Answer:**  
+- **Connection Oriented (TCP):** FTP, SMTP, SSH  
+- **Connectionless (UDP):** SNMP, TFTP, VoIP  
+
+**Explanation:**  
+- **FTP (File Transfer Protocol):** Uses TCP for reliable file transfers.  
+- **SMTP (Simple Mail Transfer Protocol):** Uses TCP for dependable email delivery.  
+- **SSH (Secure Shell):** Uses TCP for secure, reliable remote access.  
+- **SNMP (Simple Network Management Protocol):** Typically uses UDP for lightweight network management tasks.  
+- **TFTP (Trivial File Transfer Protocol):** Uses UDP for simple, fast file transfers without reliability features.  
+- **VoIP (Voice over IP):** Uses UDP for real-time voice communication, prioritizing speed over reliability.
+
+---
 
 ## Question #3 
 ![](img/003.png) 
