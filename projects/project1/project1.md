@@ -543,10 +543,125 @@ UDP provides a simpler, faster service with no guarantees of delivery, relying o
 
 ***
 
+---
 
+### Question 68
+![](img/0068.jpg)
+**Refer to the exhibit. When PC 1 sends a packet to PC 2, the packet has which source and destination IP address when it arrives at interface Gi0/0 on router R2?**
 
+*(Note: No exhibit is provided, but assume a typical routed network with PCs in different subnets connected through routers.)*
 
-Here's a detailed summary of Chapters 4-7, focusing on key points for your CCNA exam preparation:
+- **A.** source 192.168.10.10 and destination 10.10.2.2  
+- **B.** source 192.168.20.10 and destination 192.168.20.1  
+- **C.** source 192.168.10.10 and destination 192.168.20.10  
+- **D.** source 10.10.1.1 and destination 10.10.2.2  
+
+**Answer:** C  
+**Explanation:**  
+In a typical routed network, a packet’s source and destination IP addresses remain unchanged as it travels from PC 1 to PC 2, even as it passes through routers like R2. Assuming PC 1 is in the 192.168.10.0 subnet (e.g., 192.168.10.10) and PC 2 is in the 192.168.20.0 subnet (e.g., 192.168.20.10), the packet arriving at interface Gi0/0 on R2 will retain PC 1’s IP as the source (192.168.10.10) and PC 2’s IP as the destination (192.168.20.10). Option C matches this scenario.
+
+---
+
+### Question 69
+**Which three statements about MAC addresses are correct? (Choose three.)**
+
+- **A.** To communicate with other devices on a network, a network device must have a unique MAC address  
+- **B.** The MAC address is also referred to as the IP address  
+- **C.** The MAC address of a device must be configured in the Cisco IOS CLI by a user with administrative privileges  
+- **D.** A MAC address contains two main components, the first of which identifies the manufacturer of the hardware and the second of which uniquely identifies the hardware  
+- **E.** An example of a MAC address is 0A:26:B8:D6:65:90  
+- **F.** A MAC address contains two main components, the first of which identifies the network on which the host resides and the second of which uniquely identifies the host on the network  
+
+**Answer:** A, D, E  
+**Explanation:**  
+- **A:** A unique MAC address is essential for network devices to communicate at Layer 2 (data link layer).  
+- **D:** A MAC address consists of two parts: the Organizationally Unique Identifier (OUI), which identifies the manufacturer, and a unique device identifier assigned by the manufacturer.  
+- **E:** The example 0A:26:B8:D6:65:90 is a valid MAC address in hexadecimal format (48 bits, typically written as six pairs).  
+Option B is incorrect because a MAC address (Layer 2) is distinct from an IP address (Layer 3). Option C is false as MAC addresses are hardware-assigned, not configured via CLI. Option F describes IP addressing, not MAC addressing.
+
+---
+### Question 70
+**Which command prevents passwords from being stored in the configuration as plain text on a router or switch?**
+
+- **A.** `enable secret`  
+- **B.** `service password-encryption`  
+- **C.** `username cisco password encrypt`  
+- **D.** `enable password`  
+
+**Answer:** B  
+**Explanation:**  
+The `service password-encryption` command encrypts all passwords in the configuration file of a Cisco router or switch (e.g., line passwords and enable passwords), preventing them from appearing as plain text. While `enable secret` (Option A) sets an encrypted enable password, it only applies to that specific password, not all passwords. Option C is not a valid command, and `enable password` (Option D) stores the password in plain text unless encrypted by `service password-encryption`.
+A. enable secret
+
+Encrypts only the enable password using MD5 hashing.
+
+It’s more secure than enable password, but it doesn’t affect other passwords in the configuration.
+
+✅ Best practice for securing the enable password.
+
+B. service password-encryption
+
+Applies weak encryption (Type 7) to all plaintext passwords in the configuration (e.g., line passwords, username passwords, etc.).
+
+Prevents casual viewing of passwords in plain text.
+
+❗ Note: Type 7 encryption is easily reversible and not considered secure for sensitive environments.
+
+C. username cisco password encrypt
+
+❌ Invalid syntax. Cisco IOS does not recognize this command.
+
+D. enable password
+
+Stores the password in plain text unless service password-encryption is enabled.
+
+❌ Less secure than enable secret.
+---
+
+### Question 76
+![](img/0076.jpg)
+**Refer to the exhibit. If R1 receives a packet destined to 172.16.1.1, to which IP address does it send the packet?**
+
+- **A.** 192.168.14.4  
+- **B.** 192.168.12.2  
+- **C.** 192.168.13.3  
+- **D.** 192.168.15.5  
+
+**Answer:** A  
+**Explanation:**  
+The routing table on R1 shows the gateway of last resort as 192.168.14.4 to network 0.0.0.0. This is the default route, used when no specific route matches the destination. Since 172.16.1.1 does not match any specific connected or learned routes in the table (e.g., 192.168.12.0/24, 192.168.13.0/24, 192.168.14.0/24, or 192.168.10.0/24 subnets), R1 forwards the packet to the default next-hop IP address, 192.168.14.4.
+
+---
+
+### Question 77
+![](img/0077.jpg)
+**Refer to the exhibit. On R1, which routing protocol is in use on the route to 192.168.10.1?**
+
+- **A.** RIP  
+- **B.** OSPF  
+- **C.** IGRP  
+- **D.** EIGRP  
+
+**Answer:** D  
+**Explanation:**  
+The routing table entry for 192.168.10.1/32 is shown as `[90/52778] via 192.168.12.2`. The administrative distance of 90 and the protocol code `D` indicate that this route is learned via EIGRP (Enhanced Interior Gateway Routing Protocol). No other protocols (RIP, OSPF, or IGRP) match this administrative distance or code in the table for this specific route.
+
+---
+
+### Question 78
+![](img/0078.jpg)
+**Refer to the exhibit. How will the router handle a packet destined for 192.0.2.156?**
+
+- **A.** The router will forward the packet via either Serial0 or Serial1.  
+- **B.** The router will return the packet to its source.  
+- **C.** The router will forward the packet via Serial2.  
+- **D.** The router will drop the packet.  
+
+**Answer:** C  
+**Explanation:**  
+The routing table lists the gateway of last resort as 192.168.4.1 to network 0.0.0.0, with Serial2 as the connected interface (192.168.4.0/24 is directly connected via Serial2). The destination 192.0.2.156 does not match any specific routes (e.g., 10.0.2.0/24, 10.0.3.0/24, 10.0.4.0/24, or 192.168.x.x networks). Thus, the router uses the default route and forwards the packet via Serial2 to 192.168.4.1.
+
+---
 
 **Part II: Implementing Ethernet LANs - Key Summary**
 
@@ -1671,6 +1786,21 @@ Certainly! Here's a detailed summary of Chapters 22-25, focusing on key points f
     *   **MP-BGP4 (Multiprotocol BGP Version 4):** BGP extended to support IPv6 and other protocols.
 
 ***
+### Question #71
+**Which of the following dynamic routing protocols are Distance Vector routing protocols? (Choose two.)**
+
+- **A.** IS-IS  
+- **B.** EIGRP  
+- **C.** OSPF  
+- **D.** BGP  
+- **E.** RIP  
+
+**Answer:** B, E  
+**Explanation:**  
+Distance Vector routing protocols calculate the best path based on distance (e.g., hop count) and direction:  
+- **B:** Enhanced Interior Gateway Routing Protocol (EIGRP) is an advanced Distance Vector protocol, though it includes some hybrid features.  
+- **E:** Routing Information Protocol (RIP) is a classic Distance Vector protocol using hop count as its metric.  
+IS-IS and OSPF (Options A and C) are Link-State protocols, and BGP (Option D) is a Path Vector protocol, not Distance Vector.
 
 
 ## Question #11  
@@ -2873,6 +3003,472 @@ Here's a detailed summary of Chapters 13-15 and the Part IV Review of Volume 2 o
     *   **Wireless WAN (3G, 4G, LTE, 5G):** Mobile broadband, cellular networks, wireless towers.
     *   **Fiber Internet (Ethernet):** Fiber-optic cabling, high speeds, longer distances.
 
+### Question #72
+![](img/0072.jpg) 
+**Refer to the exhibit. Which command do you enter so that R1 advertises the Loopback0 interface to the BGP Peers?**
+
+```
+R1
+interface Loopback0
+  ip address 172.16.1.33 255.255.255.224
+interface FastEthernet0/0
+  ip address 192.168.12.1 255.255.255.0
+router bgp 100
+  neighbor 192.168.12.2 remote-as 100
+```
+
+- **A.** `network 172.16.1.32 mask 255.255.255.224`  
+- **B.** `network 172.16.1.0 0.0.0.255`  
+- **C.** `network 172.16.1.32 255.255.255.224`  
+- **D.** `network 172.16.1.33 mask 255.255.255.224`  
+- **E.** `network 172.16.1.32 mask 0.0.0.31`  
+- **F.** `network 172.16.1.32 0.0.0.31`  
+
+**Answer:** A  
+**Explanation:**  
+To advertise the Loopback0 interface (172.16.1.33 with a /27 mask, or 255.255.255.224) in BGP, the `network` command must specify the exact subnet of the interface. The /27 subnet ranges from 172.16.1.32 to 172.16.1.63, with 172.16.1.32 being the network address. The command `network 172.16.1.32 mask 255.255.255.224` correctly advertises this subnet to BGP peers. Option B uses an incorrect mask, Option C has invalid syntax, Option D specifies the host IP instead of the network, and Options E and F use incorrect masks or syntax.
+---
+
+---
+
+### **Question 73: Which two statements about eBGP neighbor relationships are true? (Choose two.)**
+
+**Options:**
+- **A.** The two devices must reside in different autonomous systems
+- **B.** Neighbors must be specifically declared in the configuration of each device
+- **C.** They can be created dynamically after the network statement is configured
+- **D.** The two devices must reside in the same autonomous system
+- **E.** The two devices must have matching timer settings
+
+**Reasoning:**
+
+- **eBGP Overview:** eBGP (External Border Gateway Protocol) is used to exchange routing information between different autonomous systems (ASes). An AS is a collection of IP networks under a single administration.
+
+- **Option A: "The two devices must reside in different autonomous systems"**
+  - For eBGP, neighbors are routers in separate ASes. This distinguishes eBGP from iBGP (Internal BGP), where neighbors are within the same AS. Thus, this statement is **true**.
+
+- **Option B: "Neighbors must be specifically declared in the configuration of each device"**
+  - BGP, including eBGP, does not automatically discover neighbors like some interior gateway protocols (e.g., OSPF). Instead, neighbors must be explicitly defined using the `neighbor` command in the BGP configuration on each device. This statement is **true**.
+
+- **Option C: "They can be created dynamically after the network statement is configured"**
+  - In BGP, the `network` statement is used to advertise prefixes, not to establish neighbor relationships. Neighbor relationships require explicit configuration, not dynamic creation via network statements. This statement is **false**.
+
+- **Option D: "The two devices must reside in the same autonomous system"**
+  - This applies to iBGP, not eBGP. eBGP requires neighbors to be in different ASes, making this statement **false** for eBGP.
+
+- **Option E: "The two devices must have matching timer settings"**
+  - BGP uses keepalive and hold timers to maintain neighbor relationships. While it’s recommended to have compatible timers, they don’t need to match exactly. The hold time is negotiated to the smaller value proposed by the neighbors, so this statement is **false** as "must" is too absolute.
+
+---
+
+**Answer:** **A and B**
+
+### **Question #74: Which two statements about exterior routing protocols are true? (Choose two.)**
+
+**Options:**
+- **A.** They determine the optimal path within an autonomous system
+- **B.** They determine the optimal path between autonomous systems
+- **C.** BGP is the current standard exterior routing protocol
+- **D.** Most modern networking supports both EGP and BGP for external routing
+- **E.** Most modern network routers support both EGP and EIGRP for external routing
+
+**Reasoning:**
+
+- **Exterior Routing Protocols Overview:** These protocols, such as BGP, route traffic between different ASes, unlike interior gateway protocols (e.g., OSPF, EIGRP) that operate within a single AS.
+
+- **Option A: "They determine the optimal path within an autonomous system"**
+  - This describes interior gateway protocols, not exterior ones. Exterior protocols focus on inter-AS routing, so this is **false**.
+
+- **Option B: "They determine the optimal path between autonomous systems"**
+  - This is the primary role of exterior routing protocols like BGP, which selects paths across ASes based on attributes like AS path length. This statement is **true**.
+
+- **Option C: "BGP is the current standard exterior routing protocol"**
+  - BGP (specifically eBGP) is the dominant protocol for inter-AS routing on the internet today, replacing older protocols like EGP. This statement is **true**.
+
+- **Option D: "Most modern networking supports both EGP and BGP for external routing"**
+  - EGP (Exterior Gateway Protocol) is an obsolete protocol, largely replaced by BGP since the early 1990s. Modern networks use BGP, not EGP, making this **false**.
+
+- **Option E: "Most modern network routers support both EGP and EIGRP for external routing"**
+  - EGP is outdated, and EIGRP is an interior gateway protocol, not an exterior one. This statement is **false**.
+
+**Answer:** **B and C**
+
+---
+
+### **Question #75: Which attribute does a router use to select the best path when two or more different routes to the same destination exist from two different routing protocols?**
+
+**Options:**
+- **A.** dual algorithm
+- **B.** metric
+- **C.** administrative distance
+- **D.** hop count
+
+**Reasoning:**
+
+- **Route Selection Context:** When a router receives routes to the same destination from different routing protocols (e.g., OSPF and RIP), it must choose one to install in its routing table.
+
+- **Option A: "dual algorithm"**
+  - This might refer to the Diffusing Update Algorithm (DUAL) used by EIGRP, but it’s not a general attribute for comparing routes across different protocols. This is **false**.
+
+- **Option B: "metric"**
+  - Metrics (e.g., cost in OSPF, hop count in RIP) are used within a single routing protocol to compare paths. Between different protocols, metrics are not directly comparable, so this is **false**.
+
+- **Option C: "administrative distance"**
+  - Administrative distance (AD) is a Cisco-specific value that rates the trustworthiness of a routing protocol (e.g., OSPF = 110, RIP = 120). When routes come from different protocols, the router prefers the one with the lowest AD. This is **true**.
+
+- **Option D: "hop count"**
+  - Hop count is a metric used by protocols like RIP, not a mechanism to compare routes across different protocols. This is **false**.
+
+**Answer:** **C**
+
+---
+### Question #79
+![](img\0079.jpg)
+**Refer to the exhibit. Router R1 is running three different routing protocols. Which route characteristic is used by the router to forward the packet that it receives for destination IP 172.16.32.1?**
+
+- **A.** longest prefix  
+- **B.** administrative distance  
+- **C.** cost  
+- **D.** metric  
+
+**Answer:** A  
+**Explanation:**  
+The routing table shows a single entry for 172.16.32.0/27 with three potential routes from different protocols: EIGRP ([90/2888597172] via 20.1.1.1), OSPF ([110/292094] via 20.1.1.10), and RIP ([120/2] via 20.1.1.3). Since all three routes have the same prefix length (/27), the router uses the longest prefix match principle first. Here, only one prefix (/27) matches 172.16.32.1, and then administrative distance (EIGRP’s 90 being the lowest) determines the chosen route. However, the question asks for the characteristic used to forward, and the primary decision factor in routing is the longest prefix match.
+
+---
+
+### Question #80
+![](img\0080.jpg)
+**Refer to the exhibit. How does the router manage traffic to 192.168.12.16?**
+
+- **A.** It chooses the EIGRP route because it has the lowest administrative distance.  
+- **B.** It load-balances traffic between all three routes.  
+- **C.** It chooses the OSPF route because it has the longest prefix inclusive of the destination address.  
+- **D.** It selects the RIP route because it has the longest prefix inclusive of the destination address.  
+
+**Answer:** D  
+**Explanation:**  
+The exhibit lists three routes:  
+- EIGRP: 192.168.12.0/24 (covers 192.168.12.0–255)  
+- RIP: 192.168.12.0/27 (covers 192.168.12.0–31)  
+- OSPF: 192.168.12.0/28 (covers 192.168.12.0–15)  
+
+The destination 192.168.12.16 falls within:  
+- EIGRP (/24): Yes  
+- RIP (/27): Yes  
+- OSPF (/28): No (ends at 192.168.12.15)  
+
+The router selects the route with the longest prefix match. RIP’s /27 is longer than EIGRP’s /24, and OSPF’s /28 doesn’t include the address, so the RIP route is chosen.
+
+---
+
+### Question 81
+![](img\0081.jpg)
+**Refer to the exhibit. How does router R1 handle traffic to 192.168.10.16?**
+
+- **A.** It selects the IS-IS route because it has the shortest prefix inclusive of the destination address.  
+- **B.** It selects the RIP route because it has the longest prefix inclusive of the destination address.  
+- **C.** It selects the OSPF route because it has the lowest cost.  
+- **D.** It selects the EIGRP route because it has the lowest administrative distance.  
+
+**Answer:** B  
+**Explanation:**  
+The routing table lists:  
+- EIGRP: 192.168.10.0/24 (covers 192.168.10.0–255)  
+- RIP: 192.168.10.0/27 (covers 192.168.10.0–31)  
+- OSPF: 192.168.10.0/23 (covers 192.168.10.0–192.168.11.255)  
+- IS-IS: 192.168.10.0/13 (covers 192.168.0.0–192.168.255.255)  
+
+The destination 192.168.10.16 is included in all routes, but the router selects the longest prefix match. RIP’s /27 is the most specific (longest) prefix, so it is chosen over EIGRP (/24), OSPF (/23), and IS-IS (/13).
+
+---
+
+### Question 82
+![](img\0082.jpg)
+**Refer to the exhibit. A router received these five routes from different routing information sources. Which three routes does the router install in its routing table? (Choose three.)**
+
+- **A.** OSPF route 10.0.0.0/30  
+- **B.** iBGP route 10.0.0.0/30  
+- **C.** OSPF route 10.0.0.0/16  
+- **D.** EIGRP route 10.0.0.1/32  
+- **E.** RIP route 10.0.0.0/30  
+
+**Answer:** A, C, D  
+**Explanation:**  
+The router installs routes based on the longest prefix match and uniqueness:  
+- iBGP, RIP, and OSPF routes for 10.0.0.0/30 are identical in prefix length; typically, the lowest administrative distance (OSPF, 110) wins, so OSPF 10.0.0.0/30 is installed (A).  
+- OSPF 10.0.0.0/16 is a distinct, broader route and is installed (C).  
+- EIGRP 10.0.0.1/32 is a host route (most specific) and is installed (D).  
+The iBGP (200) and RIP (120) routes for 10.0.0.0/30 are not installed due to higher administrative distances compared to OSPF.
+
+Route Source	Administrative Distance (AD)
+Directly connected interface	0
+Static route	1
+Enhanced Interior Gateway Routing Protocol (EIGRP) summary route	5
+External Border Gateway Protocol (eBGP)	20
+EIGRP internal route	90
+Interior Gateway Routing Protocol (IGRP)	100
+Open Shortest Path First (OSPF)	110
+Intermediate System to Intermediate System (IS-IS)	115
+Routing Information Protocol (RIP)	120
+Exterior Gateway Protocol (EGP)	140
+On-Demand Routing (ODR)	160
+EIGRP external route	170
+Internal Border Gateway Protocol (iBGP)	200
+Unknown source	255
+---
+
+### Question 83
+![](img\0083.jpg)
+**Refer to the exhibit. To which device does Router1 send packets that are destined to host 10.10.13.165?**
+
+- **A.** Router2  
+- **B.** Router3  
+- **C.** Router4  
+- **D.** Router5  
+
+**Answer:** B  
+**Explanation:**  
+The explanation indicates a route for 10.10.13.160/29 via 10.10.10.5. The subnet 10.10.13.160/29 covers 10.10.13.160–167, which includes 10.10.13.165. The next hop, 10.10.10.5, is part of the 10.10.10.4/30 subnet between Router1 and Router3, where Router3 likely has the IP 10.10.10.5. Thus, packets are sent to Router3.
+
+---
+
+### Question 84
+![](img\0084.jpg)
+**Refer to the exhibit. Which path is used by the router for Internet traffic?**
+
+- **A.** 10.10.10.0/28  
+- **B.** 209.165.200.0/27  
+- **C.** 0.0.0.0/0  
+- **D.** 10.10.13.0/24  
+
+**Answer:** C  
+**Explanation:**  
+Internet traffic, which includes all destinations not specifically matched, uses the default route, represented as 0.0.0.0/0. This route directs traffic to a gateway (e.g., an ISP), making it the path for Internet traffic.
+
+---
+
+### Question 85
+![](img\0085.jpg)
+**Refer to the exhibit. Which route type is configured to reach the Internet?**
+
+- **A.** host route  
+- **B.** network route  
+- **C.** floating static route  
+- **D.** default route  
+
+**Answer:** D  
+**Explanation:**  
+The route to reach the Internet is the default route (0.0.0.0/0), which matches all destinations not covered by specific routes. This is a default route type, not a host route (specific IP), network route (specific subnet), or floating static route (backup with higher administrative distance).
+
+---
+
+### Question 86
+![](img\0086.jpg)
+**Refer to the exhibit. Which route does R1 select for traffic that is destined to 192.168.16.2?**
+
+- **A.** 192.168.16.0/21  
+- **B.** 192.168.16.0/24  
+- **C.** 192.168.16.0/26  
+- **D.** 192.168.16.0/27  
+
+**Answer:** D  
+**Explanation:**  
+The routing table lists:  
+- EIGRP 90: 192.168.16.0/26 (192.168.16.0–63)  
+- RIP 120: 192.168.16.0/24 (192.168.16.0–255)  
+- OSPF 110: 192.168.16.0/21 (192.168.16.0–192.168.23.255)  
+- IS-IS 115: 192.168.16.0/27 (192.168.16.0–31)  
+
+The destination 192.168.16.2 falls within all routes, but the router selects the longest prefix match. IS-IS’s /27 is the most specific, so 192.168.16.0/27 is chosen.
+
+---
+
+### Question 87
+![](img\0087.jpg)
+**Which prefix does Router1 use for traffic to Host A?**
+
+- **A.** 10.10.10.0/28  
+- **B.** 10.10.13.0/25  
+- **C.** 10.10.13.144/28  
+- **D.** 10.10.13.208/29  
+
+**Answer:** D  
+**Explanation:**  
+The routing table on Router1 includes several prefixes under the 10.0.0.0/8 network:  
+- 10.10.10.0/28 (directly connected)  
+- 10.10.13.0/25 [110/2] via 10.10.10.1  
+- 10.10.13.144/28 [110/2] via 10.10.10.1  
+- 10.10.13.208/29 [110/2] via 10.10.10.1  
+
+Routers use the longest prefix match to determine the route for a destination IP. Without Host A’s specific IP address, the question implies that Host A’s IP falls within the 10.10.13.208/29 subnet (range: 10.10.13.208–10.10.13.215), which has the most specific mask (/29) among the options that could apply. Thus, Router1 uses the prefix 10.10.13.208/29 for traffic to Host A.
+
+---
+
+### Question 88
+![](img\0088.jpg)
+**With which metric was the route to host 172.16.0.202 learned?**
+
+- **A.** 0  
+- **B.** 110  
+- **C.** 38443  
+- **D.** 3184439  
+
+**Answer:** C  
+**Explanation:**  
+The routing table lists two routes relevant to 172.16.0.202:  
+- 172.16.0.128/25 [110/38443] via 207.165.200.254 (OSPF)  
+- 172.16.0.192/29 [90/3184439] via 207.165.200.254 (EIGRP)  
+
+The IP 172.16.0.202 falls within:  
+- 172.16.0.128/25 (range: 172.16.0.128–172.16.0.255)  
+- But not 172.16.0.192/29 (range: 172.16.0.192–172.16.0.199)  
+
+Since 172.16.0.202 matches the 172.16.0.128/25 route, which is an OSPF route with a metric of 38443, the route to 172.16.0.202 was learned with a metric of 38443.
+
+---
+
+### Question 89
+![](img\0089.jpg)
+**Which two statements are true about the routing table? (Choose two.)**
+
+- **A.** The administrative distance of the 10.0.0.0/8 route is 1.  
+- **B.** There are 20 different network masks within the 10.0.0.0/8 network.  
+- **C.** Ten routes are equally load-balanced between Te0/1/0.100 and Te0/2/0.100.  
+- **D.** The 10.0.0.0/8 network was learned via external EIGRP.  
+- **E.** A static default route to 10.85.33.14 was defined.  
+
+**Answer:** B, C  
+**Explanation:**  
+- **A:** The route `B 10.0.0.0/8 [20/0] via 10.48.144.14` indicates BGP with an administrative distance of 20, not 1. Incorrect.  
+- **B:** The table states "10.0.0.0/8 is variably subnetted, 6692 subnets, 20 masks," confirming 20 different masks. Correct.  
+- **C:** The default route `D*EX 0.0.0.0/0 [170/257024]` lists multiple equal-cost paths (ten are shown) split between interfaces like TenGigabitEthernet0/1/0.100 and TenGigabitEthernet0/2/0.100, indicating load balancing. Correct.  
+- **D:** The 10.0.0.0/8 route is learned via BGP (`B`), not external EIGRP. Incorrect.  
+- **E:** The default route is an external EIGRP route (`D*EX`), not a static route. Incorrect.  
+
+Thus, B and C are true.
+
+| Code | Protocol / Route Source | Administrative Distance (AD) |
+| :--- | :--- | :--- |
+| **C** | **Directly connected interface** | **0** |
+| **S** | **Static route** | **1** |
+| **D EX** | **EIGRP External** | **170** |
+| **D** | **EIGRP Internal** | **90** |
+| **O** | **OSPF** | **110** |
+| **R** | **RIP** | **120** |
+| **B** | **BGP** | **200 (iBGP)** and **20 (eBGP)** |
+| **i** | **IS-IS** | **115** |
+| **M** | **Mobile** | **Not applicable** |
+| **L** | **Local** | **Not applicable** |
+| **\* (asterisk)** | **Candidate Default** | **Based on the route it's associated with** |
+| **O IA** | **OSPF Inter-Area** | **110** |
+| **O N1** | **OSPF NSSA External Type 1** | **110** |
+| **O N2** | **OSPF NSSA External Type 2** | **110** |
+| **O E1** | **OSPF External Type 1** | **110** |
+| **O E2** | **OSPF External Type 2** | **110** |
+| **i su** | **IS-IS Summary** | **115** |
+| **L1** | **IS-IS Level-1** | **115** |
+| **L2** | **IS-IS Level-2** | **115** |
+| **ia** | **IS-IS Inter-Area** | **115** |
+---
+
+### Question 90
+![](img\0090.jpg)
+**If RTR01 is configured as shown, which three addresses will be received by other routers that are running EIGRP on the network? (Choose three.)**
+
+- **A.** 192.168.2.0  
+- **B.** 10.4.3.0  
+- **C.** 10.0.0.0  
+- **D.** 172.16.0.0  
+- **E.** 172.16.4.0  
+- **F.** 192.168.0.0  
+
+**Answer:** A, C, D  
+**Explanation:**  
+RTR01’s EIGRP configuration includes:  
+- `network 10.4.3.0`  
+- `network 172.16.4.0`  
+- `network 192.168.2.0`  
+- `auto-summary` enabled  
+
+With `auto-summary`, EIGRP advertises classful network boundaries:  
+- 10.4.3.0 (Class A) is summarized to 10.0.0.0/8.  
+- 172.16.4.0 (Class B) is summarized to 172.16.0.0/16.  
+- 192.168.2.0 (Class C) is advertised as 192.168.2.0/24 (classful).  
+
+Thus, other EIGRP routers receive 10.0.0.0, 172.16.0.0, and 192.168.2.0.
+
+---
+
+### Question 91
+![](img\0091.jpg)
+**Which address and mask combination represents a summary of the routes learned by EIGRP?**
+
+- **A.** 192.168.25.0 255.255.255.240  
+- **B.** 192.168.25.0 255.255.255.252  
+- **C.** 192.168.25.16 255.255.255.240  
+- **D.** 192.168.25.16 255.255.255.252  
+- **E.** 192.168.25.28 255.255.255.240  
+- **F.** 192.168.25.28 255.255.255.252  
+
+**Answer:** C  
+**Explanation:**  
+The EIGRP-learned routes are:  
+- 192.168.25.16/30 (16–19)  
+- 192.168.25.20/30 (20–23)  
+- 192.168.25.24/30 (24–27)  
+- 192.168.25.28/30 (28–31)  
+
+These subnets range from 192.168.25.16 to 192.168.25.31, which fits a /28 (255.255.255.240) mask (16 addresses). The summary address 192.168.25.16 255.255.255.240 encompasses all these subnets.
+
+---
+
+### Question 93
+**By default, how does EIGRP determine the metric of a route for the routing table?**
+
+- **A.** It uses the bandwidth and delay values of the path to calculate the route metric.  
+- **B.** It uses a default metric of 10 for all routes that are learned by the router.  
+- **C.** It counts the number of hops between the receiving and destination routers and uses that value as the metric.  
+- **D.** It uses a reference bandwidth and the actual bandwidth of the connected link to calculate the route metric.  
+
+**Answer:** A  
+**Explanation:**  
+By default, EIGRP calculates its metric using bandwidth and delay along the entire path to the destination. The formula is:  
+`Metric = [K1 * bandwidth + (K2 * bandwidth) / (256 - load) + K3 * delay] * 256`  
+Where K1 and K3 are enabled by default, focusing on bandwidth and delay.
+
+---
+
+### Question 94
+**Which two actions influence the EIGRP route selection process? (Choose two.)**
+
+- **A.** The router calculates the reported distance by multiplying the delay on the exiting interface by 256.  
+- **B.** The router calculates the best backup path to the destination route and assigns it as the feasible successor.  
+- **C.** The router calculates the feasible distance of all paths to the destination route.  
+- **D.** The advertised distance is calculated by a downstream neighbor to inform the local router of the bandwidth on the link.  
+- **E.** The router must use the advertised distance as the metric for any given route.  
+
+**Answer:** B, C  
+**Explanation:**  
+- **B:** EIGRP identifies a feasible successor (best backup path) based on the feasibility condition, influencing route selection. Correct.  
+- **C:** The feasible distance (best metric to the destination) is calculated for all paths, determining the successor route. Correct.  
+- **A, D, E:** These are either incorrect or not primary actions in route selection.
+
+---
+
+### Question 95
+**You have two paths for the 10.10.10.0 network - one that has a feasible distance of 3072 and the other of 6144. What do you need to do to load balance your EIGRP routes?**
+
+- **A.** Change the maximum paths to 2  
+- **B.** Change the configuration so they both have the same feasible distance  
+- **C.** Change the variance for the path that has a feasible distance of 3072 to 2  
+- **D.** Change the IP addresses so both paths have the same source IP address  
+
+**Answer:** C  
+**Explanation:**  
+EIGRP supports unequal-cost load balancing using the `variance` command. Setting variance to 2 allows paths with a metric up to 3072 * 2 = 6144 to be included, enabling load balancing across both paths (3072 and 6144).
+
+---
 **Chapter 15: Cloud Architecture**
 
 *   **Cloud Computing:** Approach to delivering IT services over a network (Internet), characterized by:
