@@ -3423,6 +3423,20 @@ These subnets range from 192.168.25.16 to 192.168.25.31, which fits a /28 (255.2
 
 ---
 
+### Question 92
+![](img\0092.jpg)
+
+When running EIGRP, what is required for RouterA to exchange routing updates with RouterC?
+
+A. AS numbers must be changed to match on all the routers
+B. Loopback interfaces must be configured so a DR is elected
+C. The no auto-summary command is needed on Router A and Router C
+D. Router B needs to have two network statements, one for each connected network
+
+
+
+---
+
 ### Question 93
 **By default, how does EIGRP determine the metric of a route for the routing table?**
 
