@@ -3483,6 +3483,301 @@ Where K1 and K3 are enabled by default, focusing on bandwidth and delay.
 EIGRP supports unequal-cost load balancing using the `variance` command. Setting variance to 2 allows paths with a metric up to 3072 * 2 = 6144 to be included, enabling load balancing across both paths (3072 and 6144).
 
 ---
+
+### Question 96
+**Which two statements are true about the command `ip route 172.16.3.0 255.255.255.0 192.168.2.4`? (Choose two.)**
+
+- **A.** It establishes a static route to the 172.16.3.0 network.  
+- **B.** It establishes a static route to the 192.168.2.0 network.  
+- **C.** It configures the router to send any traffic for an unknown destination to the 172.16.3.0 network.  
+- **D.** It configures the router to send any traffic for an unknown destination out the interface with the address 192.168.2.4.  
+- **E.** It uses the default administrative distance.  
+- **F.** It is a route that would be used last if other routes to the same destination exist.  
+
+**Answer:** A, E  
+**Explanation:**  
+- **A:** The command defines a static route to 172.16.3.0/24 via next-hop 192.168.2.4. Correct.  
+- **E:** Static routes default to an administrative distance of 1, unless specified otherwise. Correct.  
+- **B:** The route is to 172.16.3.0, not 192.168.2.0. Incorrect.  
+- **C, D:** This is not a default route (0.0.0.0/0). Incorrect.  
+- **F:** With an AD of 1, it’s preferred over dynamic routes, not used last. Incorrect.
+
+---
+
+### Question 97
+**Router R1 must send all traffic without a matching routing-table entry to 192.168.1.1. Which configuration accomplishes this task?**
+
+- **A.**  
+  ```
+  R1(config)# ip routing
+  R1(config)# ip route default-route 192.168.1.1
+  ```  
+- **B.**  
+  ```
+  R1(config)# ip routing
+  R1(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.1
+  ```  
+- **C.**  
+  ```
+  R1(config)# ip routing
+  R1(config)# ip route 192.168.1.1 0.0.0.0 0.0.0.0
+  ```  
+- **D.**  
+  ```
+  R1(config)# ip routing
+  R1(config)# ip default-gateway 192.168.1.1
+  ```
+
+**Answer:** B  
+**Explanation:**  
+To send all traffic without a matching routing-table entry to a specific IP address (192.168.1.1 in this case), a default route is required. In Cisco IOS, the correct command for a default route is `ip route 0.0.0.0 0.0.0.0 <next-hop>`, where `0.0.0.0 0.0.0.0` represents all destinations (any IP address with any mask). Option B correctly implements this by setting the next hop to 192.168.1.1.  
+- Option A uses an invalid keyword (`default-route`), making it incorrect.  
+- Option C has incorrect syntax, as the destination and mask are swapped with the next-hop address.  
+- Option D uses `ip default-gateway`, which is only applicable when IP routing is disabled (e.g., with `no ip routing`), not when `ip routing` is enabled as shown.
+
+---
+
+### Question 98
+![](img\0098.jpg)
+
+**Refer to the exhibit. Router R1 Fa0/0 cannot ping router R3 Fa0/1. Which action must be taken in router R1 to help resolve the configuration issue?**
+
+- **A.** Set the default gateway as 20.20.20.2  
+- **B.** Configure a static route with Fa0/1 as the egress interface to reach the 20.20.20.0/24 network  
+- **C.** Configure a static route with 10.10.10.2 as the next hop to reach the 20.20.20.0/24 network  
+- **D.** Set the default network as 20.20.20.0/24  
+
+**Answer:** C  
+**Explanation:**  
+Assuming the exhibit shows R1’s Fa0/0 on the 10.10.10.0/24 network (with R3’s Fa0/0 at 10.10.10.2) and R3’s Fa0/1 on the 20.20.20.0/24 network, R1 cannot ping R3’s Fa0/1 (20.20.20.x) because it lacks a route to the 20.20.20.0/24 network. To resolve this, R1 needs a static route pointing to R3’s Fa0/0 (10.10.10.2) as the next hop for the 20.20.20.0/24 network. Option C correctly configures this with:  
+```
+R1(config)# ip route 20.20.20.0 255.255.255.0 10.10.10.2
+```  
+- Option A (`ip default-gateway`) is for devices not acting as routers, not for R1 with routing enabled.  
+- Option B specifies an egress interface (Fa0/1), but R1 needs to send traffic via Fa0/0 to reach R3, and a next-hop IP is more appropriate here.  
+- Option D refers to an invalid command (`default network` is not a Cisco IOS feature for this purpose).
+
+---
+
+### Question 99
+**A packet is destined for 10.10.1.22. Which static route does the router choose to forward the packet?**
+
+- **A.** `ip route 10.10.1.0 255.255.255.240 10.10.255.1`  
+- **B.** `ip route 10.10.1.20 255.255.255.252 10.10.255.1`  
+- **C.** `ip route 10.10.1.16 255.255.255.252 10.10.255.1`  
+- **D.** `ip route 10.10.1.20 255.255.255.254 10.10.255.1`  
+
+**Answer:** B  
+**Explanation:**  
+Routers use the longest prefix match to select a route. Let’s evaluate each option against the destination 10.10.1.22:  
+- **A:** `10.10.1.0/28` (255.255.255.240) covers 10.10.1.0–10.10.1.15. (Does not include 10.10.1.22.)  
+- **B:** `10.10.1.20/30` (255.255.255.252) covers 10.10.1.0–10.10.1.3. (Does not include 10.10.1.22.)  
+- **C:** `10.10.1.16/30` (255.255.255.252) covers 10.10.1.16–10.10.1.19. (Does not include 10.10.1.22.)  
+- **D:** `10.10.1.20/31` (255.255.255.254) covers 10.10.1.20–10.10.1.21. (Does not include 10.10.1.22.)  
+
+None of these routes directly match 10.10.1.22, suggesting a possible error in the question (e.g., the destination might be intended as 10.10.1.2). If the destination were 10.10.1.2, Option B (`10.10.1.0/30`) would cover it and be the most specific match. Given the provided answer is B, it’s likely a typo in the question, and the intended destination is within 10.10.1.0–10.10.1.3 (e.g., 10.10.1.2). Thus, B is accepted as the answer.
+
+---
+
+### Question 100
+**What are two reasons for an engineer to configure a floating static route? (Choose two.)**
+
+- **A.** To enable fallback static routing when the dynamic routing protocol fails  
+- **B.** To route traffic differently based on the source IP of the packet  
+- **C.** To automatically route traffic on a secondary path when the primary path goes down  
+- **D.** To support load balancing via static routing  
+- **E.** To control the return path of traffic that is sent from the router  
+
+**Answer:** A, C  
+**Explanation:**  
+A floating static route is a static route with a higher administrative distance (AD) than a primary route (e.g., from a dynamic protocol like OSPF). It serves as a backup:  
+- **A:** It provides fallback routing when the dynamic protocol fails (e.g., OSPF AD = 110, floating static AD = 120; if OSPF route disappears, the static route activates).  
+- **C:** It automatically takes over as a secondary path when the primary path (with lower AD) is unavailable.  
+- **B:** Source-based routing is policy-based routing, not a floating static route feature.  
+- **D:** Load balancing requires equal AD routes, not higher-AD floating routes.  
+- **E:** Return path control is unrelated to floating static routes.
+
+---
+
+
+### Question 101
+![](img\0101.jpg)
+**Which type of route does R1 use to reach host 10.10.13.10/32?**
+
+- **A.** Floating static route  
+- **B.** Host route  
+- **C.** Default route  
+- **D.** Network route  
+
+**Answer:** D  
+**Explanation:**  
+Assuming R1’s routing table includes a route like `OSPF 10.10.13.0/25`, which covers 10.10.13.10:  
+- A **host route** is a /32 route (specific to one host), but 10.10.13.10/32 suggests the destination, not the route prefix.  
+- A **default route** is `0.0.0.0/0`, not applicable here.  
+- A **floating static route** is a static route with higher AD, but there’s no indication of this.  
+- A **network route** has a prefix less than /32 (e.g., /25), which matches `10.10.13.0/25`. Thus, R1 uses a network route (D).
+
+---
+
+### Question 102
+![](img\0102.jpg)
+**If configuring a static default route on the router with the `ip route 0.0.0.0 0.0.0.0 10.13.0.1 120` command, how does the router respond?**
+
+**Exhibit:**
+```
+Gateway of last resort is 10.12.0.1 to network 0.0.0.0
+O*E2 0.0.0.0/0 [110/1] via 10.12.0.1, 00:00:01, GigabitEthernet0/0
+10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C 10.0.0.0/24 is directly connected, GigabitEthernet0/0
+L 10.0.0.2/32 is directly connected, GigabitEthernet0/0
+C 10.13.0.0/24 is directly connected, GigabitEthernet0/1
+L 10.13.0.2/32 is directly connected, GigabitEthernet0/1
+```
+
+- **A.** It ignores the new static route until the existing OSPF default route is removed.  
+- **B.** It immediately replaces the existing OSPF route in the routing table with the newly configured static route.  
+- **C.** It starts load-balancing traffic between the two default routes.  
+- **D.** It starts sending traffic without a specific matching entry in the routing table to GigabitEthernet0/1.  
+
+**Answer:** A  
+**Explanation:**  
+The static default route `ip route 0.0.0.0 0.0.0.0 10.13.0.1 120` has an AD of 120. The existing OSPF default route (`O*E2 0.0.0.0/0 [110/1]`) has an AD of 110. Cisco routers prefer the route with the lowest AD, so the OSPF route (110) remains in the routing table, and the static route (120) is ignored until the OSPF route is removed.
+
+---
+
+### Question 103
+**When a floating static route is configured, which action ensures that the backup route is used when the primary route fails?**
+
+- **A.** The floating static route must have a higher administrative distance than the primary route so it is used as a backup.  
+- **B.** The administrative distance must be higher on the primary route so that the backup route becomes secondary.  
+- **C.** The floating static route must have a lower administrative distance than the primary route so it is used as a backup.  
+- **D.** The default-information originate command must be configured for the route to be installed into the routing table.  
+
+**Answer:** A  
+**Explanation:**  
+A floating static route is designed as a backup with a higher AD than the primary route (e.g., OSPF AD = 110, floating static AD = 120). When the primary route fails, the router installs the floating static route (with the next-lowest AD) into the routing table.
+D. The default-information originate command is used in dynamic routing protocols like OSPF and EIGRP to inject a default route (a route to 0.0.0.0/0) into a routing domain. It is not required for a floating static route to be installed in the routing table upon a primary route's failure.
+---
+
+### Question 104
+![](img\0104.jpg)
+**Refer to the exhibit. Which command would you use to configure a static route on Router1 to network 192.168.202.0/24 with a nondefault administrative distance?**
+
+- **A.** `router1(config)# ip route 192.168.202.0 255.255.255.0 192.168.201.2 1`  
+- **B.** `router1(config)# ip route 192.168.202.0 255.255.255.0 192.168.201.2 5`  
+- **C.** `router1(config)# ip route 1 192.168.201.1 255.255.255.0 192.168.201.2`  
+- **D.** `router1(config)# ip route 5 192.168.202.0 255.255.255.0 192.168.201.2`  
+
+**Answer:** B  
+**Explanation:**  
+The syntax for a static route with a custom AD is `ip route <network> <mask> <next-hop> <AD>`. Option B correctly configures a route to 192.168.202.0/24 via 192.168.201.2 with an AD of 5 (nondefault, as the default AD for static routes is 1).  
+- Option A uses AD 1, which is the default, not nondefault.  
+- Options C and D have incorrect syntax.
+
+---
+
+### Question 105
+![](img\0105.jpg)
+**Refer to the exhibit. The `default-information originate` command is configured under the R1 OSPF configuration. After testing, workstations on VLAN 20 at Site B cannot reach a DNS server on the Internet. Which action corrects the configuration issue?**
+
+- **A.** Add the `default-information originate` command on R2.  
+- **B.** Add the `always` keyword to the `default-information originate` command on R1  
+- **C.** Configure the `ip route 0.0.0.0 0.0.0.0 10.10.10.18` command on R1  
+- **D.** Configure the `ip route 0.0.0.0 0.0.0.0 10.10.10.12` command on R2  
+
+**Answer:** C  
+**Explanation:**  
+The OSPF command `default-information originate` on R1 advertises a default route to other OSPF routers (e.g., R2) only if R1 has a default route in its routing table. If workstations at Site B (behind R2) cannot reach the Internet, R1 likely lacks a default route to advertise. Adding `ip route 0.0.0.0 0.0.0.0 10.10.10.18` on R1 (assuming 10.10.10.18 is the next hop to the Internet) ensures R1 has a default route, which it then propagates via OSPF to R2.
+
+---
+
+### Question 106
+**Which three describe the reasons large OSPF networks use a hierarchical design? (Choose three.)**
+
+- **A.** To speed up convergence  
+- **B.** To reduce routing overhead  
+- **C.** To lower costs by replacing routers with distribution layer switches  
+- **D.** To decrease latency by increasing bandwidth  
+- **E.** To confine network instability to single areas of the network  
+- **F.** To reduce the complexity of router configuration  
+
+**Answer:** A, B, E  
+**Explanation:**  
+OSPF’s hierarchical design (multiple areas) provides:  
+- **A:** Faster convergence by limiting SPF calculations to smaller areas.  
+- **B:** Reduced routing overhead by summarizing routes at area boundaries.  
+- **E:** Containment of instability (e.g., link flaps) within a single area.  
+- **C, D, F:** These are not primary benefits of OSPF hierarchy.
+
+---
+
+### Question 107
+**Which statements describe the routing protocol OSPF? (Choose two.)**
+
+- **A.** It supports VLSM.  
+- **B.** It is used to route between autonomous systems.  
+- **C.** It confines network instability to one area of the network.  
+- **D.** It is simpler to configure than RIPv2.  
+
+**Answer:** A, C  
+**Explanation:**  
+- **A:** OSPF supports Variable Length Subnet Masking (VLSM).  
+- **C:** Its hierarchical design limits instability to individual areas.  
+- **B:** OSPF is an Interior Gateway Protocol (IGP), not for inter-AS routing (that’s BGP).  
+- **D:** OSPF is more complex to configure than RIPv2.
+
+---
+
+### Question 108
+**Which command is used to display the collection of OSPF link states?**
+
+- **A.** `show ip ospf link-state`  
+- **B.** `show ip ospf lsa database`  
+- **C.** `show ip ospf neighbors`  
+- **D.** `show ip ospf database`  
+
+**Answer:** D  
+**Explanation:**  
+The `show ip ospf database` command displays the OSPF link-state database, showing all Link State Advertisements (LSAs), which represent the collection of link states.
+
+---
+
+### Question 109
+**Refer to the exhibit. A network associate has configured OSPF with the command: `City(config-router)# network 192.168.12.64 0.0.0.63 area 0`. After completing the configuration, the associate discovers that not all the interfaces are participating in OSPF. Which three of the interfaces shown in the exhibit will participate in OSPF according to this configuration statement? (Choose three.)**
+
+**Exhibit:**
+```
+City#show ip interface brief
+Interface       IP-Address      OK?  Method  Status  Protocol
+FastEthernet0/0 192.168.12.40   YES  manual  up      up
+FastEthernet0/1 192.168.12.65   YES  manual  up      up
+Serial0/0       192.168.12.121  YES  manual  up      up
+Serial0/1       unassigned      YES  unset   up      up
+Serial0/1.102   192.168.12.125  YES  manual  up      up
+Serial0/1.104   192.168.12.133  YES  manual  up      up
+```
+
+- **A.** FastEthernet0/0  
+- **B.** FastEthernet0/1  
+- **C.** Serial0/0  
+- **D.** Serial0/1  
+- **E.** Serial0/1.102  
+- **F.** Serial0/1.104  
+
+**Answer:** B, C, E  
+**Explanation:**  
+The OSPF command `network 192.168.12.64 0.0.0.63 area 0` uses a wildcard mask of 0.0.0.63, covering IP addresses from 192.168.12.64 to 192.168.12.127 (64 + 63 = 127). Interfaces with IPs in this range participate in OSPF:  
+- **FastEthernet0/0:** 192.168.12.40 (outside range)  
+- **FastEthernet0/1:** 192.168.12.65 (within range)  
+- **Serial0/0:** 192.168.12.121 (within range)  
+- **Serial0/1:** Unassigned (no IP, so excluded)  
+- **Serial0/1.102:** 192.168.12.125 (within range)  
+- **Serial0/1.104:** 192.168.12.133 (outside range)  
+Thus, B, C, and E participate.
+
+---
+
+
 **Chapter 15: Cloud Architecture**
 
 *   **Cloud Computing:** Approach to delivering IT services over a network (Internet), characterized by:
