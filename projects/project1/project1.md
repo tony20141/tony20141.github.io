@@ -3721,9 +3721,9 @@ OSPF’s hierarchical design (multiple areas) provides:
 
 **Answer:** A, C  
 **Explanation:**  
-- **A:** OSPF supports Variable Length Subnet Masking (VLSM).  
+- **A:** OSPF supports Variable Length Subnet Masking (VLSM). a subnetting technique that allows an IP address range to be divided into subnets of different sizes.  
 - **C:** Its hierarchical design limits instability to individual areas.  
-- **B:** OSPF is an Interior Gateway Protocol (IGP), not for inter-AS routing (that’s BGP).  
+- **B:** OSPF is an Interior Gateway Protocol (IGP), only internal within a single auto system, not for inter-AS routing (that’s BGP).  
 - **D:** OSPF is more complex to configure than RIPv2.
 
 ---
@@ -3743,6 +3743,7 @@ The `show ip ospf database` command displays the OSPF link-state database, showi
 ---
 
 ### Question 109
+![](img\0109.jpg)
 **Refer to the exhibit. A network associate has configured OSPF with the command: `City(config-router)# network 192.168.12.64 0.0.0.63 area 0`. After completing the configuration, the associate discovers that not all the interfaces are participating in OSPF. Which three of the interfaces shown in the exhibit will participate in OSPF according to this configuration statement? (Choose three.)**
 
 **Exhibit:**
@@ -3774,6 +3775,21 @@ The OSPF command `network 192.168.12.64 0.0.0.63 area 0` uses a wildcard mask of
 - **Serial0/1.102:** 192.168.12.125 (within range)  
 - **Serial0/1.104:** 192.168.12.133 (outside range)  
 Thus, B, C, and E participate.
+
+---
+### QUESTION 110  
+![](img\0110.jpg)
+Refer to the exhibit. Given the output for this command, if the router ID has not been manually set, what router ID will OSPF use for this router?  
+A. 10.1.1.2
+B. 10.154.154.1
+C. 172.16.5.1
+D. 192.168.5.3
+参考以下输出信息。如果未手动设置路由器ID，OSPF将为此路由器使用哪个ID？  
+**答案**: C (172.16.5.1)  
+**解释**:  
+- OSPF路由器ID的优先级顺序为：手动配置 > 最大Loopback接口IP > 最大物理接口IP。  
+- 本题中，Loopback0的IP为`172.16.5.1`，Loopback1为`10.154.154.1`，物理接口中最大IP为`192.168.5.3`。  
+- `172.16.5.1`是最大的Loopback接口IP，因此被选为Router ID。
 
 ---
 
