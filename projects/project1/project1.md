@@ -3793,6 +3793,129 @@ D. 192.168.5.3
 
 ---
 
+### QUESTION 111  
+ 
+A network administrator is troubleshooting the OSPF configuration of routers R1 and R2. The routers cannot establish an adjacency relationship on their common Ethernet link. Based on the output of `show ip ospf interface e0`, what is the cause of this problem?  
+![](img\0111.jpg)
+**中文翻译**:  
+网络管理员正在排查R1和R2的OSPF配置问题。两台路由器在共享的以太网链路上无法建立邻接关系。根据`show ip ospf interface e0`的输出，问题原因是什么？  
+A. The OSPF area is not configured properly.
+B. The priority on R1 should be set higher.
+C. The cost on R1 should be set higher.
+D. The hello and dead timers are not configured properly.*
+E. A backup designated router needs to be added to the network.
+F. The OSPF process ID numbers must match.
+**答案**: D (The hello and dead timers are not configured properly)  
+**解释**:  
+- R1的Hello间隔为5秒，Dead间隔为20秒；R2的Hello间隔为10秒，Dead间隔为40秒。  
+- OSPF要求直连路由器的Hello和Dead间隔必须一致，否则无法建立邻接关系。
+
+---
+### QUESTION 112  
+![](img\0112.jpg)
+R1 is unable to establish an OSPF neighbor relationship with R3. What are possible reasons for this problem? (Choose two.)  
+**中文翻译**:  
+R1无法与R3建立OSPF邻居关系。可能的原因是什么？（选择两项）  
+A. All of the routers need to be configured for backbone Area 1.
+B. R1 and R2 are the DR and BDR, so OSPF will not establish neighbor adjacency with R3.
+C. A static route has been configured from R1 to R3 and prevents the neighbor adjacency from being established.
+D. The hello and dead interval timers are not set to the same values on R1 and R3. *
+E. EIGRP is also configured on these routers with a lower administrative distance.
+F. R1 and R3 are configured in different areas.*
+**答案**: D, F (Hello/Dead定时器不匹配；R1和R3配置在不同区域)  
+**解释**:  
+- **D**: Hello和Dead定时器不一致会导致邻居关系失败。  
+- **F**: OSPF要求邻居接口必须属于同一区域。  
+- **错误选项**:  
+  - B: DR/BDR选举不影响邻居关系建立，只影响邻接关系。  
+  - E: EIGRP的AD值较低（默认90），但不会阻止OSPF邻居建立。
+  - A is not correct because the backbone area of OSPF is always Area 0.
+B is not correct because R1 or R3 must be the DR or BDR -> it has to establish neighbor adjacency with the other.
+C is not correct because OSPF neighbor relationship is not established based on static routing. It uses multicast address 224.0.0.5 to establish OSPF neighbor relationship.
+E is not correct because configure EIGRP on these routers (with a lower administrative distance) will force these routers to run EIGRP, not OSPF.
+D and F are correct because these entries must match on neighboring routers:
+
+---
+### QUESTION 113  
+![](img\0113.jpg)
+ 
+Which two statements are true about the loopback address that is configured on RouterB?  
+A. It ensures that data will be forwarded by RouterB.
+B. It provides stability for the OSPF process on RouterB.
+C. It specifies that the router ID for RouterB should be 10.0.0.1.
+D. It decreases the metric for routes that are advertised from RouterB.
+E. It indicates that RouterB should be elected the DR for the LAN.
+**中文翻译**:  
+关于RouterB上配置的环回地址，哪两项描述正确？  
+**答案**: B, C (提供OSPF进程稳定性；指定RouterB的Router ID为10.0.0.1)  
+**解释**:  
+- **B**: Loopback接口永不宕机，确保Router ID稳定。  
+- **C**: OSPF优先使用Loopback接口的IP作为Router ID（即使其他接口IP更大）。  
+- **错误选项**:  
+  - D: Loopback地址不影响路由度量值（Cost）。  
+  - E: DR选举基于优先级和接口IP，与Loopback无关。
+
+---
+
+### QUESTION 114  
+  
+If all OSPF routers in a single area are configured with the same priority value, what value does a router use for the OSPF router ID in the absence of a loopback interface?  
+A. the IP address of the first Fast Ethernet interface
+B. the IP address of the console management interface
+C. the highest IP address among its active interfaces
+D. the lowest IP address among its active interfaces
+E. the priority value until a loopback interface is configured
+**中文翻译**:  
+如果单区域内的所有OSPF路由器优先级相同且无环回接口，路由器将使用哪个值作为OSPF路由器ID？  
+**答案**: C (活跃接口中的最大IP地址)  
+**解释**:  
+- 当无Loopback接口时，OSPF选择数值最大的活跃物理接口IP地址作为Router ID。
+
+---
+
+### QUESTION 115  
+**英文原文**:  
+The OSPF Hello protocol performs which of the following tasks? (Choose two.)  
+**中文翻译**:  
+OSPF Hello协议执行以下哪些任务？（选择两项）  
+A. It provides dynamic neighbor discovery.
+
+B. It detects unreachable neighbors in 90 second intervals.
+
+C. It maintains neighbor relationships.
+
+D. It negotiates correctness parameters between neighboring interfaces.
+
+E. It uses timers to elect the router with the fastest links as the designated router.
+
+F. It broadcasts hello packets throughout the internetwork to discover all routers that are running OSPF.
+**答案**: A, C (动态邻居发现；维护邻居关系)  
+**解释**:  
+- **A**: Hello协议通过组播发现邻居。  
+- **C**: 周期性发送Hello包以确认邻居存活。  
+- **错误选项**:  
+  - B: Dead间隔是Hello间隔的4倍（如Hello=10秒，Dead=40秒），而非固定90秒。  
+  - F: Hello包仅在直连网络发送，不会全网泛洪。
+
+---
+
+### QUESTION 116  
+![](img\0116.jpg)
+**英文原文**:  
+Refer to the exhibit. Which configuration issue is preventing the OSPF neighbor relationship from being established between the two routers?  
+**中文翻译**:  
+参考以下配置。哪个配置问题导致两台路由器无法建立OSPF邻居关系？  
+A. R1 has an incorrect network command for interface Gi1/0.
+B. R2 should have its network command in area 1.
+C. R1 interface Gi1/0 has a larger MTU size.
+D. R2 is using the passive-interface default command.
+
+**答案**: C (R1的接口MTU值更大)  
+**解释**:  
+- R1的MTU配置为1600，而R2未配置（默认1500）。OSPF要求两端MTU一致，否则无法建立邻接。
+
+---
+
 
 **Chapter 15: Cloud Architecture**
 
