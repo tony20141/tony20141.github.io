@@ -3901,7 +3901,7 @@ F. It broadcasts hello packets throughout the internetwork to discover all route
 
 ### QUESTION 116  
 ![](img\0116.jpg)
-**英文原文**:  
+
 Refer to the exhibit. Which configuration issue is preventing the OSPF neighbor relationship from being established between the two routers?  
 **中文翻译**:  
 参考以下配置。哪个配置问题导致两台路由器无法建立OSPF邻居关系？  
@@ -3916,7 +3916,145 @@ D. R2 is using the passive-interface default command.
 
 ---
 
+### QUESTION 117  
+**英文原文**:  
+Which two minimum parameters must be configured to enable OSPFv2 to operate? (Choose two.)  
+A. OSPF process ID
+B. OSPF MD5 authentication key
+C. OSPF stub flag
+D. IPv6 address
+E. OSPF area
+启用OSPFv2必须配置哪两项最小参数？（选择两项）  
+**答案**: A, E (OSPF进程ID；OSPF区域)  
+**解释**:  
+- **A**: 进程ID用于标识本地OSPF进程（不同进程ID的路由器仍可建立邻居）。  
+- **E**: 所有接口必须归属某个OSPF区域。  
+- **错误选项**:  
+  - D: OSPFv2使用IPv4地址，与IPv6无关。
 
+---
+
+### QUESTION 118  
+![](img\0118.jpg)
+**英文原文**:  
+After the configuration is applied, the two routers fail to establish an OSPF neighbor relationship. What is the reason for the problem?  
+A. The OSPF process IDs are mismatched
+B. The network statement on Router1 is misconfigured
+C. Router2 is using the default hello timer
+D. The OSPF router IDs are mismatched
+
+**中文翻译**:  
+配置应用后，两台路由器无法建立OSPF邻居关系。问题原因是什么？  
+**答案**: B (Router2使用默认Hello定时器)  
+**解释**:  
+- Router1可能修改了Hello间隔（如5秒），而Router2使用默认值（10秒），定时器不匹配导致协商失败。
+
+---
+
+### QUESTION 119  
+
+What does router R1 use as its OSPF router-ID?  
+![](img\0119.jpg)
+路由器R1使用哪个地址作为其OSPF路由器ID？ 
+A. 10.10.1.10
+B. 10.10.10.20
+C. 172.16.15.10
+D. 192.168.0.1
+**答案**: C (172.16.15.10)  
+**解释**:  
+- Loopback接口`172.16.15.10`存在，即使其他物理接口IP更大（如`10.10.10.20`），OSPF仍优先选择Loopback地址。
+
+---
+
+### QUESTION 120  
+![](img\0120.jpg)
+
+An engineer configured an OSPF neighbor as a designated router. Which state verifies the designated router is in the proper mode?  
+A. Init
+B. 2-way
+C. Exchange
+D. Full
+
+**中文翻译**:  
+工程师将某OSPF邻居配置为指定路由器（DR）。哪种状态可以验证DR处于正确模式？  
+**答案**: C (Full)  
+**解释**:  
+- **Full状态**：表示路由器与DR/BDR已完全同步链路状态数据库（LSDB），邻接关系建立完成。  
+- **其他状态**:  
+  - 2-way：仅确认双向通信，未完成同步。  
+  - Exchange：正在交换LSA头部信息。
+---
+
+### QUESTION 121  
+![](img\0121.jpg)
+
+If OSPF is running on this network, how does Router2 handle traffic from Site B to 10.10.13.128/25 at Site A?  
+**中文翻译**:  
+如果OSPF在此网络中运行，Router2如何处理从Site B到Site A的10.10.13.128/25的流量？  
+**答案**: C (It cannot send packets to 10.10.13.128/25)  
+**解释**:  
+- Router2的路由表中没有匹配10.10.13.128/25的路由条目。  
+- 路由表显示，Router2仅知道10.10.13.0/25的路径，而`10.10.13.128/25`是一个不同的子网，因此无法转发。
+
+---
+
+### QUESTION 122  
+
+You have configured a router with an OSPF router ID, but its IP address still reflects the physical interface. Which action can you take to correct the problem in the least disruptive way?  
+**中文翻译**:  
+你已为路由器配置了OSPF路由器ID，但其IP地址仍显示为物理接口地址。如何以最小影响纠正此问题？  
+**答案**: A (Reload the OSPF process)  
+**解释**:  
+- OSPF的Router ID在进程启动时确定。重新加载OSPF进程（如执行`clear ip ospf process`）会强制路由器重新选择Router ID（优先使用Loopback接口IP）。  
+- 无需重启路由器或修改物理接口配置。
+
+---
+
+### QUESTION 123  
+
+When OSPF learns multiple paths to a network, how does it select a route?  
+**中文翻译**:  
+当OSPF学习到多条路径时，如何选择最佳路由？  
+**答案**: C (It divides a reference bandwidth by the actual bandwidth to calculate the lowest cost)  
+**解释**:  
+- OSPF的路径选择基于**Cost值**，计算公式为：  
+  `Cost = 参考带宽（默认100 Mbps） / 接口实际带宽`。  
+- 例如：千兆接口的Cost为 `1000 Mbps / 1000 Mbps = 1`。  
+- 选择总Cost最小的路径。
+
+---
+
+### QUESTION 124  
+
+By default, which type of OSPF network does a Gigabit Ethernet interface belong to?  
+**中文翻译**:  
+默认情况下，千兆以太网接口属于哪种OSPF网络类型？  
+**答案**: C (Broadcast)  
+**解释**:  
+- 以太网接口默认被归类为**广播网络（Broadcast）**，支持DR/BDR选举。  
+- 其他类型：  
+  - **Point-to-Point**：用于串行链路（如PPP封装）。  
+  - **Nonbroadcast**：需手动配置（如帧中继）。
+DR/BDR Election: A Designated Router (DR) and a Backup Designated Router (BDR) are elected to manage OSPF traffic and maintain a consistent Link-State Database. The DR is responsible for creating a Type 2 Link-State Advertisement (LSA) that represents the multi-access segment and lists all connected routers. This process reduces the number of OSPF adjacencies and LSA exchanges, preventing a full-mesh of connections and improving scalability.
+---
+
+### QUESTION 125  
+![](img\0125.jpg)
+
+The `show ip ospf interface` command has been executed on R1. How is OSPF configured?  
+A. A point-to-point network type is configured.
+B. The interface is not participating in OSPF.
+C. The default Hello and Dead timers are in use.
+D. There are six OSPF neighbors on this interface.
+**中文翻译**:  
+在R1上执行`show ip ospf interface`命令后，如何判断OSPF的配置？  
+**答案**: C (The default Hello and Dead timers are in use)  
+**解释**:  
+- 输出中显示`Hello 10, Dead 40`，符合OSPF默认的以太网接口定时器（Hello=10秒，Dead=40秒）。  
+- **错误选项**：  
+  - B：Point-to-Point网络的默认Hello为10秒，Dead为40秒，但题目中接口是广播网络（显示DR/BDR信息）。  
+
+---
 **Chapter 15: Cloud Architecture**
 
 *   **Cloud Computing:** Approach to delivering IT services over a network (Internet), characterized by:
