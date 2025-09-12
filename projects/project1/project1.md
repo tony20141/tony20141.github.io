@@ -2396,6 +2396,89 @@ Security Violation Count : 0
 Option B is false because "protect" mode drops traffic, not error-disables the port. D is incorrect as only 2 are dynamically learned, and E is false because "protect" mode does not increment the violation counter.
 
 
+
+**QUESTION 137**
+
+![](img\0137.jpg)
+Refer to diagram.  Which configuration on RTR-1 denies SSH access from PC-1 to any RTR-1
+interface and allows all other traffic?
+
+A.
+```
+access-list 100 deny tcp host 172.16.1.33 any eq 22
+access-list 100 permit ip any any
+interface GigabitEthernet0/0
+ ip access-group 100 in
+```
+B.
+```
+access-list 100 deny tcp host 172.16.1.33 any eq 22
+access-list 100 permit ip any any
+line vty 0 15
+ access-class 100 in
+```
+C.
+```
+access-list 100 deny tcp host 172.16.1.33 any eq 23
+access-list 100 permit ip any any
+interface GigabitEthernet0/0
+ ip access-group 100 in
+```
+
+D.
+```
+access-list 100 deny tcp host 172.16.1.33 any eq 23
+access-list 100 permit ip any any
+line vty 0 15
+ access-class 100 in
+
+```
+
+**Answer: B**
+
+**Explanation**
+The best and correct answer is **B**. Here's a breakdown of why, and why the others are incorrect:
+
+*   **Why B is Correct:**
+    *   `access-list 100 deny tcp host 172.16.1.33 any eq 22`: This line *correctly* denies TCP traffic (SSH uses TCP) *from* the specific host 172.16.1.33 (PC-1) *to* any destination (`any`) on the SSH port (port 22).
+    *   `access-list 100 permit ip any any`: This line is crucial.  It permits *all other* IP traffic.  Without this, the implicit `deny any` at the end of the ACL would block everything.
+    *   `line vty 0 15`: This enters the configuration for the virtual terminal lines (used for Telnet and SSH access).
+    *   `access-class 100 in`: This applies the access list *inbound* on the VTY lines.  This is the correct place to filter SSH/Telnet access *to* the router itself.  Applying an ACL to a physical interface filters traffic *passing through* the router, not traffic *destined for* the router's management interface.
+
+*   **Why A is Incorrect:**
+    *  It uses port 22 (which is correct for SSH). But the ACL is applied to the interface. Applying an ACL to a physical `interface` filters traffic passing *through* the router, not traffic *to* the router itself (like a management session).
+
+*   **Why C and D are Incorrect:**
+    *   They both incorrectly use port 23 (Telnet) instead of port 22 (SSH).
+    *   Option C, like Option A, incorrectly applies the ACL to the physical interface instead of the VTY lines.
+
+---
+
+**QUESTION 138**
+
+While examining excessive traffic on the network, it is noted that all incoming packets on an
+interface appear to be allowed even though an IPv4 ACL is applied to the interface. Which two
+misconfigurations cause this behavior? (Choose two.)
+A. The ACL is empty.
+B. A matching permit statement is too broadly defined.
+C. The packets fail to match any permit statement.
+D. A matching deny statement is too high in the access list.
+E. A matching permit statement is too high in the access list.
+
+**Answer: B, E**
+
+**Explanation**
+*   **B. A matching permit statement is too broadly defined:** If a `permit` statement is too broad (e.g., `permit ip any any`), it will allow *all* traffic, regardless of any subsequent `deny` statements. The ACL is processed sequentially, and the *first* match is taken.
+
+*   **E. A matching permit statement is too high in the access list:**  ACLs are processed *top-down*.  If a broad `permit` statement (like `permit ip any any`) is placed *before* more specific `deny` statements, the `permit` statement will match *all* traffic, and the `deny` statements will *never* be reached.  The order of ACEs (Access Control Entries) within an ACL is *critical*.
+
+*   A is incorrect:  If the ACL is empty, it means there's *no explicit deny*, the implicit deny at the end will block all traffic.
+*   C is incorrect:  If packets fail to match any `permit` statement, they will hit the *implicit deny* at the end of the ACL, and the traffic will be blocked, not allowed.
+*   D is partially correct but less likely. A `deny` statement that is too high might allow traffic that *should* be blocked, but it wouldn't explain *all* traffic being allowed.  A broadly defined `permit` statement is a far more common cause of this problem.
+
+---
+
+
 **Chapter 5: Securing Network Devices**
 
 *   **Securing IOS Passwords:**
@@ -3989,6 +4072,10 @@ D. Full
 ![](img\0121.jpg)
 
 If OSPF is running on this network, how does Router2 handle traffic from Site B to 10.10.13.128/25 at Site A?  
+A. It sends packets out of interface Fa0/2 only.
+B. It sends packets out of interface Fa0/1 only.
+C. It cannot send packets to 10.10.13.128/25.
+D. It load-balances traffic out of Fa0/1 and Fa0/2.
 **中文翻译**:  
 如果OSPF在此网络中运行，Router2如何处理从Site B到Site A的10.10.13.128/25的流量？  
 **答案**: C (It cannot send packets to 10.10.13.128/25)  
@@ -4000,7 +4087,12 @@ If OSPF is running on this network, how does Router2 handle traffic from Site B 
 
 ### QUESTION 122  
 
-You have configured a router with an OSPF router ID, but its IP address still reflects the physical interface. Which action can you take to correct the problem in the least disruptive way?  
+You have configured a router with an OSPF router ID, but its IP address still reflects the physical interface. Which action can you take to correct the problem in the least disruptive way?
+A. Reload the OSPF process.
+B. Specify a loopback address
+C. Reboot the router.
+D. Save the router configuration
+
 **中文翻译**:  
 你已为路由器配置了OSPF路由器ID，但其IP地址仍显示为物理接口地址。如何以最小影响纠正此问题？  
 **答案**: A (Reload the OSPF process)  
@@ -4013,6 +4105,11 @@ You have configured a router with an OSPF router ID, but its IP address still re
 ### QUESTION 123  
 
 When OSPF learns multiple paths to a network, how does it select a route?  
+A. It multiplies the active K value by 256 to calculate the route with the lowest metric.
+B. For each existing interface, it adds the metric from the source router to the destination to calculate the route with the lowest bandwidth.
+C. It divides a reference bandwidth of 100 Mbps by the actual bandwidth of the existing interface to calculate the route with the lowest cost.
+D. It counts the number of hops between the source router and the destination to determine the route with the lowest metric.
+
 **中文翻译**:  
 当OSPF学习到多条路径时，如何选择最佳路由？  
 **答案**: C (It divides a reference bandwidth by the actual bandwidth to calculate the lowest cost)  
@@ -4027,6 +4124,10 @@ When OSPF learns multiple paths to a network, how does it select a route?
 ### QUESTION 124  
 
 By default, which type of OSPF network does a Gigabit Ethernet interface belong to?  
+A. point-to-multipoint
+B. point-to-point
+C. broadcast
+D. nonbroadcast
 **中文翻译**:  
 默认情况下，千兆以太网接口属于哪种OSPF网络类型？  
 **答案**: C (Broadcast)  
@@ -4055,6 +4156,243 @@ D. There are six OSPF neighbors on this interface.
   - B：Point-to-Point网络的默认Hello为10秒，Dead为40秒，但题目中接口是广播网络（显示DR/BDR信息）。  
 
 ---
+### QUESTION 126  
+ 
+Drag and drop the OSPFv2 neighbor adjacency parameters.  
+**中文翻译**:  
+拖放OSPFv2邻居邻接参数到对应的类别。  
+**答案**:  
+
+| 参数            | 类别         |
+|-----------------|-------------|
+| area ID         | must match  |
+| OSPF process ID | must be unique |
+| router ID       | must be unique |
+| timers          | must match  |
+| netmask         | must match  |  
+*   **Must Match (for adjacency to form):**
+    *   **area ID:** OSPF neighbors *must* be in the same area to form an adjacency.  This is a fundamental requirement for OSPF operation.
+    *   **netmask:** OSPF neighbors on a common segment *must* agree on the subnet mask (and therefore, the network address).
+    *   **timers:**  The Hello and Dead timers *must* match for neighbors to form an adjacency.  These timers control how often OSPF sends Hello packets and how long it waits before declaring a neighbor down.
+
+*   **Must Be Unique (within the OSPF domain or on the local router):**
+    *   **IP address:**  Obviously, interfaces need unique IP addresses within the same subnet.
+    *    **router ID:** The Router ID *must* be unique within the entire OSPF routing domain.  Duplicate Router IDs will prevent adjacencies from forming and cause routing problems.
+     *   **OSPF process ID:** The OSPF process ID is *locally significant* to the router.  It *does not* need to match on neighbors.  You can run multiple OSPF processes on the same router, each with a different process ID, and they can form adjacencies with neighbors running *any* process ID (as long as the other "must match" parameters are correct). The Process ID is just a local label.
+
+---
+**解释**:  
+- **必须一致（Must Match）**: 区域ID（area ID）、子网掩码（netmask）、Hello/Dead定时器（timers）。  
+- **必须唯一（Must Be Unique）**: OSPF进程ID（仅本地有效）、路由器ID（全局唯一）。
+
+---
+
+### QUESTION 127  
+ 
+By default, which OSPF network type is seen on a PPP-encapsulated serial interface?  
+A. point-to-multipoint
+B. broadcast
+C. point-to-point
+D. nonbroadcast
+**中文翻译**:  
+默认情况下，使用PPP封装的串行接口属于哪种OSPF网络类型？  
+**答案**: C (Point-to-Point)  
+**解释**:  
+- PPP封装的串行链路默认被归类为**点对点（Point-to-Point）**网络，无需DR/BDR选举。  
+
+---
+
+### QUESTION 128  
+ 
+Which two circumstances can prevent two routers from establishing an OSPF neighbor
+adjacency? (Choose two.)
+A. mismatched autonomous system numbers
+B. an ACL blocking traffic from multicast address 224.0.0.10
+C. mismatched process IDs
+D. mismatched hello timers and dead timers
+E. use of the same router ID on both devices
+
+a mismatched Cisco IOS version that is used
+mismatched OSPF Hello or Dead timers
+mismatched subnet masks on the link interfaces
+use of private IP addresses on the link interfaces
+one router connecting to a FastEthernet port on the switch and the other connecting to a GigabitEthernet port
+**中文翻译**:  
+哪两种情况下OSPF邻居无法建立邻接关系？（选择两项）  
+**答案**: D, E (Hello/Dead定时器不匹配；路由器ID冲突)  
+**解释**:  
+- **D**: Hello和Dead定时器必须一致。  
+- **E**: 路由器ID必须唯一，否则会导致OSPF进程冲突。  
+- **错误选项**:  
+  - A：OSPF不使用AS号（ASN是BGP的概念）。  
+  - C：OSPF进程ID仅本地有效，不同路由器可以不同。
+ There may be several reasons why two routers running OSPF will fail to form an OSPF adjacency, including these:
+The subnet masks do not match, causing the routers to be on separate networks.
+OSPF Hello or Dead Timers do not match.
+OSPF network types do not match.
+There is a missing or incorrect OSPF network command.
+Mismatched IOS versions, the use of private IP addresses, and different types of interface ports used on a switch are not causes for an OSPF adjacency failing to form between two routers
+---
+
+### QUESTION 129  
+![](img\0129.jpg)
+
+What administrative distance has the route to 192.168.10.1?  
+A. 1
+B. 90
+C. 110
+D. 120
+**中文翻译**:  
+到达192.168.10.1的路由的管理距离是多少？  
+**答案**: B (90)  
+**解释**:  
+
+- 常见管理距离：  
+  - 直连路由：0  
+  - 静态路由：1  
+  - EIGRP：90  
+  - OSPF：110  
+
+---
+
+### QUESTION 130  
+ 
+ 
+A router has learned route 10.10.10.0/24 via numerous routing protocols. Which route is installed?
+A. route with the next hop that has the highest IP
+B. route with the lowest cost
+C. route with the lowest administrative distance
+D. route with the shortest prefix length
+
+**中文翻译**:  
+路由器通过多种协议学习到同一路由，将安装哪条路由？  
+**答案**: C (Route with the lowest administrative distance）
+*   A is incorrect. The IP address of the next hop is *not* a factor in route selection *between different routing protocols*.
+*   B is incorrect.  "Cost" is the *metric* used by OSPF.  Metrics are only relevant *within* a single routing protocol.  You can't compare an OSPF cost to an EIGRP metric directly.
+*   D is *partially* correct, but misleading. The *longest prefix match* rule is used *after* the AD has determined the routing protocol, within a protocol, the longest prefix win.
+*   
+---
+
+
+### QUESTION 131
+![](img\0131.jpg)
+Output showing a network diagram with R1, R2, R3, R4, R5, a switch, VLAN25, and an Internet connection. The R1's routing table is also shown.
+
+An engineer is bringing up a new circuit to the MPLS provider on the Gi0/1 interface of Router1.
+The new circuit uses eBGP and learns the route to VLAN25 from the BGP path. What is the
+expected behavior for the traffic flow for route 10.10.13.0/25?
+
+A. Traffic to 10.10.13.0/25 is load balanced out of multiple interfaces.
+B. Route 10.10.13.0/25 is updated in the routing table as being learned from interface Gi0/1.
+C. Traffic to 10.10.13.0/25 is asymmetrical.
+D. Route 10.10.13.0/25 learned via the Gi0/0 interface remains in the routing table.
+
+**Answer: B**
+**Explaination**
+Since the new circuit between Router 1 and MPLS cloud using eBGP, the Administrative Distance of eBGP is 20 which is smaller that the current OSPF route (110) .Therefore, the routing table will choose eBGP route.
+
+---
+**QUESTION 132**
+
+A router running EIGRP has learned the same route from two different paths. Which parameter
+does the router use to select the best path?
+A. cost
+B. administrative distance
+C. metric
+D. as-path
+
+**Answer: C**
+
+*   **C. metric:**  Each routing protocol uses its own *metric* to determine the best path.  EIGRP's metric is a composite value calculated from bandwidth, delay, load, and reliability (though, by default, only bandwidth and delay are used).  The EIGRP route with the *lowest* metric is considered the best.
+
+*   A is incorrect; "Cost" is specifically the OSPF metric, not EIGRP's.
+*   B is incorrect; Administrative Distance is used to choose between routes learned from *different* routing protocols (e.g., OSPF vs. EIGRP).  This question specifies that *EIGRP* has learned the routes, so AD isn't relevant.
+*   D is incorrect; AS-Path is a BGP attribute, not relevant to EIGRP.
+
+
+---
+
+**QUESTION 133**
+
+Router A learns the same route from two different neighbors; one of the neighbor routers is an
+OSPF neighbor, and the other is an EIGRP neighbor. What is the administrative distance of the
+route that will be installed in the routing table?
+A. 20
+B. 90
+C. 110
+D. 115
+
+**Answer: B**
+
+**Explanation:**
+
+The question states that the router learns the *same route* from both an OSPF neighbor and an EIGRP neighbor.  The router will choose the route based on *Administrative Distance (AD)*.  Here are the relevant default AD values:
+
+*   **EIGRP (internal): 90**
+*   OSPF: 110
+
+Since EIGRP has a *lower* AD than OSPF, the EIGRP route will be preferred and installed in the routing table. The administrative distance of that route will be 90.
+
+---
+
+**QUESTION 135**
+
+Which two pieces of information can you learn by viewing the routing table? (Choose two.)
+A. whether an ACL was applied inbound or outbound to an interface
+B. the EIGRP or BGP autonomous system
+C. whether the administrative distance was manually or dynamically configured
+D. which neighbor adjacencies are established
+E. the length of time that a route has been known
+
+**Answer: C, E**
+
+**Explanation:**
+
+*   **C. whether the administrative distance was manually or dynamically configured:**  Static routes have an AD of 1 by default, but this can be manually configured to a different value. The routing table shows the AD.  If it's not 1, you know it was manually set. Routes learned from dynamic routing protocols have their default AD values unless explicitly modified.
+*   **E. the length of time that a route has been known:** The routing table output (e.g., `show ip route`) typically includes a *timestamp* or *uptime* for each route, indicating how long the route has been in the table.
+
+*   A is incorrect; Routing tables don't show ACL application.  You need `show ip interface` or to examine the running configuration.
+*   B is incorrect; While you can see *if* a route was learned via EIGRP or BGP, the routing table itself doesn't show the AS number in the route entry. You'd use `show ip eigrp topology` or `show ip bgp` for that detailed information.
+*   D is incorrect;  The routing table shows *routes*, not *neighbor adjacencies*.  You'd use commands like `show ip ospf neighbor`, `show ip eigrp neighbors`, or `show cdp neighbors` to see neighbor information.
+
+---
+
+**QUESTION 136**
+
+Drag each route source from the left to the numbers on the right. Beginning with the lowest and 
+ending with the highest administrative distance.
+```
+connected     1
+EBGP          2
+EIGRP         3
+OSPF          4
+RIP           5
+static        6
+```
+**Answer:**
+
+```
+1 connected
+2 static
+3 EBGP
+4 EIGRP
+5 OSPF
+6 RIP
+```
+**Explanation:**
+This requires knowing the default Administrative Distances (ADs) for various route sources in Cisco IOS.  Lower AD values are preferred. Here's the correct order, from lowest (most preferred) to highest (least preferred):
+
+1.  **Connected (0):**  Directly connected networks have an AD of 0.  These are always preferred because the router is *directly attached* to the network.
+2.  **Static (1):** Static routes have a default AD of 1.  They are preferred over any dynamically learned routes (unless the static route is configured with a higher AD, making it a "floating static route").
+3.  **eBGP (20):** External BGP routes.
+4.  **EIGRP (90):**  Internal EIGRP routes have a default AD of 90.
+5.  **OSPF (110):** OSPF routes have a default AD of 110.
+6.   **RIP (120):** RIP routes have a default AD of 120.
+
+---
+
+
+
 **Chapter 15: Cloud Architecture**
 
 *   **Cloud Computing:** Approach to delivering IT services over a network (Internet), characterized by:
