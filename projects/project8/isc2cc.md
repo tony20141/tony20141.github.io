@@ -3045,7 +3045,7 @@ Using dehumidifiers (B) helps maintain appropriate humidity levels, preventing c
 
 A. Allow researchers to freely assign access levels to their own data.
 
-B. Define access levels based on roles and job functions, enforced by the system.
+**B. Define access levels based on roles and job functions, enforced by the system.**
 
 C. Enable a committee to review and approve access requests on a case-by-case basis.
 
@@ -3065,7 +3065,7 @@ Option B is correct because it aligns with MAC principles by defining and enforc
 
 A. To protect intellectual property and trade secrets
 
-B. To ensure continuity of production and avoid downtime
+**B. To ensure continuity of production and avoid downtime**
 
 C. To comply with industry standards for data protection
 
@@ -3085,7 +3085,7 @@ For a manufacturing company, the primary importance of a disaster recovery plan 
 
 A. Man-in-the-Middle (MITM)
 
-B. SYN Flood
+**B. SYN Flood**
 
 C. SQL Injection
 
@@ -3105,7 +3105,7 @@ The correct answer is B. SYN Flood. The NIDS alert indicating numerous SYN packe
 
 A. Use a centralized logging system to monitor server activities.
 
-B. Apply standard security templates through automated deployment scripts.
+**B. Apply standard security templates through automated deployment scripts.**
 
 C. Set up network-based firewalls to protect each server.
 
@@ -3125,7 +3125,7 @@ The correct answer is B. Applying standard security templates through automated 
 
 A. Malware
 
-B. Port Scanning
+**B. Port Scanning**
 
 C. Phishing
 
@@ -3145,7 +3145,7 @@ The correct answer is B. Port Scanning. This scenario describes a situation wher
 
 A. The color scheme of the SaaS application
 
-B. Data residency and regulatory compliance
+**B. Data residency and regulatory compliance**
 
 C. Integration capabilities with social media
 
@@ -3165,7 +3165,7 @@ Verifying data residency and regulatory compliance (B) with the SaaS provider en
 
 A. Immediately apply the patch to all systems without testing.
 
-B. Assess the impact of the vulnerability and test the patch in a controlled environment.
+**B. Assess the impact of the vulnerability and test the patch in a controlled environment.**
 
 C. Wait for confirmation from other organizations that the patch is stable.
 
@@ -3187,7 +3187,7 @@ A. Add the file to the antivirus exclusion list
 
 B. Delete the file immediately
 
-C. Contact the antivirus vendor for further analysis
+**C. Contact the antivirus vendor for further analysis**
 
 D. Disable the antivirus to prevent false alerts
 
@@ -3205,7 +3205,7 @@ A. Subnetting
 
 B. NAT (Network Address Translation)
 
-C. IP forwarding
+**C. IP forwarding**
 
 D. DHCP (Dynamic Host Configuration Protocol)
 
@@ -3225,7 +3225,7 @@ B. Conducting daily reconciliations and audits
 
 C. Encrypting the transaction records
 
-D. Utilizing a blockchain-based ledger for transactions
+**D. Utilizing a blockchain-based ledger for transactions**
 
  
 
@@ -3247,7 +3247,7 @@ A. File Integrity Monitoring (FIM).
 
 B. Antivirus software.
 
-C. Group Policy to restrict software installation.
+**C. Group Policy to restrict software installation.**
 
 D. Regular software audits.
 
@@ -3265,7 +3265,7 @@ Implementing Group Policy to restrict software installation (C) is a technical c
 
 A. To meet legal obligations for patient data protection
 
-B. To quickly restore access to critical healthcare systems
+**B. To quickly restore access to critical healthcare systems**
 
 C. To enhance the hospital's cybersecurity posture
 
@@ -3287,7 +3287,7 @@ A. Application layer
 
 B. Transport layer
 
-C. Internet layer
+**C. Internet layer**
 
 D. Network Interface layer
 
@@ -3307,7 +3307,7 @@ A. Cross-Site Scripting (XSS)
 
 B. SQL Injection
 
-C. Man-in-the-Browser Attack
+**C. Man-in-the-Browser Attack**
 
 D. Buffer Overflow
 
@@ -3323,7 +3323,7 @@ The correct answer is C. Man-in-the-Browser Attack. This scenario represents a t
 
  
 
-A. Install a fire suppression system in the server room.
+**A. Install a fire suppression system in the server room.**
 
 B. Use multifactor authentication for server access.
 
@@ -3347,7 +3347,7 @@ A. Increased vulnerability to zero-day exploits
 
 B. Reduced performance of the antivirus software
 
-C. Potential exposure to new malware threats
+**C. Potential exposure to new malware threats**
 
 D. Inability to detect hardware failures
 
@@ -3363,7 +3363,7 @@ The correct answer is C. Potential exposure to new malware threats. Outdated ant
 
  
 
-A. Establishing a baseline configuration and regularly auditing for changes.
+**A. Establishing a baseline configuration and regularly auditing for changes.**
 
 B. Implementing a robust firewall policy to block unauthorized access.
 
@@ -3385,7 +3385,7 @@ The correct answer is A. Establishing a baseline configuration and regularly aud
 
 A. Grant read access to everyone in the team.
 
-B. Give read access specifically to the colleague.
+**B. Give read access specifically to the colleague.**
 
 C. Assign full control to the colleague and remove Alice's own access.
 
@@ -3405,7 +3405,7 @@ Option B is correct as it adheres to the DAC principle by allowing Alice, the ow
 
 A. Encrypting all financial data stored on the organization's servers.
 
-B. Ensuring that there are controls in place to maintain the integrity of financial data.
+**B. Ensuring that there are controls in place to maintain the integrity of financial data.**
 
 C. Conducting quarterly vulnerability assessments on all financial systems.
 
@@ -3425,7 +3425,7 @@ One of the main cybersecurity requirements under SOX is ensuring that there are 
 
 A. Security guards stationed outside the vault.
 
-B. Installation of a robust door with a multi-factor authentication system.
+**B. Installation of a robust door with a multi-factor authentication system.**
 
 C. Implementing a sign-in sheet for those accessing the vault area.
 
@@ -3445,7 +3445,7 @@ A robust door with multi-factor authentication provides a strong physical barrie
 
 A. Distributed Denial of Service (DDoS)
 
-B. Command and Control (C2) Communication
+**B. Command and Control (C2) Communication**
 
 C. Phishing Attempt
 
@@ -3465,7 +3465,7 @@ The correct answer is B. Command and Control (C2) Communication. The scenario de
 
 A. Static IP assignment
 
-B. Dynamic IP assignment
+**B. Dynamic IP assignment**
 
 C. Reserved IP assignment
 
@@ -3485,7 +3485,7 @@ Dynamic IP assignment (B) uses DHCP to automatically assign IP addresses to devi
 
 A. Throwing the documents in the trash
 
-B. Shredding the documents using a cross-cut shredder
+**B. Shredding the documents using a cross-cut shredder**
 
 C. Storing the documents in a secure offsite location
 
@@ -3505,7 +3505,7 @@ The most appropriate method for securely destroying physical documents containin
 
 A. Installing a single, high-end firewall to protect the network perimeter
 
-B. Using antivirus software on all devices and regular security awareness training
+**B. Using antivirus software on all devices and regular security awareness training**
 
 C. Implementing firewalls, intrusion detection systems, endpoint protection, and regular employee training
 
@@ -3525,7 +3525,7 @@ Implementing firewalls, intrusion detection systems, endpoint protection, and re
 
 A. Increased network speed
 
-B. Enhanced security by segmenting network traffic
+**B. Enhanced security by segmenting network traffic**
 
 C. Simplified network topology
 
@@ -3543,7 +3543,7 @@ VLANs provide enhanced security by logically segmenting network traffic (B), pre
 
  
 
-A. It can identify and block traffic based on application data within the packets
+**A. It can identify and block traffic based on application data within the packets**
 
 B. It reduces the number of alerts generated by the IPS
 
@@ -3563,7 +3563,7 @@ The correct answer is A. It can identify and block traffic based on application 
 
  
 
-A. UPS with built-in surge protection
+**A. UPS with built-in surge protection**
 
 B. Automatic Transfer Switch (ATS)
 
@@ -3585,7 +3585,7 @@ A UPS with built-in surge protection (A) provides both continuous power during o
 
 A. Classify all data as public
 
-B. Classify data based on sensitivity and impact if compromised
+**B. Classify data based on sensitivity and impact if compromised**
 
 C. Classify data according to its size
 
@@ -3607,7 +3607,7 @@ A. To ensure employees can access company resources remotely.
 
 B. To monitor employee productivity during work hours.
 
-C. To enforce security policies and protect company data on personal devices.
+**C. To enforce security policies and protect company data on personal devices.**
 
 D. To facilitate easier communication between employees.
 
@@ -3625,7 +3625,7 @@ The correct answer is C. Installing an MDM application on personal devices allow
 
 A. Risk management
 
-B. Training and awareness
+**B. Training and awareness**
 
 C. Business impact analysis
 
@@ -3645,11 +3645,10 @@ Regularly testing the business continuity plan to ensure employees are familiar 
 
 A. Grant the developer full administrative access to the payroll database.
 
-B. Provide the developer access to a duplicate test environment with the necessary data.
+**B. Provide the developer access to a duplicate test environment with the necessary data.**
 
 C. Allow the developer read-only access to the live payroll data.
 
- 
 
 D. Give the developer temporary full access to the live payroll system until the bug is fixed.
 
@@ -3665,7 +3664,7 @@ Option B is correct as it provides the necessary access for troubleshooting with
 
 A. Access Control List (ACL)
 
-B. Posture validation server
+**B. Posture validation server**
 
 C. DHCP server
 
@@ -3674,6 +3673,7 @@ D. Network switch
  
 
 A posture validation server (B) is a critical component of NAC, responsible for evaluating devices against security policies (such as antivirus status and patch levels) and enforcing compliance before granting network access. An Access Control List (ACL) (A) can restrict network access based on IP addresses or protocols but does not evaluate device compliance. A DHCP server (C) assigns IP addresses but does not enforce security policies. A network switch (D) provides connectivity but does not perform compliance checks.
+状态验证服务器 (B) 是 NAC 的关键组件，负责根据安全策略（例如防病毒状态和补丁级别）评估设备，并在授予网络访问权限之前强制执行合规性。访问控制列表 (ACL) (A) 可以根据 IP 地址或协议限制网络访问，但不会评估设备的合规性。DHCP 服务器 (C) 分配 IP 地址，但不执行安全策略。网络交换机 (D) 提供连接，但不执行合规性检查。
 
  
 
@@ -3689,7 +3689,7 @@ B. Hash functions produce a fixed-size output regardless of input size.
 
 C. Hash functions are deterministic.
 
-D. Strong hash functions make it computationally infeasible to find two different inputs that produce the same hash value.
+**D. Strong hash functions make it computationally infeasible to find two different inputs that produce the same hash value.**
 
  
 
@@ -3705,7 +3705,7 @@ Strong hash functions make it computationally infeasible to find two different i
 
 A. To quickly leak the incident details to the media.
 
-B. To limit the damage to the organization's reputation and intellectual property.
+**B. To limit the damage to the organization's reputation and intellectual property.**
 
 C. To permanently disable affected systems to prevent future incidents.
 
