@@ -1,12 +1,5 @@
-# CCNA 题库（修订版）
+# CCNA 题库（修订版2026111）
 
-> 修订说明（2026-11-10）：本文件由 questions.md 经全量审校后修订生成，审校报告见《all corect.md》（234 条）。
-> 已应用：事实性错误与错误答案更正（含解析对齐）、开头 QUESTION 1–30 等双语缺失处的中文解析补全、命令与字符笔误修正、Simulation 配置命令修正。
-> 已删除：重复题目的第二份副本（QUESTION 14、121–126、365 空条目、389 残缺副本、459 残缺副本、503–512 整组、1024），删除处均留有【修订注】；QUESTION 60 后的一段生成残留文字已删除。
-> 已知保留事项（未补造、未重编号）：缺失题号 61、62、92、211、364、528、1034；个别原题本身残缺（缺选项/题干）者已加注【待补全】，内容保持原样。
-> 其余未被审校点名的原文一字未动。
-
-Below is a detailed response to each question from the provided document, complete with explanations, formatted in Markdown for clarity. Each question is listed with its options (where applicable), the correct answer(s), and a comprehensive explanation.
 
 ---
 
