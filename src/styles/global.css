@@ -166,10 +166,6 @@ a {
   letter-spacing: 0.02em;
 }
 
-.logo .tick {
-  color: var(--accent);
-}
-
 .nav-links {
   display: flex;
   gap: 1.25rem;
