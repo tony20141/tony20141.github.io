@@ -7,7 +7,8 @@ const blog = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
     author: z.string().optional(),
-    migrated: z.string().optional(),
+    // nullish(): YAML "migrated:" (empty) parses to null — must not fail the whole build
+    migrated: z.string().nullish(),
   }),
 });
 
