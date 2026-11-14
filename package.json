@@ -1,0 +1,24 @@
+{
+  "name": "tony20141.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Yimin Qiu's project & blog site - Astro + modern web platform",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.19",
+    "rehype-raw": "^7.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^1.29.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.2.0"
+  }
+}

@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getProjects } from '../content-projects.mjs';
+import { VIDEOS } from '../videos.mjs';
+import { SITE } from '../site-meta.mjs';
+
+const projects = getProjects();
+const banks = projects.filter((p) => p.hasMd).length;
+---
+
+<Layout>
+  <div class="wrap">
+    <section class="hero">
+      <span class="kicker">cyber security · cloud · learning with AI</span>
+      <h1>I'm <em>Yimin Qiu</em> — I build things I don't yet understand, on purpose.</h1>
+      <p class="tagline">
+        3 years helpdesk for 5000+ users, 1 year layer-1 security, Cyber Security &amp; Cloud Admin
+        diploma. Started with zero code knowledge; now I pair AI with my own curiosity to learn by building.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">browse projects ↓</a>
+        <a class="btn btn-ghost" href="/blog/">read the blog</a>
+        <a class="btn btn-ghost" href={SITE.github} rel="me">github ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">{String(projects.length).padStart(2, '0')}</div><div class="lbl">projects</div></div>
+        <div class="stat"><div class="num">{String(banks).padStart(2, '0')}</div><div class="lbl">markdown sources</div></div>
+        <div class="stat"><div class="num">∞</div><div class="lbl">things to learn</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <span class="kicker">the work</span>
+      <h2 class="section-title" id="projects-title">Project Notes</h2>
+      <div class="projects-grid">
+        {
+          projects.map((p, i) => (
+            <a class="card reveal" href={p.url} style={`animation-delay:${(i % 6) * 40}ms`}>
+              <div class="card-cover">
+                {p.cover ? (
+                  <img src={p.cover} alt={`${p.title} cover`} loading="lazy" />
+                ) : (
+                  <div class="card-cover-empty mono">/ {p.id}</div>
+                )}
+                {p.hasMd && <span class="badge">.md source</span>}
+              </div>
+              <div class="card-body">
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+                <span class="card-foot">view project <span class="arrow">→</span></span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section" id="videos" aria-labelledby="videos-title">
+      <span class="kicker">hands on</span>
+      <h2 class="section-title" id="videos-title">Project Videos</h2>
+      <div class="videos-grid">
+        {
+          VIDEOS.map((v) => (
+            <div class="video-card reveal">
+              <div class="frame">
+                <iframe
+                  src={v.embed}
+                  title={v.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="cap">
+                <h3>{v.title}</h3>
+                <p>{v.note}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <span class="kicker">whoami</span>
+      <h2 class="section-title" id="about-title">About Me</h2>
+      <div class="about-box reveal">
+        <div>
+          <p>I started most of the codes with 0-code knowledge.</p>
+          <p>
+            I'm not a programmer, but I'm trying to use AI with my love &amp; understanding to build
+            &amp; learn from these projects with codes.
+          </p>
+          <p>3 years Helpdesk position in an organization with 5000+ users.</p>
+          <p>1 year layer 1 implementation in security.</p>
+          <p>Cyber Security and Cloud Admin — 2 years diploma.</p>
+          <p>
+            Contact: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+        </div>
+        <div class="credly">
+          <div
+            data-iframe-width="150"
+            data-iframe-height="270"
+            data-share-badge-id={SITE.credly}
+            data-share-badge-host="https://www.credly.com"></div>
+          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

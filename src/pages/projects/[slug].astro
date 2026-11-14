@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getProjectPages } from '../../data.mjs';
+import { renderMarkdown } from '../../render-md.mjs';
+
+export async function getStaticPaths() {
+  // All data work lives inside getStaticPaths — this Astro version's
+  // compiler does not share top-level frontmatter consts with it.
+  const pages = await getProjectPages();
+  return pages.map((pg) => ({
+    params: { slug: pg.project.slug },
+    props: pg,
+  }));
+}
+
+const { project, bank, md, size, title } = Astro.props;
+const kb = (n) => (n >= 1024 * 1024 ? `${(n / 1024 / 1024).toFixed(1)} MB` : `${Math.round(n / 1024)} KB`);
+const items = bank ? bank.items : [];
+// Pre-render all markdown at build time; the page is static HTML.
+const rendered = bank ? null : await renderMarkdown(md);
+const preambleHtml = bank && bank.preamble ? (await renderMarkdown(bank.preamble)).html : '';
+const bankItemHtml = bank ? items.map((it) => renderMarkdown(it.body)).map((p) => p.then((r) => r.html)) : null;
+const itemHtml = bank ? await Promise.all(bankItemHtml) : [];
+---
+
+<Layout title={title} description={`${project.title} — ${project.description}`}>
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">home</a>
+        <span class="sep">/</span>
+        <a href="/#projects">projects</a>
+        <span class="sep">/</span>
+        <span>{project.id}</span>
+      </nav>
+      <h1>{title}</h1>
+    </div>
+
+    {
+      bank ? (
+        <div class="bank">
+          {bank.preamble && <div class="prose bank-preamble" set:html={preambleHtml}></div>}
+          <div class="bank-toolbar" role="search">
+            <input
+              type="search"
+              class="bank-search"
+              id="bank-search"
+              placeholder="search this bank…"
+              aria-label="Search this question bank"
+            />
+            <span class="bank-meta" id="bank-count">
+              <b>{items.length}</b> entries · {kb(size)} source
+            </span>
+          </div>
+          <div id="bank-items">
+            {
+              items.map((it, i) => (
+                it.divider ? (
+                  <div
+                    class="bank-divider"
+                    id={it.id}
+                    data-id={it.id}
+                    data-num={i + 1}
+                    data-title={it.title.toLowerCase()}
+                    data-body="">
+                    <span class="mono kicker">▸ section</span>
+                    <h2>{it.title}</h2>
+                  </div>
+                ) : (
+                  <article
+                    class="bank-item"
+                    id={it.id}
+                    data-id={it.id}
+                    data-num={it.num ?? i + 1}
+                    data-title={it.title.toLowerCase()}
+                    data-body={it.body.toLowerCase().slice(0, 2000)}>
+                    <h2>
+                      <span class="qno">{String(i + 1).padStart(3, '0')}</span>
+                      {it.num && it.num !== String(i + 1) ? (
+                        <span class="mono" style="color:var(--muted);font-size:.8rem">#{it.num}</span>
+                      ) : null}
+                      <span>{it.title}</span>
+                    </h2>
+                    <div class="prose item-body" set:html={itemHtml[i]}></div>
+                  </article>
+                )
+              ))
+            }
+          </div>
+          <div class="bank-empty" id="bank-empty" hidden>
+            nothing matches — try a shorter keyword
+          </div>
+          <div class="bank-pager" id="bank-pager" hidden>
+            <button class="btn btn-ghost" id="bank-prev" type="button">← prev</button>
+            <span class="page-info" id="bank-pageinfo"></span>
+            <button class="btn btn-ghost" id="bank-next" type="button">next →</button>
+          </div>
+        </div>
+      ) : (
+        <div class="prose" set:html={rendered.html}></div>
+      )
+    }
+  </div>
+
+  {
+    bank && (
+      <script>
+        // Client-side search + pagination for big banks. The full text is
+        // already on the page (static); this just shows it smartly.
+        const items = Array.from(document.querySelectorAll('.bank-item'));
+        const search = document.getElementById('bank-search');
+        const empty = document.getElementById('bank-empty');
+        const pager = document.getElementById('bank-pager');
+        const prev = document.getElementById('bank-prev');
+        const next = document.getElementById('bank-next');
+        const info = document.getElementById('bank-pageinfo');
+        const b = document.querySelector('#bank-count b');
+        const perPage = window.innerWidth < 700 ? 10 : 25;
+
+        let visible = items;
+        let page = 0;
+
+        function apply() {
+          const q = search.value.trim().toLowerCase();
+          visible = items.filter(
+            (it) =>
+              !q ||
+              it.dataset.title.includes(q) ||
+              it.dataset.body.includes(q) ||
+              it.dataset.num === q
+          );
+          b.textContent = String(visible.length);
+          if (!visible.length) {
+            empty.hidden = false;
+            pager.hidden = true;
+            items.forEach((it) => (it.hidden = true));
+            return;
+          }
+          empty.hidden = true;
+          const total = Math.max(1, Math.ceil(visible.length / perPage));
+          page = Math.min(page, total - 1);
+          draw();
+        }
+
+        function draw() {
+          const start = page * perPage;
+          const end = start + perPage;
+          items.forEach((it) => (it.hidden = true));
+          visible.slice(start, end).forEach((it) => (it.hidden = false));
+          pager.hidden = false;
+          const total = Math.max(1, Math.ceil(visible.length / perPage));
+          info.textContent = `page ${page + 1}/${total} · ${start + 1}–${Math.min(end, visible.length)} of ${visible.length}`;
+          prev.disabled = page === 0;
+          next.disabled = page >= total - 1;
+          const first = visible[start];
+          if (first) first.scrollIntoView({ block: 'start' });
+        }
+
+        let t;
+        search.addEventListener('input', () => {
+          clearTimeout(t);
+          t = setTimeout(apply, 120);
+        });
+        search.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const el = visible[0];
+            if (el) el.scrollIntoView({ block: 'start' });
+          }
+        });
+        prev.addEventListener('click', () => {
+          if (page > 0) {
+            page--;
+            draw();
+          }
+        });
+        next.addEventListener('click', () => {
+          page++;
+          draw();
+        });
+        apply();
+      </script>
+    )
+  }
+</Layout>

@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const excerpt = (body, n = 160) => {
+  const text = body.replace(/[#*`>\-\[\]!]/g, '').replace(/\s+/g, ' ').trim();
+  return text.length > n ? text.slice(0, n).trimEnd() + '…' : text;
+};
+---
+
+<Layout title="Blog" description="Notes from the road — Linux, markdown, and learning.">
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">home</a>
+        <span class="sep">/</span>
+        <span>blog</span>
+      </nav>
+      <h1>Blog</h1>
+    </div>
+    <div class="post-list">
+      {
+        posts.map((post, i) => (
+          <a
+            class="post-row reveal"
+            href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+            style={`animation-delay:${i * 40}ms`}>
+            <time class="post-date" datetime={post.data.date.toISOString()}>
+              {post.data.date.toISOString().slice(0, 10)}
+            </time>
+            <div>
+              <h3>{post.data.title}</h3>
+              <p>{excerpt(post.body)}</p>
+            </div>
+            <div class="post-tags">
+              {post.data.tags.slice(0, 3).map((t) => (
+                <span class="tag">#{t}</span>
+              ))}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

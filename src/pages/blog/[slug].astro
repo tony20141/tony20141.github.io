@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Convention export (not imported from astro:content in Astro 5).
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={`Blog post: ${post.data.title}`}>
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">home</a>
+        <span class="sep">/</span>
+        <a href="/blog/">blog</a>
+        <span class="sep">/</span>
+        <span>{post.id}</span>
+      </nav>
+      <h1>{post.data.title}</h1>
+      <p class="mono" style="color:var(--muted);font-size:.85rem">
+        <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().slice(0, 10)}</time>
+        {post.data.author ? ` · ${post.data.author}` : ''}
+      </p>
+    </div>
+    <article class="prose">
+      <Content />
+      {
+        post.data.migrated && (
+          <p class="mono" style="margin-top:2rem;font-size:.75rem;color:var(--muted)">
+            migrated from the old Docusaurus blog · {post.data.migrated}
+          </p>
+        )
+      }
+    </article>
+  </div>
+</Layout>
